@@ -173,7 +173,7 @@ require get_template_directory() . '/inc/utility.php';
 /**
  * Register post types and taxonomies
  */
-//require get_template_directory() . '/inc/register.php';
+require get_template_directory() . '/inc/register.php';
 
 /**
  * TGM Plugin Activation

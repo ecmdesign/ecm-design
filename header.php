@@ -44,7 +44,7 @@
 			<div class="row">
 				<div class="site-branding">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="logo home-logo" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/logo.svg" />
+						<img class="logo home-logo" src="<?php bloginfo( 'template_directory' ); ?>/assets/img/logo-white.svg" />
 					</a>
 				</div>
 

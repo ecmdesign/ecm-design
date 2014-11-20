@@ -42,6 +42,14 @@ function my_theme_register_required_plugins() {
 	 */
 	$plugins_local = array(
 		array(
+			'name'				=> 'ACF-CF7 Field',
+			'slug'				=> 'acf-cf7-field-master',
+			'source'			=> get_stylesheet_directory() . '/inc/vendor/acf/acf-cf7-field.zip',
+			'required'			=> false,
+			'version'			=> '1.1.2',
+			'force_activation'	=> false,
+		),
+		array(
 			'name'				=> 'Advanced Custom Fields',
 			'slug'				=> 'advanced-custom-fields',
 			'required'			=> true,
@@ -51,8 +59,14 @@ function my_theme_register_required_plugins() {
 			'name'				=> 'Advanced Custom Fields: Repeater Field',
 			'slug'				=> 'acf-repeater',
 			'source'			=> get_stylesheet_directory() . '/inc/vendor/acf/acf-repeater.zip',
-			'required'			=> false,
+			'required'			=> true,
 			'version'			=> '1.1.1',
+			'force_activation'	=> true,
+		),
+		array(
+			'name'				=> 'Contact Form 7',
+			'slug'				=> 'contact-form-7',
+			'required'			=> false,
 			'force_activation'	=> false,
 		),
 		array(
