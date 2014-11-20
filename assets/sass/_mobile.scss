@@ -1,0 +1,78 @@
+/*--------------------------------------------------------------
+>>> _mobile.scss
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+.site-header {
+	text-align: center;
+	background-color: $nav-bg;
+	padding: 1.25em 0;
+	a {
+		color: white;
+		&:hover,
+		&:focus {
+			color: #E3E3E3;
+			@include animate;
+		}
+	}
+}
+.site-branding,
+.main-navigation {
+	display: block;
+}
+.site-branding {
+	margin: 0 0 1.0em;
+}
+
+/* Navigation */
+.main-navigation {
+	text-align: center;
+	li {
+		display: inline;
+		padding: 0 0.5em;
+	}
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+}
+
+/* Contact */
+.site-contact {
+	display: none;
+	span {
+		color: white;
+	}
+}
+
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+.site-content {
+	padding: 1.5em 0;
+}
+.entry-title,
+.page-title {
+	margin-top: 0;
+}
+
+
+/*--------------------------------------------------------------
+Home Page
+--------------------------------------------------------------*/
+.home {
+	.site-content {
+		padding: 0;
+	}
+}
+
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+.site-footer {
+}

@@ -1,0 +1,48 @@
+/*--------------------------------------------------------------
+>>> _768up.scss
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+.site-branding,
+.main-navigation {
+	float: left;
+}
+.site-branding {
+	margin: 0 3.75em 0 0;
+}
+
+.main-navigation,
+.site-contact {
+	margin-top: 0.625em;
+}
+
+/* Navigation */
+.main-navigation {
+	li {
+		color: white;
+		padding-left: 0;
+		padding-right: 1.0em;
+		&:after {
+			content: '/';
+			display: inline;
+			padding-left: 1.0em;
+		}
+		&:last-of-type {
+			&:after {
+				display: none;
+			}
+		}
+	}
+	a {
+		font-size: 16px;
+		font-size: 1.6rem;
+	}
+}
+
+/* Contact */
+.site-contact {
+	display: block;
+	float: right;
+}

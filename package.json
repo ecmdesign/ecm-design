@@ -1,0 +1,26 @@
+{
+  "name": "ecm-design",
+  "version": "1.0.0",
+  "author": "Sean McHenry <sean@ecm-design.com>",
+  "homepage": "http://www.ecm-design.com",
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:ecmdesign/ecm-design.git"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.6.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-sass": "~0.14.2"
+  }
+}
