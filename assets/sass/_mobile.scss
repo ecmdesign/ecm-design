@@ -11,6 +11,8 @@ Global
 	position: relative;
 	height: 100%;
 }
+
+/* Buttons */
 .button-fancy {
 	background-color: $accent-color;
 	color: white;
@@ -20,6 +22,26 @@ Global
 	&:hover {
 		background-color: $button-color;
 		color: white;
+	}
+}
+
+/* Headlines */
+.headline {
+	text-align: center;
+	font-weight: 700;
+}
+.fancy-headline {
+	font-size: 24px;
+	font-size: 2.4rem;
+	margin: 0 0 2.0em;
+	text-transform: uppercase;
+	&:after {
+		content: "";
+		display: block;
+		height: 3px;
+		width: 30px;
+		margin: 0.25em auto 0;
+		background-color: $link-color;
 	}
 }
 
@@ -101,15 +123,27 @@ Home Page
 Hero
 ------------------------------*/
 .hero-section {
-	background-color: lighten($border-color, 2.5%);
 	text-align: center;
+	background-color: lighten($border-color, 2.5%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 255, 255, 0.75);
+		z-index: 1;
+	}
 }
 .home-area {
 	position: relative;
+	z-index: 100;
 }
 .hero-callout {
 	h1 {
-		margin: 0 0 0.375em;
+		margin: 0 0 0.75em;
 		font-size: 42px;
 		font-size: 4.2rem;
 	}
@@ -120,7 +154,6 @@ Hero
 	}
 	.button {
 		display: inline-block;
-		margin: 1.0em 0 0.5em;
 	}
 }
 .hero-image {
@@ -132,6 +165,21 @@ Services
 ------------------------------*/
 .services-section {
 	background-color: #fff;
+	text-align: center;
+	z-index: 999;
+}
+.service {
+	p {
+		font-weight: 300;
+	}
+}
+.service-icon {
+	margin-bottom: 0.75em;
+}
+.service-title {
+	font-size: 20px;
+	font-size: 2.0rem;
+	margin-bottom: 1.0em;
 }
 
 

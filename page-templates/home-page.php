@@ -17,4 +17,14 @@ get_header(); ?>
 		get_template_part( 'partials/home/services', 'section' );
 	} ?>
 
+	<?php /* Work Section */
+	if ( have_rows( 'work_items' ) ) {
+		get_template_part( 'partials/home/work', 'section' );
+	} ?>
+
+	<?php /* Clients Section */
+	if ( get_field( 'clients_headline' ) && have_rows( 'clients' ) ) {
+		get_template_part( 'partials/home/clients', 'section' );
+	} ?>
+
 <?php get_footer(); ?>
