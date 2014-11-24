@@ -11,6 +11,17 @@ Global
 	position: relative;
 	height: 100%;
 }
+.button-fancy {
+	background-color: $accent-color;
+	color: white;
+	padding: 1.0em 1.25em;
+	border-radius: 5px;
+	&:focus,
+	&:hover {
+		background-color: $button-color;
+		color: white;
+	}
+}
 
 /*--------------------------------------------------------------
 Header
@@ -19,6 +30,8 @@ Header
 	text-align: center;
 	background-color: $nav-bg;
 	padding: 1.5em 0 1.25em;
+	position: relative;
+	z-index: 999;
 	a {
 		color: white;
 		&:hover,
@@ -78,6 +91,47 @@ Home Page
 	.site-content {
 		padding: 0;
 	}
+}
+.section {
+	padding: 36px 0;
+	position: relative;
+}
+
+/*------------------------------
+Hero
+------------------------------*/
+.hero-section {
+	background-color: lighten($border-color, 2.5%);
+	text-align: center;
+}
+.home-area {
+	position: relative;
+}
+.hero-callout {
+	h1 {
+		margin: 0 0 0.375em;
+		font-size: 42px;
+		font-size: 4.2rem;
+	}
+	p {
+		font-size: 20px;
+		font-size: 2.0rem;
+		font-weight: 300;
+	}
+	.button {
+		display: inline-block;
+		margin: 1.0em 0 0.5em;
+	}
+}
+.hero-image {
+	display: none;
+}
+
+/*------------------------------
+Services
+------------------------------*/
+.services-section {
+	background-color: #fff;
 }
 
 

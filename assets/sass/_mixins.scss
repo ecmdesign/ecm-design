@@ -10,6 +10,7 @@ $sans-serif: 'Roboto', sans-serif;
 
 /* Colors */
 $blue: #80A3B7;
+$brown: #907E71;
 $charcoal: #404040;
 $gray-light: #E3E3E3;
 
@@ -20,8 +21,10 @@ Definitions
 $body-font: $sans-serif;
 
 /* Colors */
+$accent-color: $brown;
 $body-color: $charcoal;
 $border-color: $gray-light;
+$button-color: darken($blue, 15%);
 $link-color: $blue;
 $nav-bg: darken($link-color, 7.5%);
 

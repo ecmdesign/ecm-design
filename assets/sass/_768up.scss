@@ -61,3 +61,24 @@ Header
 	display: block;
 	float: right;
 }
+
+/*--------------------------------------------------------------
+Home Page
+--------------------------------------------------------------*/
+
+/*------------------------------
+Hero
+------------------------------*/
+.hero-section {
+	text-align: left;
+}
+.hero-image {
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	img {
+		max-width: 375px;
+		margin-bottom: -200px;
+	}
+}

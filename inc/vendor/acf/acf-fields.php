@@ -185,6 +185,16 @@ if(function_exists("register_field_group"))
 		'title' => 'Hero Section',
 		'fields' => array (
 			array (
+				'key' => 'field_54738ed1a796c',
+				'label' => 'Hero Background',
+				'name' => 'hero_background',
+				'type' => 'image',
+				'instructions' => 'Upload an image to use as the background of the hero section.',
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+			array (
 				'key' => 'field_546e4a48b0c32',
 				'label' => 'Hero Headline',
 				'name' => 'hero_headline',
@@ -203,7 +213,7 @@ if(function_exists("register_field_group"))
 				'label' => 'Hero Text',
 				'name' => 'hero_text',
 				'type' => 'textarea',
-				'instructions' => 'Enter some text for the hero area.',
+				'instructions' => 'Enter some text for the hero section.',
 				'required' => 1,
 				'default_value' => '',
 				'placeholder' => '',
@@ -213,10 +223,10 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_546e4ac6b0c34',
-				'label' => 'CTA Button Text',
-				'name' => 'cta_button_text',
+				'label' => 'Button Text',
+				'name' => 'button_text',
 				'type' => 'text',
-				'instructions' => 'Enter some text for the call-to-action button in the hero area.',
+				'instructions' => 'Enter some text for the button in the hero section.',
 				'required' => 1,
 				'default_value' => '',
 				'placeholder' => '',
@@ -224,6 +234,31 @@ if(function_exists("register_field_group"))
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => 15,
+			),
+			array (
+				'key' => 'field_5473a37464a31',
+				'label' => 'Button URL',
+				'name' => 'button_url',
+				'type' => 'text',
+				'instructions' => 'Enter a URL for the button to link to.',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_54737b85cff93',
+				'label' => 'Hero Image',
+				'name' => 'hero_image',
+				'type' => 'image',
+				'instructions' => 'Upload an image to use in the hero section.',
+				'required' => 1,
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
 			),
 		),
 		'location' => array (
@@ -239,7 +274,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
@@ -332,7 +367,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
@@ -416,7 +451,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
@@ -478,7 +513,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
@@ -571,7 +606,7 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),

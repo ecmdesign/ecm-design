@@ -23,7 +23,7 @@ p {
 
 b,
 strong {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 div:focus {
@@ -69,9 +69,12 @@ Links
 --------------------------------------------------------------*/
 a {
 	color: $link-color;
-	&:hover {
+	&:hover,
+	&:focus {
 		text-decoration: none;
 		color: darken($link-color, 10%);
+	}
+	&:hover {
 		@include animate;
 	}
 }

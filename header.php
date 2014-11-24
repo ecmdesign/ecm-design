@@ -23,7 +23,7 @@
 <meta name="msapplication-TileImage" content="<?php bloginfo( 'template_directory' ); ?>/assets/img/icons/favicon-144.png">
 
 <!-- Web fonts -->
-<link href='http://fonts.googleapis.com/css?family=Roboto:500,400italic,300,500italic,400' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Roboto:400italic,700italic,300,700,400' rel='stylesheet' type='text/css'>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -53,7 +53,7 @@
 				</nav><!-- #site-navigation -->
 
 				<div class="site-contact">
-					<span>Call: <a href="">603-969-8786</a></span>
+					<span>Call: <a href="tel:6037787147">603-778-7147</a></span>
 				</div>
 			</div>
 		</div>
