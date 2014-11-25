@@ -10,7 +10,7 @@
 $hero_bg = get_field( 'hero_background' );
 $bg_url = $hero_bg['url']; ?>
 
-<div class="hero-section contrast" style="background-image: url('<?php echo $bg_url; ?>');">
+<div class="hero-section" style="background-image: url('<?php echo $bg_url; ?>');">
 	<div class="home-area container">
 		<div class="section">
 			<div class="row">
