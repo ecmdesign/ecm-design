@@ -16,8 +16,9 @@ Global
 .button-fancy {
 	background-color: $accent-color;
 	color: white;
-	padding: 1.0em 1.25em;
+	padding: 0.75em 1.0em;
 	border-radius: 5px;
+	letter-spacing: 1px;
 	&:focus,
 	&:hover {
 		background-color: $button-color;
@@ -28,11 +29,11 @@ Global
 /* Headlines */
 .headline {
 	text-align: center;
-	font-weight: 700;
+	font-family: $heading-font;
 }
 .fancy-headline {
-	font-size: 24px;
-	font-size: 2.4rem;
+	font-size: 22px;
+	font-size: 2.2rem;
 	margin: 0 0 2.0em;
 	text-transform: uppercase;
 	&:after {
@@ -115,7 +116,7 @@ Home Page
 	}
 }
 .section {
-	padding: 36px 0;
+	padding: 48px 0;
 	position: relative;
 	&:nth-of-type(odd) {
 		background-color: lighten($border-color, 7.5%);
@@ -153,8 +154,9 @@ Hero
 .hero-callout {
 	h1 {
 		margin: 0 0 0.75em;
-		font-size: 42px;
-		font-size: 4.2rem;
+		font-size: 44px;
+		font-size: 4.4rem;
+		font-family: $heading-font;
 	}
 	p {
 		font-size: 20px;
@@ -189,6 +191,37 @@ Services
 	font-size: 2.0rem;
 	margin-bottom: 1.0em;
 }
+
+/*------------------------------
+Testimonials
+------------------------------*/
+.testimonial-section {
+}
+.tst-slider {
+	ul {
+		text-align: center;
+		padding: 0;
+		margin: 0;
+	}
+	li {
+		list-style-type: none;
+		font-family: $fancy-font;
+		font-size: 20px;
+		font-size: 2.0rem;
+	}
+	span {
+		display: block;
+		font-style: italic;
+	}
+	p {
+		margin-bottom: 0.5em;
+	}
+}
+
+
+/*------------------------------
+Clients
+------------------------------*/
 
 
 /*--------------------------------------------------------------

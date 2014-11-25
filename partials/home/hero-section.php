@@ -23,8 +23,10 @@ $bg_url = $hero_bg['url']; ?>
 							</h1>
 
 							<?php /* Text */
-							$hero_text = get_field( 'hero_text' );
-							echo wpautop( $hero_text ); ?>
+							if ( get_field( 'hero_text' ) ) {
+								$hero_text = get_field( 'hero_text' );
+								echo wpautop( $hero_text );
+							} ?>
 
 							<?php /* Button */
 							if ( get_field( 'button_text' ) ) {
@@ -40,11 +42,13 @@ $bg_url = $hero_bg['url']; ?>
 		</div><!-- .section -->
 
 		<?php /* Hero Image */
-		$hero_img = get_field( 'hero_image' );
-		$img_alt = $hero_img['alt'];
-		$img_url = $hero_img['url']; ?>
-		<div class="hero-image animated bounceInRight">
-			<img src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
-		</div>
+		if ( get_field( 'hero_image' ) ) {
+			$hero_img = get_field( 'hero_image' );
+			$img_alt = $hero_img['alt'];
+			$img_url = $hero_img['url']; ?>
+			<div class="hero-image animated bounceInRight">
+				<img src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
+			</div>
+		<?php } ?>
 	</div><!-- .home-area -->
 </div><!-- .hero-section -->

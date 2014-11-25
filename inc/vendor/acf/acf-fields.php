@@ -185,11 +185,31 @@ if(function_exists("register_field_group"))
 		'title' => 'Hero Section',
 		'fields' => array (
 			array (
+				'key' => 'field_5474efea7a364',
+				'label' => 'Enable Hero?',
+				'name' => 'enable_hero',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the hero section.',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
 				'key' => 'field_54738ed1a796c',
 				'label' => 'Hero Background',
 				'name' => 'hero_background',
 				'type' => 'image',
 				'instructions' => 'Upload an image to use as the background of the hero section.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474efea7a364',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'save_format' => 'object',
 				'preview_size' => 'thumbnail',
 				'library' => 'all',
@@ -201,6 +221,17 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 				'instructions' => 'Enter a headline for the hero section.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474efea7a364',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -215,6 +246,17 @@ if(function_exists("register_field_group"))
 				'type' => 'textarea',
 				'instructions' => 'Enter some text for the hero section.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474efea7a364',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'maxlength' => 100,
@@ -228,6 +270,17 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 				'instructions' => 'Enter some text for the button in the hero section.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474efea7a364',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -242,6 +295,17 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 				'instructions' => 'Enter a URL for the button to link to.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474efea7a364',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -256,6 +320,17 @@ if(function_exists("register_field_group"))
 				'type' => 'image',
 				'instructions' => 'Upload an image to use in the hero section.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474efea7a364',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'save_format' => 'object',
 				'preview_size' => 'thumbnail',
 				'library' => 'all',
@@ -285,12 +360,32 @@ if(function_exists("register_field_group"))
 		'title' => 'Services Section',
 		'fields' => array (
 			array (
+				'key' => 'field_5474ed23a096b',
+				'label' => 'Enable Services?',
+				'name' => 'enable_services',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the services section.',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
 				'key' => 'field_546e4c085048e',
 				'label' => 'Services Headline',
 				'name' => 'services_headline',
 				'type' => 'text',
 				'instructions' => 'Enter a headline for the services section here.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ed23a096b',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -305,6 +400,17 @@ if(function_exists("register_field_group"))
 				'type' => 'repeater',
 				'instructions' => 'Add services by clicking "Add Row" below.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ed23a096b',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'sub_fields' => array (
 					array (
 						'key' => 'field_546e4f4631480',
@@ -320,8 +426,8 @@ if(function_exists("register_field_group"))
 					),
 					array (
 						'key' => 'field_546e4ba58dbeb',
-						'label' => 'Service Headline',
-						'name' => 'service_headline',
+						'label' => 'Service Title',
+						'name' => 'service_title',
 						'type' => 'text',
 						'instructions' => 'Enter a headline for the service.',
 						'required' => 1,
@@ -331,7 +437,7 @@ if(function_exists("register_field_group"))
 						'prepend' => '',
 						'append' => '',
 						'formatting' => 'html',
-						'maxlength' => '',
+						'maxlength' => 30,
 					),
 					array (
 						'key' => 'field_546e4bdd8dbec',
@@ -346,6 +452,21 @@ if(function_exists("register_field_group"))
 						'maxlength' => 150,
 						'rows' => '',
 						'formatting' => 'br',
+					),
+					array (
+						'key' => 'field_5473aed9631c5',
+						'label' => 'Service URL',
+						'name' => 'service_url',
+						'type' => 'text',
+						'instructions' => 'Enter a URL for the service to link to.',
+						'required' => 1,
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
 					),
 				),
 				'row_min' => 3,
@@ -378,12 +499,32 @@ if(function_exists("register_field_group"))
 		'title' => 'Work Section',
 		'fields' => array (
 			array (
+				'key' => 'field_5474edc6e97f5',
+				'label' => 'Enable Work?',
+				'name' => 'enable_work',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the services section.',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
 				'key' => 'field_546e5c7fa8528',
 				'label' => 'Work Items',
 				'name' => 'work_items',
 				'type' => 'repeater',
 				'instructions' => 'Add work items by clicking "Add Row" below.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474edc6e97f5',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'sub_fields' => array (
 					array (
 						'key' => 'field_546e60856ae7c',
@@ -458,71 +599,18 @@ if(function_exists("register_field_group"))
 		'menu_order' => 3,
 	));
 	register_field_group(array (
-		'id' => 'acf_clients-section',
-		'title' => 'Clients Section',
-		'fields' => array (
-			array (
-				'key' => 'field_546e568c5fc3e',
-				'label' => 'Clients Headline',
-				'name' => 'clients_headline',
-				'type' => 'text',
-				'instructions' => 'Enter a headline for the clients section here.',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'formatting' => 'html',
-				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_546e55a468e7f',
-				'label' => 'Clients',
-				'name' => 'clients',
-				'type' => 'repeater',
-				'instructions' => 'Add client logos by clicking "Add Row" below.',
-				'sub_fields' => array (
-					array (
-						'key' => 'field_546e55be68e80',
-						'label' => 'Client Logo',
-						'name' => 'client_logo',
-						'type' => 'image',
-						'instructions' => 'Upload an image of the client logo (preferably a PNG).',
-						'required' => 1,
-						'column_width' => '',
-						'save_format' => 'object',
-						'preview_size' => 'thumbnail',
-						'library' => 'all',
-					),
-				),
-				'row_min' => 3,
-				'row_limit' => '',
-				'layout' => 'row',
-				'button_label' => 'Add Row',
-			),
-		),
-		'location' => array (
-			array (
-				array (
-					'param' => 'page_template',
-					'operator' => '==',
-					'value' => 'page-templates/home-page.php',
-					'order_no' => 0,
-					'group_no' => 0,
-				),
-			),
-		),
-		'options' => array (
-			'position' => 'normal',
-			'layout' => 'default',
-			'hide_on_screen' => array (
-			),
-		),
-		'menu_order' => 4,
-	));
-	register_field_group(array (
 		'id' => 'acf_testimonials-section',
 		'title' => 'Testimonials Section',
 		'fields' => array (
+			array (
+				'key' => 'field_5474ed4a0f2c9',
+				'label' => 'Enable Testimonials?',
+				'name' => 'enable_testimonials',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the testimonials section.',
+				'message' => '',
+				'default_value' => 0,
+			),
 			array (
 				'key' => 'field_546e571539794',
 				'label' => 'Testimonials Headline',
@@ -530,6 +618,17 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 				'instructions' => 'Enter a headline for the testimonials section here.',
 				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ed4a0f2c9',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -543,6 +642,17 @@ if(function_exists("register_field_group"))
 				'name' => 'testimonials',
 				'type' => 'repeater',
 				'instructions' => 'Add testimonials by clicking "Add Row" below.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ed4a0f2c9',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'sub_fields' => array (
 					array (
 						'key' => 'field_546e579021445',
@@ -610,6 +720,206 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
+		'menu_order' => 4,
+	));
+	register_field_group(array (
+		'id' => 'acf_clients-section',
+		'title' => 'Clients Section',
+		'fields' => array (
+			array (
+				'key' => 'field_5474ed6065b02',
+				'label' => 'Enable Clients?',
+				'name' => 'enable_clients',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the clients section.',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_546e568c5fc3e',
+				'label' => 'Clients Headline',
+				'name' => 'clients_headline',
+				'type' => 'text',
+				'instructions' => 'Enter a headline for the clients section here.',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ed6065b02',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_546e55a468e7f',
+				'label' => 'Clients',
+				'name' => 'clients',
+				'type' => 'repeater',
+				'instructions' => 'Add client logos by clicking "Add Row" below.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ed6065b02',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'sub_fields' => array (
+					array (
+						'key' => 'field_546e55be68e80',
+						'label' => 'Client Logo',
+						'name' => 'client_logo',
+						'type' => 'image',
+						'instructions' => 'Upload an image of the client logo (preferably a PNG).',
+						'required' => 1,
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+				'row_min' => 3,
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/home-page.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
 		'menu_order' => 5,
+	));
+	register_field_group(array (
+		'id' => 'acf_cta-section',
+		'title' => 'CTA Section',
+		'fields' => array (
+			array (
+				'key' => 'field_5474ee1948f51',
+				'label' => 'Enable CTA?',
+				'name' => 'enable_cta',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the CTA section.',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_5474ebd6fcfee',
+				'label' => 'CTA Headline',
+				'name' => 'cta_headline',
+				'type' => 'text',
+				'instructions' => 'Enter a headline for the CTA section here.',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ee1948f51',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5474ee417a041',
+				'label' => 'CTA Text',
+				'name' => 'cta_text',
+				'type' => 'textarea',
+				'instructions' => 'Enter some text to appear below the CTA headline.',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ee1948f51',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => 100,
+				'rows' => '',
+				'formatting' => 'br',
+			),
+			array (
+				'key' => 'field_5474eea87a042',
+				'label' => 'CTA URL',
+				'name' => 'cta_url',
+				'type' => 'text',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ee1948f51',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/home-page.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 6,
 	));
 }

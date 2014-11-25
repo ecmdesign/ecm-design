@@ -8,28 +8,40 @@
 get_header(); ?>
 
 	<?php /* Hero Section */
-	if ( get_field( 'hero_text' ) && get_field( 'hero_image' ) ) {
+	if ( get_field( 'enable_hero' ) ) {
 		get_template_part( 'partials/home/hero', 'section' );
 	} ?>
 
 	<?php /* Services Section */
-	if ( get_field( 'services_headline' ) && have_rows( 'services' ) ) {
+	if ( get_field( 'enable_services' ) ) {
 		get_template_part( 'partials/home/services', 'section' );
 	} ?>
 
 	<?php /* Work Section */
-	if ( have_rows( 'work_items' ) ) {
+	if ( get_field( 'enable_work' ) ) {
 		get_template_part( 'partials/home/work', 'section' );
 	} ?>
 
 	<?php /* Testimonials Section */
-	if ( get_field( 'testimonials_headline' ) && have_rows( 'testimonials' ) ) {
+	if ( get_field( 'enable_testimonials' ) ) {
 		get_template_part( 'partials/home/testimonials', 'section' );
 	} ?>
 
 	<?php /* Clients Section */
-	if ( get_field( 'clients_headline' ) && have_rows( 'clients' ) ) {
+	if ( get_field( 'enable_clients' ) ) {
 		get_template_part( 'partials/home/clients', 'section' );
 	} ?>
+
+	<script>
+	jQuery(window).ready(function($){
+		$('.tst-slider').glide({
+			autoplay: 7000,
+			hoverpause: true,
+			arrows: false,
+			navigation: false,
+			keyboard: true
+		});
+	});
+	</script>
 
 <?php get_footer(); ?>

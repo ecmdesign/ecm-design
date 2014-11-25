@@ -7,6 +7,8 @@ Variables
 --------------------------------------------------------------*/
 /* Fonts */
 $sans-serif: 'Roboto', sans-serif;
+$sans-alt: 'Lato', sans-serif;
+$serif: Georgia, Palatino, serif;
 
 /* Colors */
 $blue: #80A3B7;
@@ -19,6 +21,8 @@ Definitions
 --------------------------------------------------------------*/
 /* Fonts */
 $body-font: $sans-serif;
+$fancy-font: $serif;
+$heading-font: $sans-alt;
 
 /* Colors */
 $accent-color: $brown;
