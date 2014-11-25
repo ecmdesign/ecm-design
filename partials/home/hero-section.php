@@ -10,7 +10,7 @@
 $hero_bg = get_field( 'hero_background' );
 $bg_url = $hero_bg['url']; ?>
 
-<div class="hero-section" style="background-image: url('<?php echo $bg_url; ?>');">
+<div class="hero-section contrast" style="background-image: url('<?php echo $bg_url; ?>');">
 	<div class="home-area container">
 		<div class="section">
 			<div class="row">
@@ -29,12 +29,11 @@ $bg_url = $hero_bg['url']; ?>
 							} ?>
 
 							<?php /* Button */
-							if ( get_field( 'button_text' ) ) {
-								$btn_text = get_field( 'button_text' );
-							} else {
-								$btn_text = 'Click here';
-							} ?>
-							<a class="button button-fancy" href="<?php the_field( 'button_url' ); ?>"><?php echo $btn_text; ?></a>
+							if ( get_field( 'button_text' ) && get_field( 'button_url' ) ) { ?>
+								<a class="button text-small" href="<?php the_field( 'button_url' ); ?>">
+									<?php the_field( 'button_text' ); ?>
+								</a>
+							<?php } ?>
 						</div>
 					</div>
 				<?php } ?>

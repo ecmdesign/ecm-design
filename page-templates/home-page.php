@@ -32,6 +32,11 @@ get_header(); ?>
 		get_template_part( 'partials/home/clients', 'section' );
 	} ?>
 
+	<?php /* CTA Section */
+	if ( get_field( 'enable_cta' ) ) {
+		get_template_part( 'partials/home/cta', 'section' );
+	} ?>
+
 	<script>
 	jQuery(window).ready(function($){
 		$('.tst-slider').glide({

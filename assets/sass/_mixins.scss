@@ -25,12 +25,11 @@ $fancy-font: $serif;
 $heading-font: $sans-alt;
 
 /* Colors */
-$accent-color: $brown;
+$accent-color: darken($brown, 5%);
 $body-color: $charcoal;
 $border-color: $gray-light;
-$button-color: darken($blue, 15%);
-$link-color: $blue;
-$nav-bg: darken($link-color, 7.5%);
+$link-color: darken($blue, 10%);
+$section-bg: lighten($border-color, 7.5%);
 
 /* Social */
 $facebook: #3C599B;

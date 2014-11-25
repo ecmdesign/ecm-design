@@ -13,17 +13,31 @@ Global
 }
 
 /* Buttons */
-.button-fancy {
-	background-color: $accent-color;
-	color: white;
-	padding: 0.75em 1.0em;
-	border-radius: 5px;
-	letter-spacing: 1px;
-	&:focus,
+.button {
+	display: inline-block;
+}
+.pill {
+	padding: 0.5em 2.0em;
+	border: 3px solid $link-color;
+	border-radius: 500px;
+	text-transform: uppercase;
 	&:hover {
-		background-color: $button-color;
-		color: white;
+		border-color: $accent-color;
+		color: $accent-color;
 	}
+	&.pill-alt {
+		border-color: $accent-color;
+		color: $accent-color;
+		&:hover {
+			border-color: $link-color;
+			color: $link-color;
+		}
+	}
+}
+
+/* Text */
+.text-small {
+	font-size: 87.5%;
 }
 
 /* Headlines */
@@ -51,7 +65,7 @@ Header
 --------------------------------------------------------------*/
 .site-header {
 	text-align: center;
-	background-color: $nav-bg;
+	background-color: $link-color;
 	padding: 1.5em 0 1.25em;
 	position: relative;
 	z-index: 999;
@@ -119,19 +133,17 @@ Home Page
 	padding: 48px 0;
 	position: relative;
 	&:nth-of-type(odd) {
-		background-color: lighten($border-color, 7.5%);
+		background-color: $section-bg;
 	}
 	&:nth-of-type(even) {
 		background-color: #FFF;
 	}
 }
 
-/*------------------------------
-Hero
-------------------------------*/
+/* Hero */
 .hero-section {
 	text-align: center;
-	background-color: darken($border-color, 15%);
+	background-color: darken($section-bg, 15%);
 	background-repeat: no-repeat;
 	background-size: cover;
 	.section {
@@ -146,7 +158,37 @@ Hero
 		background-color: rgba(255, 255, 255, 0.75);
 		z-index: 1;
 	}
+	.button {
+		background-color: $accent-color;
+		color: white;
+		padding: 1.0em 1.25em;
+		border-radius: 5px;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		&:focus,
+		&:hover {
+			background-color: $link-color;
+			color: white;
+		}
+	}
+	&.contrast {
+		color: white;
+		&:after {
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+		.button {
+			background-color: white;
+			color: lighten($body-color, 20%);
+			font-weight: 700;
+			&:focus,
+			&:hover {
+				background-color: darken(white, 10%);
+				color: lighten($body-color, 15%);
+			}
+		}
+	}
 }
+
 .home-area {
 	position: relative;
 	z-index: 100;
@@ -163,17 +205,12 @@ Hero
 		font-size: 2.0rem;
 		font-weight: 300;
 	}
-	.button {
-		display: inline-block;
-	}
 }
 .hero-image {
 	display: none;
 }
 
-/*------------------------------
-Services
-------------------------------*/
+/* Services */
 .services-section {
 	text-align: center;
 	z-index: 999;
@@ -192,9 +229,7 @@ Services
 	margin-bottom: 1.0em;
 }
 
-/*------------------------------
-Testimonials
-------------------------------*/
+/* Testimonials */
 .testimonial-section {
 }
 .tst-slider {
@@ -219,9 +254,25 @@ Testimonials
 }
 
 
-/*------------------------------
-Clients
-------------------------------*/
+/* Call-to-Action */
+.cta-section {
+	text-align: center;
+	h2 {
+		font-family: $heading-font;
+		font-weight: 700;
+		margin-bottom: 0.25em;
+	}
+	p {
+		font-size: 18px;
+		font-size: 1.8rem;
+		font-style: italic;
+		font-family: $fancy-font;
+		@include antialiased;
+	}
+	.button {
+		margin-top: 1.0em;
+	}
+}
 
 
 /*--------------------------------------------------------------
