@@ -22,6 +22,11 @@ get_header(); ?>
 		get_template_part( 'partials/home/work', 'section' );
 	} ?>
 
+	<?php /* Testimonials Section */
+	if ( get_field( 'testimonials_headline' ) && have_rows( 'testimonials' ) ) {
+		get_template_part( 'partials/home/testimonials', 'section' );
+	} ?>
+
 	<?php /* Clients Section */
 	if ( get_field( 'clients_headline' ) && have_rows( 'clients' ) ) {
 		get_template_part( 'partials/home/clients', 'section' );

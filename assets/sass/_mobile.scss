@@ -117,6 +117,12 @@ Home Page
 .section {
 	padding: 36px 0;
 	position: relative;
+	&:nth-of-type(odd) {
+		background-color: lighten($border-color, 7.5%);
+	}
+	&:nth-of-type(even) {
+		background-color: #FFF;
+	}
 }
 
 /*------------------------------
@@ -124,9 +130,12 @@ Hero
 ------------------------------*/
 .hero-section {
 	text-align: center;
-	background-color: lighten($border-color, 2.5%);
+	background-color: darken($border-color, 15%);
 	background-repeat: no-repeat;
 	background-size: cover;
+	.section {
+		background-color: transparent;
+	}
 	&:after {
 		content: "";
 		position: absolute;
@@ -164,7 +173,6 @@ Hero
 Services
 ------------------------------*/
 .services-section {
-	background-color: #fff;
 	text-align: center;
 	z-index: 999;
 }

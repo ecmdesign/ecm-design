@@ -79,7 +79,7 @@ function my_theme_register_required_plugins() {
 			'name'				=> 'Resize Image After Upload',
 			'slug'				=> 'resize-image-after-upload',
 			'required'			=> true,
-			'force_activation'	=> true,
+			'force_activation'	=> false,
 		),
 	);
 	$plugins_remote = array(

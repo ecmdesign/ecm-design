@@ -43,7 +43,7 @@ $bg_url = $hero_bg['url']; ?>
 		$hero_img = get_field( 'hero_image' );
 		$img_alt = $hero_img['alt'];
 		$img_url = $hero_img['url']; ?>
-		<div class="hero-image">
+		<div class="hero-image animated bounceInRight">
 			<img src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
 		</div>
 	</div><!-- .home-area -->
