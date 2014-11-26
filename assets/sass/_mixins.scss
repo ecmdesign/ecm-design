@@ -25,11 +25,13 @@ $fancy-font: $serif;
 $heading-font: $sans-alt;
 
 /* Colors */
-$accent-color: darken($brown, 5%);
+$accent-color: darken($brown, 10%);
 $body-color: $charcoal;
+$body-light: lighten($body-color, 25%);
 $border-color: $gray-light;
 $link-color: darken($blue, 10%);
-$section-bg: lighten($border-color, 7.5%);
+$pill-color: lighten($body-light, 20%);
+$section-bg: lighten($border-color, 9%);
 
 /* Social */
 $facebook: #3C599B;

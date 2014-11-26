@@ -12,6 +12,11 @@ get_header(); ?>
 		get_template_part( 'partials/home/hero', 'section' );
 	} ?>
 
+	<?php /* About Section */
+	if ( get_field( 'enable_about' ) ) {
+		get_template_part( 'partials/home/about', 'section' );
+	} ?>
+
 	<?php /* Services Section */
 	if ( get_field( 'enable_services' ) ) {
 		get_template_part( 'partials/home/services', 'section' );
@@ -32,9 +37,9 @@ get_header(); ?>
 		get_template_part( 'partials/home/clients', 'section' );
 	} ?>
 
-	<?php /* CTA Section */
-	if ( get_field( 'enable_cta' ) ) {
-		get_template_part( 'partials/home/cta', 'section' );
+	<?php /* Contact Section */
+	if ( get_field( 'enable_contact' ) ) {
+		get_template_part( 'partials/home/contact', 'section' );
 	} ?>
 
 	<script>

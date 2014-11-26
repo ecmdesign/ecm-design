@@ -55,6 +55,15 @@ function _s_hide_post_editor() {
 add_action( 'admin_init', '_s_hide_post_editor' );
 
 /**
+ * Allow SVG upload to media library
+ */
+function _s_allow_svg_mime( $mimes ) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter( 'upload_mimes', '_s_allow_svg_mime' );
+
+/**
  * Detect current template
  *//*
 function _s_show_template() {

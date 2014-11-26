@@ -266,7 +266,7 @@ if(function_exists("register_field_group"))
 			array (
 				'key' => 'field_546e4ac6b0c34',
 				'label' => 'Button Text',
-				'name' => 'button_text',
+				'name' => 'hero_button_text',
 				'type' => 'text',
 				'instructions' => 'Enter some text for the button in the hero section.',
 				'required' => 1,
@@ -291,7 +291,7 @@ if(function_exists("register_field_group"))
 			array (
 				'key' => 'field_5473a37464a31',
 				'label' => 'Button URL',
-				'name' => 'button_url',
+				'name' => 'hero_button_url',
 				'type' => 'text',
 				'instructions' => 'Enter a URL for the button to link to.',
 				'required' => 1,
@@ -354,6 +354,134 @@ if(function_exists("register_field_group"))
 			),
 		),
 		'menu_order' => 1,
+	));
+	register_field_group(array (
+		'id' => 'acf_about-section',
+		'title' => 'About Section',
+		'fields' => array (
+			array (
+				'key' => 'field_5476287d77e7e',
+				'label' => 'Enable About',
+				'name' => 'enable_about',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the contact section.',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_5476293077e7f',
+				'label' => 'About Headline',
+				'name' => 'about_headline',
+				'type' => 'text',
+				'instructions' => 'Enter a headline for the about section here.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5476287d77e7e',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5476294777e80',
+				'label' => 'About Text',
+				'name' => 'about_text',
+				'type' => 'textarea',
+				'instructions' => 'Enter some text to appear below the about headline.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5476287d77e7e',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+			array (
+				'key' => 'field_5476297177e81',
+				'label' => 'Button Text',
+				'name' => 'about_button_text',
+				'type' => 'text',
+				'instructions' => 'Enter some text for the button in the about section.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5476287d77e7e',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5476297877e82',
+				'label' => 'Button URL',
+				'name' => 'about_button_url',
+				'type' => 'text',
+				'instructions' => 'Enter a URL for the button to link to.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5476287d77e7e',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/home-page.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'default',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 2,
 	));
 	register_field_group(array (
 		'id' => 'acf_services-section',
@@ -492,7 +620,7 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 2,
+		'menu_order' => 3,
 	));
 	register_field_group(array (
 		'id' => 'acf_work-section',
@@ -596,7 +724,7 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 3,
+		'menu_order' => 4,
 	));
 	register_field_group(array (
 		'id' => 'acf_testimonials-section',
@@ -720,7 +848,7 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 4,
+		'menu_order' => 5,
 	));
 	register_field_group(array (
 		'id' => 'acf_clients-section',
@@ -814,27 +942,27 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 5,
+		'menu_order' => 6,
 	));
 	register_field_group(array (
-		'id' => 'acf_cta-section',
-		'title' => 'CTA Section',
+		'id' => 'acf_contact-section',
+		'title' => 'Contact Section',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ee1948f51',
-				'label' => 'Enable CTA?',
-				'name' => 'enable_cta',
+				'label' => 'Enable Contact',
+				'name' => 'enable_contact',
 				'type' => 'true_false',
-				'instructions' => 'Check to enable the CTA section.',
+				'instructions' => 'Check to enable the contact section.',
 				'message' => '',
 				'default_value' => 0,
 			),
 			array (
 				'key' => 'field_5474ebd6fcfee',
-				'label' => 'CTA Headline',
-				'name' => 'cta_headline',
+				'label' => 'Contact Headline',
+				'name' => 'contact_headline',
 				'type' => 'text',
-				'instructions' => 'Enter a headline for the CTA section here.',
+				'instructions' => 'Enter a headline for the contact section here.',
 				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
@@ -856,10 +984,10 @@ if(function_exists("register_field_group"))
 			),
 			array (
 				'key' => 'field_5474ee417a041',
-				'label' => 'CTA Text',
-				'name' => 'cta_text',
+				'label' => 'Contact Text',
+				'name' => 'contact_text',
 				'type' => 'textarea',
-				'instructions' => 'Enter some text to appear below the CTA headline.',
+				'instructions' => 'Enter some text to appear below the contact headline.',
 				'required' => 1,
 				'conditional_logic' => array (
 					'status' => 1,
@@ -881,9 +1009,20 @@ if(function_exists("register_field_group"))
 			array (
 				'key' => 'field_5474f6375ea21',
 				'label' => 'Button Text',
-				'name' => 'button_text',
+				'name' => 'contact_button_text',
 				'type' => 'text',
-				'instructions' => 'Enter some text for the button in the CTA section.',
+				'instructions' => 'Enter some text for the button in the contact section.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5474ee1948f51',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -894,7 +1033,7 @@ if(function_exists("register_field_group"))
 			array (
 				'key' => 'field_5474eea87a042',
 				'label' => 'Button URL',
-				'name' => 'button_url',
+				'name' => 'contact_button_url',
 				'type' => 'text',
 				'instructions' => 'Enter a URL for the button to link to.',
 				'required' => 1,
@@ -934,6 +1073,6 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 6,
+		'menu_order' => 7,
 	));
 }

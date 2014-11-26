@@ -17,27 +17,25 @@ Global
 	display: inline-block;
 }
 .pill {
-	padding: 0.5em 2.0em;
-	border: 3px solid $link-color;
-	border-radius: 500px;
+	padding: 0.75em 2.0em;
+	color: $pill-color;
 	text-transform: uppercase;
-	&:hover {
-		border-color: $accent-color;
-		color: $accent-color;
-	}
-	&.pill-alt {
-		border-color: $accent-color;
-		color: $accent-color;
-		&:hover {
-			border-color: $link-color;
-			color: $link-color;
-		}
+	border: 2px solid $pill-color;
+	border-radius: 500px;
+	letter-spacing: 1px;
+	&:hover,
+	&:focus {
+		border-color: $link-color;
+		color: $link-color;
 	}
 }
 
 /* Text */
 .text-small {
 	font-size: 87.5%;
+}
+.text-smaller {
+	font-size: 75%;
 }
 
 /* Headlines */
@@ -136,7 +134,12 @@ Home Page
 		background-color: $section-bg;
 	}
 	&:nth-of-type(even) {
-		background-color: #FFF;
+		background-color: white;
+	}
+	// prevent hero image overlap
+	&:nth-child(2) {
+		position: relative;
+		z-index: 99999;
 	}
 }
 
@@ -165,8 +168,8 @@ Home Page
 		border-radius: 5px;
 		letter-spacing: 1px;
 		text-transform: uppercase;
-		&:focus,
-		&:hover {
+		&:hover,
+		&:focus {
 			background-color: $link-color;
 			color: white;
 		}
@@ -180,15 +183,14 @@ Home Page
 			background-color: white;
 			color: lighten($body-color, 20%);
 			font-weight: 700;
-			&:focus,
-			&:hover {
+			&:hover,
+			&:focus {
 				background-color: darken(white, 10%);
 				color: lighten($body-color, 15%);
 			}
 		}
 	}
 }
-
 .home-area {
 	position: relative;
 	z-index: 100;
@@ -210,6 +212,28 @@ Home Page
 	display: none;
 }
 
+/* About */
+.about-section {
+	@extend %contact-section;
+	h2 {
+		font-size: 36px;
+		font-size: 3.6rem;
+		&:after {
+			display: block;
+			content: '\2605\2605\2605';
+			font-size: 0.5em;
+			margin-top: 1.0em;
+		}
+	}
+	p {
+		font-size: 20px;
+		font-size: 2.0rem;
+	}
+	.pill {
+		padding: 1.0em 2.25em;
+	}
+}
+
 /* Services */
 .services-section {
 	text-align: center;
@@ -221,6 +245,8 @@ Home Page
 	}
 }
 .service-icon {
+	max-width: 100px;
+	max-height: 100px;
 	margin-bottom: 0.75em;
 }
 .service-title {
@@ -253,16 +279,27 @@ Home Page
 	}
 }
 
+/* Clients */
+.client-section {
+}
+.client-icon {
+	display: block;
+	max-width: 100%;
+	max-height: 200px;
+	margin: 0 auto 1.0em;
+}
 
-/* Call-to-Action */
-.cta-section {
+/* Contact */
+%contact-section {
 	text-align: center;
 	h2 {
 		font-family: $heading-font;
 		font-weight: 700;
-		margin-bottom: 0.25em;
+		margin-bottom: 0.375em;
+		@include antialiased;
 	}
 	p {
+		color: $body-light;
 		font-size: 18px;
 		font-size: 1.8rem;
 		font-style: italic;
@@ -272,6 +309,9 @@ Home Page
 	.button {
 		margin-top: 1.0em;
 	}
+}
+.contact-section {
+	@extend %contact-section;
 }
 
 

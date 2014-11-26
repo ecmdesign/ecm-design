@@ -21,13 +21,12 @@
 					<div class="row">
 						<?php /* Clients */
 						while( have_rows( 'clients' ) ): the_row(); ?>
-							<div class="col-xs-3 service">
+							<div class="col-xs-3 client">
 								<?php /* Icons */
 								$icon = get_sub_field( 'client_logo' );
 								$icon_url = $icon['alt'];
 								$icon_url = $icon['url']; ?>
-								<img class="service-icon" src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />
-
+								<img class="client-icon" src="<?php echo $icon_url; ?>" alt="<?php echo $icon_alt; ?>" />
 							</div>
 						<?php endwhile; ?>
 					</div>

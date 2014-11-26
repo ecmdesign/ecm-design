@@ -10,6 +10,7 @@
 $hero_bg = get_field( 'hero_background' );
 $bg_url = $hero_bg['url']; ?>
 
+<!-- add 'contrast' class below to change color scheme -->
 <div class="hero-section" style="background-image: url('<?php echo $bg_url; ?>');">
 	<div class="home-area container">
 		<div class="section">
@@ -29,9 +30,9 @@ $bg_url = $hero_bg['url']; ?>
 							} ?>
 
 							<?php /* Button */
-							if ( get_field( 'button_text' ) && get_field( 'button_url' ) ) { ?>
-								<a class="button text-small" href="<?php the_field( 'button_url' ); ?>">
-									<?php the_field( 'button_text' ); ?>
+							if ( get_field( 'hero_button_text' ) && get_field( 'hero_button_url' ) ) { ?>
+								<a class="button text-small" href="<?php the_field( 'hero_button_url' ); ?>">
+									<?php the_field( 'hero_button_text' ); ?>
 								</a>
 							<?php } ?>
 						</div>
