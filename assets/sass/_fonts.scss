@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 /* Fontello */
-$version: "";
+$version: "53575280";
 @font-face {
 	font-family: 'fontello';
 	src: url('../fonts/fontello.eot?@{version}');
@@ -54,3 +54,11 @@ $version: "";
 	/* Uncomment for 3D effect */
 	/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
+.icon-dribbble:before { content: '\e800'; } /* '' */
+.icon-dribbble-circled:before { content: '\e801'; } /* '' */
+.icon-twitter:before { content: '\e802'; } /* '' */
+.icon-twitter-circled:before { content: '\e803'; } /* '' */
+.icon-facebook-circled:before { content: '\e804'; } /* '' */
+.icon-facebook:before { content: '\e805'; } /* '' */
+.icon-left-open-big:before { content: '\e806'; } /* '' */
+.icon-right-open-big:before { content: '\e807'; } /* '' */

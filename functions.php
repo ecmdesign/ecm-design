@@ -73,7 +73,7 @@ function _s_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_image_size
 	 */
-	//add_image_size( 'slide', 1280, 520, true );
+	add_image_size( 'gallery-image', 1600, 900, true );
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );
@@ -137,6 +137,12 @@ function _s_enqueue_scripts() {
 
 	/* Home Page */
 	if ( is_front_page() ) {
+		wp_enqueue_style( '_s-glide' );
+		wp_enqueue_script( '_s-glide' );
+	}
+
+	/* About Page */
+	if ( is_page_template( 'page-templates/about-page.php' ) ) {
 		wp_enqueue_style( '_s-glide' );
 		wp_enqueue_script( '_s-glide' );
 	}

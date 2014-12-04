@@ -7,26 +7,34 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div class="container">
+		<div class="row">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<div class="col-sm-offset-1 col-sm-10">
+				<div id="primary" class="content-area">
+					<main id="main" class="site-main" role="main">
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<div class="entry-content">
-						<?php the_content(); ?>
-						<?php
-							wp_link_pages( array(
-								'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
-								'after'  => '</div>',
-							) );
-						?>
-					</div><!-- .entry-content -->
-				</article><!-- #post-## -->
+						<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<div class="entry-content">
+									<?php the_content(); ?>
+									<?php
+										wp_link_pages( array(
+											'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+											'after'  => '</div>',
+										) );
+									?>
+								</div><!-- .entry-content -->
+							</article><!-- #post-## -->
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+						<?php endwhile; // end of the loop. ?>
+
+					</main><!-- #main -->
+				</div><!-- #primary -->
+			</div>
+
+		</div><!-- .row -->
+	</div><!-- .container -->
 
 <?php get_footer(); ?>

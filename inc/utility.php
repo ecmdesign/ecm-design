@@ -41,6 +41,14 @@ function _s_thumbnail_url( $size ) {
 }
 
 /**
+ * Get home page ID
+ */
+function _s_home_ID() {
+	$home_id = get_option( 'page_on_front' );
+	return $home_id;
+}
+
+/**
  * Hide the post editor on page templates
  */
 function _s_hide_post_editor() {

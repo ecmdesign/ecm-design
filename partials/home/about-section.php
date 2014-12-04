@@ -16,6 +16,8 @@
 						<h2><?php the_field( 'about_headline' ); ?></h2>
 					<?php } ?>
 
+					<div class="accent-bar"></div>
+
 					<?php /* Text */
 					if ( get_field( 'about_text' ) ) {
 						$about_text = get_field( 'about_text' );
