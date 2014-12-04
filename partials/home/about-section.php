@@ -16,6 +16,7 @@
 						<h2><?php the_field( 'about_headline' ); ?></h2>
 					<?php } ?>
 
+					<!-- Accent bar -->
 					<div class="accent-bar"></div>
 
 					<?php /* Text */

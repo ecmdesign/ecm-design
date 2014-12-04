@@ -70,8 +70,17 @@ get_header(); ?>
 				<div class="services about-services">
 					<?php // loop through rows
 					while( have_rows( 'services' ) ): the_row(); ?>
-						<div class="service">
+						<div class="service col-sm-4">
+							<?php /* Title */
+							if ( get_sub_field( 'service_title' ) ) { ?>
+								<h4><?php the_sub_field( 'service_title' ); ?></h4>
+							<?php } ?>
 
+							<?php /* Text */
+							if ( get_sub_field( 'service_text' ) ) {
+								$svc_text = get_sub_field( 'service_text' );
+								echo wpautop( $svc_text );
+							} ?>
 						</div>
 					<?php endwhile; ?>
 				</div>
@@ -79,6 +88,12 @@ get_header(); ?>
 
 		</div><!-- .row -->
 	</div><!-- .container -->
+
+	<!-- Accent bar -->
+	<div class="accent-bar spacer"></div>
+
+	<div class="section about-section">
+	</div>
 
 	<script>
 	jQuery(window).ready(function($){
