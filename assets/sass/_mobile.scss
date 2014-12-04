@@ -68,6 +68,17 @@ Global
 		background-color: $link-color;
 	}
 }
+.text-hero {
+	text-align: center;
+	background-color: $section-bg;
+	padding: 4.0em;
+	h1 {
+		margin: 0;
+		font-size: 4.0em;
+		font-weight: 300;
+
+	}
+}
 
 /*--------------------------------------------------------------
 Header
@@ -133,6 +144,9 @@ Content
 }
 
 .entry-content {
+	p {
+		@include antialiased;
+	}
 }
 
 
@@ -223,6 +237,7 @@ Home Page
 		font-size: 20px;
 		font-size: 2.0rem;
 		font-weight: 300;
+		line-height: 1.5;
 	}
 }
 .hero-image {
@@ -280,6 +295,7 @@ Home Page
 		font-family: $fancy-font;
 		font-size: 20px;
 		font-size: 2.0rem;
+		@include antialiased;
 	}
 	span {
 		display: block;
@@ -305,9 +321,7 @@ Home Page
 	text-align: center;
 	h2 {
 		font-family: $heading-font;
-		font-weight: 700;
 		margin-bottom: 0.375em;
-		@include antialiased;
 	}
 	p {
 		color: $body-light;
@@ -336,9 +350,6 @@ About Page
 		margin: 0 0 0.5em;
 		font-size: 4.0em;
 		font-weight: 300;
-	}
-	h1, .entry-content p {
-		@include antialiased;
 	}
 	.entry-content p {
 		line-height: 1.75em;
@@ -401,10 +412,21 @@ About Page
 	h4 {
 		margin-bottom: 1.0em;
 		font-weight: bold;
-		@include antialiased;
 	}
 	.service {
 		margin-bottom: 2.0em;
+	}
+}
+
+/*--------------------------------------------------------------
+Contact Page
+--------------------------------------------------------------*/
+.contact-page {
+	.site-content {
+		padding-top: 0;
+	}
+	.text-hero {
+		margin-bottom: 2.75em;
 	}
 }
 

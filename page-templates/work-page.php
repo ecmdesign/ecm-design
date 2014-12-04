@@ -1,29 +1,26 @@
 <?php
 /**
- * Template Name: Contact Page
+ * Template Name: Work Page
  *
  * @package _s
  */
 
 get_header(); ?>
 
-	<?php /* Headline */
-	if ( get_field( 'custom_heading' ) ) { ?>
-		<div class="text-hero">
-			<h1><?php the_field( 'custom_heading' ); ?></h1>
-		</div>
-	<?php } ?>
-
 	<div class="container">
 		<div class="row">
+			<div class="col-sm-12">
 
-			<div class="col-sm-offset-1 col-sm-10">
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main" role="main">
 
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<header class="entry-header">
+									<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+								</header><!-- .entry-header -->
+
 								<div class="entry-content">
 									<?php the_content(); ?>
 									<?php
@@ -39,8 +36,8 @@ get_header(); ?>
 
 					</main><!-- #main -->
 				</div><!-- #primary -->
-			</div>
 
+			</div><!-- .col-sm-12 -->
 		</div><!-- .row -->
 	</div><!-- .container -->
 
