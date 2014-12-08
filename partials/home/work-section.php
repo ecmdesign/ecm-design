@@ -106,9 +106,11 @@ if ( $the_query->have_posts() ) { ?>
 				while( $the_query->have_posts() ): $the_query->the_post(); ?>
 					<div class="col-sm-4">
 						<?php /* Image */
-						if ( has_post_thumbnail() ) {
-							the_post_thumbnail( 'work-thumb' );
-						} ?>
+						if ( has_post_thumbnail() ) { ?>
+							<a href="<?php the_permalink(); ?>">
+								<?php the_post_thumbnail( 'work-thumb' ); ?>
+							</a>
+						<?php } ?>
 					</div>
 				<?php endwhile; ?>
 			</div><!--.row -->
