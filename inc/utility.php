@@ -49,20 +49,6 @@ function _s_home_ID() {
 }
 
 /**
- * Hide the post editor on page templates
- */
-function _s_hide_post_editor() {
-	$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
-	if( !isset( $post_id ) ) return;
-
-	$template_file = get_post_meta( $post_id, '_wp_page_template', true );
-	if ( $template_file == 'page-templates/home-page.php' ) {
-		remove_post_type_support( 'page', 'editor' );
-	}
-}
-add_action( 'admin_init', '_s_hide_post_editor' );
-
-/**
  * Allow SVG upload to media library
  */
 function _s_allow_svg_mime( $mimes ) {

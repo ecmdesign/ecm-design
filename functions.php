@@ -74,6 +74,7 @@ function _s_setup() {
 	 * @link http://codex.wordpress.org/Function_Reference/add_image_size
 	 */
 	add_image_size( 'gallery-image', 1600, 900, true );
+	add_image_size( 'work-thumb', 360, 300, true );
 }
 endif; // _s_setup
 add_action( 'after_setup_theme', '_s_setup' );

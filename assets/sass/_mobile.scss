@@ -284,6 +284,36 @@ Home Page
 	margin-bottom: 1.0em;
 }
 
+/* Work Items */
+.work-section {
+	h2 {
+		margin-bottom: 0.75em;
+	}
+	p {
+		font-weight: 300;
+	}
+}
+.work-image {
+	margin-bottom: 1.0em;
+}
+.item-info {
+	display: table-cell;
+	height: 100%;
+	vertical-align: middle;
+}
+.cat-list {
+	color: darken($border-color, 15%);
+	font-weight: 300;
+	a {
+		color: darken($border-color, 15%);
+		border-bottom: 1px dotted transparent;
+		&:hover {
+			border-color: darken($border-color, 15%);
+			@include animate;
+		}
+	}
+}
+
 /* Testimonials */
 .testimonial-section {
 }
