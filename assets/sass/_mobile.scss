@@ -40,13 +40,29 @@ Global
 		color: $link-color;
 	}
 }
+ %color-button {
+	background-color: $accent-color;
+	color: white;
+	padding: 1.0em 1.25em;
+	border-radius: 5px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	&:hover,
+	&:focus {
+		background-color: $link-color;
+		color: white;
+	}
+}
+.color-button {
+	@extend %color-button;
+}
 
 /* Text */
 .text-small {
-	font-size: 87.5%;
+	@include text_small;
 }
 .text-smaller {
-	font-size: 75%;
+	@include text_smaller;
 }
 
 /* Headlines */
@@ -191,19 +207,6 @@ Home Page
 		height: 100%;
 		background-color: rgba(255, 255, 255, 0.75);
 		z-index: 1;
-	}
-	.button {
-		background-color: $accent-color;
-		color: white;
-		padding: 1.0em 1.25em;
-		border-radius: 5px;
-		letter-spacing: 1px;
-		text-transform: uppercase;
-		&:hover,
-		&:focus {
-			background-color: $link-color;
-			color: white;
-		}
 	}
 	&.contrast {
 		color: white;
@@ -354,11 +357,13 @@ About Page
 	.entry-content p {
 		line-height: 1.75em;
 	}
+	.spacer {
+		padding: 2.5em 0;
+	}
 }
 /* Slider */
 .about-slider {
 	padding-top: 20px;
-	margin-bottom: 3.25em;
 	ul {
 		padding: 0;
 		list-style-type: none;
@@ -400,9 +405,7 @@ About Page
 		width: 0.75em;
 		border-radius: 50%;
 		&.slider__nav-item--current {
-			transform: scale(1.25);
 			background-color: white;
-			transform-origin: center;
 		}
 	}
 }
@@ -418,6 +421,24 @@ About Page
 	}
 }
 
+/* Social */
+.social-section {
+	@extend %contact-section;
+}
+.social-links {
+	a {
+		margin: 0 0.25em;
+		&.facebook:hover {
+			color: $facebook;
+			border-color: $facebook;
+		}
+		&.twitter:hover {
+			color: $twitter;
+			border-color: $twitter;
+		}
+	}
+}
+
 /*--------------------------------------------------------------
 Contact Page
 --------------------------------------------------------------*/
@@ -427,6 +448,88 @@ Contact Page
 	}
 	.text-hero {
 		margin-bottom: 2.75em;
+	}
+}
+
+/* Forms */
+.wpcf7 {
+	p {
+		margin-bottom: 0.75em
+	}
+	input[type="text"],
+	input[type="email"],
+	textarea {
+		border: 1px solid darken($border-color, 5%);
+		padding: 0.25em 0.5em;
+		width: 100%;
+	}
+	textarea {
+		max-height: 150px;
+	}
+	input[type="submit"] {
+		@extend %color-button;
+		@include text_small;
+		padding: 0.75em 1.0em;
+	}
+}
+
+/* Google Map */
+.google-map {
+	display: block;
+	margin-bottom: 1.0em;
+	#content {
+		overflow: hidden;
+		white-space: nowrap;
+		line-height: 1.35;
+	}
+	img { max-width: none; }
+	h3 {
+		font-size: 18px;
+		font-size: 1.8rem;
+		margin: 0 0 3px;
+	}
+	span {
+		display: block;
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+}
+.map-search {
+	position: relative;
+	::-webkit-input-placeholder {
+	    color: darken($border-color, 5%);
+	}
+	:-moz-placeholder {
+	   color: darken($border-color, 5%);
+	}
+	::-moz-placeholder {
+	   color: darken($border-color, 5%);
+	}
+	:-ms-input-placeholder {
+	   color: darken($border-color, 5%);
+	}
+	input[type="text"] {
+		border: 1px solid darken($border-color, 5%);
+		padding: 0.25em 80px 0.25em 0.5em;
+		width: 100%;
+	}
+	input[type="submit"] {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 67px;
+		height: 100%;
+		padding: 0.25em 0.75em;
+		color: white;
+		background: $link-color url('../img/search.svg') 50% 50% no-repeat;
+		background-size: 24px 24px;
+		border: none;
+		@include flip-horiz;
+		@include text_small;
+		&:hover {
+			background-color: darken($link-color, 10%);
+			@include animate;
+		}
 	}
 }
 

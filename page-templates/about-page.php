@@ -62,11 +62,13 @@ get_header(); ?>
 		</div>
 	<?php } ?>
 
-	<div class="container">
-		<div class="row">
+	<!-- Accent bar -->
+	<div class="accent-bar spacer"></div>
 
-			<?php /* Services */
-			if ( have_rows( 'services' ) ) { ?>
+	<?php /* Services */
+	if ( have_rows( 'services' ) ) { ?>
+		<div class="container">
+			<div class="row">
 				<div class="services about-services">
 					<?php // loop through rows
 					while( have_rows( 'services' ) ): the_row(); ?>
@@ -84,16 +86,39 @@ get_header(); ?>
 						</div>
 					<?php endwhile; ?>
 				</div>
-			<?php } ?>
+			</div><!-- .row -->
+		</div><!-- .container -->
+	<?php } ?>
 
-		</div><!-- .row -->
-	</div><!-- .container -->
+	<?php /* Social Section */
+	if ( get_field( 'enable_social' ) ) { ?>
+		<div class="section social-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-offset-1 col-sm-10">
+						<?php /* Headline */
+						if ( get_field( 'social_headline' ) ) { ?>
+							<h2><?php the_field( 'social_headline' ); ?></h2>
+						<?php } ?>
 
-	<!-- Accent bar -->
-	<div class="accent-bar spacer"></div>
+						<?php /* Text */
+						if ( get_field( 'social_text' ) ) {
+							$social_text = get_field( 'social_text' );
+							echo wpautop( $social_text );
+						} ?>
 
-	<div class="section about-section">
-	</div>
+						<?php /* Buttons */
+						if ( get_theme_mod( 'facebook_url' ) && get_theme_mod( 'twitter_url' ) ) { ?>
+							<div class="social-links">
+								<a class="button pill text-smaller facebook" href="<?php echo get_theme_mod( 'facebook_url' ); ?>" target="_blank">Facebook</a>
+								<a class="button pill text-smaller twitter" href="<?php echo get_theme_mod( 'twitter_url' ); ?>" target="_blank">Twitter</a>
+							</div>
+						<?php } ?>
+					</div>
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div>
+	<?php } ?>
 
 	<script>
 	jQuery(window).ready(function($){

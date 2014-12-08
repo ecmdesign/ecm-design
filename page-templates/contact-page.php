@@ -26,6 +26,23 @@ get_header(); ?>
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 								<div class="entry-content">
 									<?php the_content(); ?>
+
+									<div class="row">
+
+									<?php /* Forms */
+									if ( get_field( 'contact_forms' ) ) {
+										// set forms to a variable
+										$forms = get_field( 'contact_forms' ); ?>
+										<div class="col-sm-6">
+											<?php echo $forms[0]; ?>
+										</div>
+									<?php } ?>
+
+									<?php /* Map */
+									if ( get_field( 'google_map' ) ) {
+										get_template_part( 'partials/content', 'map' );
+									} ?>
+
 									<?php
 										wp_link_pages( array(
 											'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),

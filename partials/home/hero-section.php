@@ -31,7 +31,7 @@ $bg_url = $hero_bg['url']; ?>
 
 							<?php /* Button */
 							if ( get_field( 'hero_button_text' ) && get_field( 'hero_button_url' ) ) { ?>
-								<a class="button text-small" href="<?php the_field( 'hero_button_url' ); ?>">
+								<a class="button color-button text-small" href="<?php the_field( 'hero_button_url' ); ?>">
 									<?php the_field( 'hero_button_text' ); ?>
 								</a>
 							<?php } ?>
