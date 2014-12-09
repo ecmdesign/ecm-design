@@ -62,31 +62,42 @@ get_header(); ?>
 		</div>
 	<?php } ?>
 
-	<!-- Accent bar -->
-	<div class="accent-bar spacer"></div>
+	<?php /* Services Intro */
+	if ( get_field( 'services_intro' ) ) { ?>
+		<div class="section intro-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-offset-2 col-sm-8">
+						<div class="services-intro">
+							<?php the_field( 'services_intro' ); ?>
+						</div>
+					</div>
+				</div><!-- .row -->
+			</div><!-- .container -->
+		</div>
+	<?php } ?>
 
-	<?php /* Services */
-	if ( have_rows( 'services' ) ) { ?>
+	<?php /* Item Lists */
+	if ( have_rows( 'item_list' ) ) { ?>
 		<div class="container">
-			<div class="row">
-				<div class="services about-services">
-					<?php // loop through rows
-					while( have_rows( 'services' ) ): the_row(); ?>
-						<div class="service col-sm-4">
+			<?php /* List */
+			while( have_rows( 'item_list' ) ): the_row(); ?>
+				<div class="row">
+					<div class="col-sm-offset-1 col-sm-10">
+						<div class="item-list">
 							<?php /* Title */
-							if ( get_sub_field( 'service_title' ) ) { ?>
-								<h4><?php the_sub_field( 'service_title' ); ?></h4>
+							if ( get_sub_field( 'list_name' ) ) { ?>
+								<h4><?php the_sub_field( 'list_name' ); ?></h4>
 							<?php } ?>
 
-							<?php /* Text */
-							if ( get_sub_field( 'service_text' ) ) {
-								$svc_text = get_sub_field( 'service_text' );
-								echo wpautop( $svc_text );
+							<?php /* Items */
+							if ( get_sub_field( 'list_items' ) ) {
+								the_sub_field( 'list_items' );
 							} ?>
 						</div>
-					<?php endwhile; ?>
-				</div>
-			</div><!-- .row -->
+					</div>
+				</div><!-- .row -->
+			<?php endwhile; ?>
 		</div><!-- .container -->
 	<?php } ?>
 

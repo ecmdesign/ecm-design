@@ -121,10 +121,21 @@ About Page
 	display: none;
 }
 
-/* Services */
-.about-services {
-	.service {
-		margin-bottom: 1.75em;
+/* Intro */
+.services-intro {
+	font-size: 20px;
+	font-size: 2.0rem;
+}
+
+/* Item List */
+.item-list {
+	ul {
+		-webkit-column-count: 3;
+		-moz-column-count: 3;
+		column-count: 3;
+		-webkit-column-gap: 20px;
+		-moz-column-gap: 20px;
+		column-gap: 20px;
 	}
 }
 
@@ -132,4 +143,9 @@ About Page
 Work Page
 --------------------------------------------------------------*/
 .work-page {
+}
+.work-image {
+	&:nth-of-type(3n+4) {
+		clear: left;
+	}
 }

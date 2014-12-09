@@ -8,9 +8,7 @@
 get_header(); ?>
 
 	<?php /* Hero Section */
-	if ( get_field( 'enable_hero' ) ) {
-		get_template_part( 'partials/home/hero', 'section' );
-	} ?>
+	get_template_part( 'partials/home/hero', 'section' ); ?>
 
 	<?php /* About Section */
 	if ( get_field( 'enable_about' ) ) {

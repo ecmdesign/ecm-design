@@ -176,11 +176,13 @@ Content
 }
 .entry-title,
 .page-title {
-	margin-top: 0;
+	margin: 0 0 1.0em;
 	font-weight: 400;
 }
 .page-header {
-	margin-top: 0;
+	margin: 0;
+	padding: 0;
+	border: none;
 }
 
 .entry-content {
@@ -481,20 +483,44 @@ About Page
 	}
 }
 
-/* Services */
-.about-services {
-	h4 {
-		margin-bottom: 1.0em;
-		font-weight: bold;
+/* Intro */
+.intro-section {
+	margin-bottom: 3.5em;
+}
+.services-intro {
+	text-align: center;
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: 300;
+}
+
+/* Item List */
+.item-list {
+	display: block;
+	margin-bottom: 2.0em;
+	ul {
+		padding-left: 0;
+		-webkit-column-count: 2;
+		-moz-column-count: 2;
+		column-count: 2;
+		-webkit-column-gap: 15px;
+		-moz-column-gap: 15px;
+		column-gap: 15px;
 	}
-	.service {
-		margin-bottom: 2.0em;
+	li {
+		font-weight: 300;
+		list-style-position: inside;
+		list-style-type: circle;
+		// indent the list items
+		text-indent: -1.0em;
+		padding-left: 1.0em;
 	}
 }
 
 /* Social */
 .social-section {
 	@extend %contact-section;
+	margin-top: 3.0em;
 }
 .social-links {
 	a {

@@ -37,44 +37,53 @@ if(function_exists("register_field_group"))
 				'button_label' => 'Add Row',
 			),
 			array (
-				'key' => 'field_546e66a65d74e',
-				'label' => 'Services',
-				'name' => 'services',
+				'key' => 'field_54875daac9140',
+				'label' => 'Services Intro',
+				'name' => 'services_intro',
+				'type' => 'textarea',
+				'instructions' => 'Enter some text introducing the services the business provides.',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'br',
+			),
+			array (
+				'key' => 'field_548753d052a6c',
+				'label' => 'Item List',
+				'name' => 'item_list',
 				'type' => 'repeater',
-				'instructions' => 'Add services by clicking "Add Row" below.',
+				'instructions' => 'Add a list of items (e.g. "Industries" or "Disciplines") by clicking "Add Row" below.',
 				'required' => 1,
 				'sub_fields' => array (
 					array (
-						'key' => 'field_546e69f05d74f',
-						'label' => 'Service Title',
-						'name' => 'service_title',
+						'key' => 'field_5487542f52a6d',
+						'label' => 'List Name',
+						'name' => 'list_name',
 						'type' => 'text',
-						'instructions' => 'Enter a title for the service.',
-						'required' => 1,
+						'instructions' => 'Enter the name of the list here.',
 						'column_width' => '',
 						'default_value' => '',
-						'placeholder' => '',
+						'placeholder' => 'e.g. Industries',
 						'prepend' => '',
 						'append' => '',
 						'formatting' => 'html',
 						'maxlength' => '',
 					),
 					array (
-						'key' => 'field_546e6a245d750',
-						'label' => 'Service Text',
-						'name' => 'service_text',
-						'type' => 'textarea',
-						'instructions' => 'Enter some text describing the service.',
-						'required' => 1,
+						'key' => 'field_5487544552a6e',
+						'label' => 'List Items',
+						'name' => 'list_items',
+						'type' => 'wysiwyg',
+						'instructions' => 'Add the list of items here.',
 						'column_width' => '',
 						'default_value' => '',
-						'placeholder' => '',
-						'maxlength' => 350,
-						'rows' => 10,
-						'formatting' => 'br',
+						'toolbar' => 'full',
+						'media_upload' => 'yes',
 					),
 				),
-				'row_min' => 3,
+				'row_min' => 2,
 				'row_limit' => '',
 				'layout' => 'row',
 				'button_label' => 'Add Row',
@@ -249,35 +258,87 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
+		'id' => 'acf_work-item-fields',
+		'title' => 'Work Item Fields',
+		'fields' => array (
+			array (
+				'key' => 'field_5487343ac75f6',
+				'label' => 'Item Link',
+				'name' => 'item_link',
+				'type' => 'text',
+				'instructions' => 'Enter a URL for the work item to link to.',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_548737a023b59',
+				'label' => 'Item Images',
+				'name' => 'item_images',
+				'type' => 'repeater',
+				'instructions' => 'Upload item images by clicking "Add Row" below.',
+				'sub_fields' => array (
+					array (
+						'key' => 'field_548737be23b5a',
+						'label' => 'Image',
+						'name' => 'image',
+						'type' => 'image',
+						'instructions' => 'Upload an image (or screenshot) of the item here.',
+						'column_width' => '',
+						'save_format' => 'object',
+						'preview_size' => 'thumbnail',
+						'library' => 'all',
+					),
+				),
+				'row_min' => '',
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'work_item',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
 		'id' => 'acf_hero-section',
 		'title' => 'Hero Section',
 		'fields' => array (
-			array (
-				'key' => 'field_5474efea7a364',
-				'label' => 'Enable Hero?',
-				'name' => 'enable_hero',
-				'type' => 'true_false',
-				'instructions' => 'Check to enable the hero section.',
-				'message' => '',
-				'default_value' => 0,
-			),
 			array (
 				'key' => 'field_54738ed1a796c',
 				'label' => 'Hero Background',
 				'name' => 'hero_background',
 				'type' => 'image',
 				'instructions' => 'Upload an image to use as the background of the hero section.',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5474efea7a364',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
+				'save_format' => 'object',
+				'preview_size' => 'thumbnail',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_54737b85cff93',
+				'label' => 'Hero Image',
+				'name' => 'hero_image',
+				'type' => 'image',
+				'instructions' => 'Upload an image to use in the hero section.',
+				'required' => 1,
 				'save_format' => 'object',
 				'preview_size' => 'thumbnail',
 				'library' => 'all',
@@ -289,17 +350,6 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 				'instructions' => 'Enter a headline for the hero section.',
 				'required' => 1,
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5474efea7a364',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -314,20 +364,9 @@ if(function_exists("register_field_group"))
 				'type' => 'textarea',
 				'instructions' => 'Enter some text for the hero section.',
 				'required' => 1,
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5474efea7a364',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
 				'default_value' => '',
 				'placeholder' => '',
-				'maxlength' => 100,
+				'maxlength' => 150,
 				'rows' => '',
 				'formatting' => 'br',
 			),
@@ -338,17 +377,6 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 				'instructions' => 'Enter some text for the button in the hero section.',
 				'required' => 1,
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5474efea7a364',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
@@ -363,45 +391,12 @@ if(function_exists("register_field_group"))
 				'type' => 'text',
 				'instructions' => 'Enter a URL for the button to link to.',
 				'required' => 1,
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5474efea7a364',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
 				'default_value' => '',
 				'placeholder' => '',
 				'prepend' => '',
 				'append' => '',
 				'formatting' => 'html',
 				'maxlength' => '',
-			),
-			array (
-				'key' => 'field_54737b85cff93',
-				'label' => 'Hero Image',
-				'name' => 'hero_image',
-				'type' => 'image',
-				'instructions' => 'Upload an image to use in the hero section.',
-				'required' => 1,
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5474efea7a364',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
-				'save_format' => 'object',
-				'preview_size' => 'thumbnail',
-				'library' => 'all',
 			),
 		),
 		'location' => array (
@@ -813,6 +808,88 @@ if(function_exists("register_field_group"))
 		'menu_order' => 4,
 	));
 	register_field_group(array (
+		'id' => 'acf_more-work-section',
+		'title' => 'More Work Section',
+		'fields' => array (
+			array (
+				'key' => 'field_5487282da9c73',
+				'label' => 'Enable More Work?',
+				'name' => 'enable_more_work',
+				'type' => 'true_false',
+				'instructions' => 'Check to enable the more work section.',
+				'message' => '',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_548727f12f0c9',
+				'label' => 'More Work Headline',
+				'name' => 'more_work_headline',
+				'type' => 'text',
+				'instructions' => 'Enter a headline for the more work section here.',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5487282da9c73',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_54872a0dc4a88',
+				'label' => 'Button Text',
+				'name' => 'more_work_button_text',
+				'type' => 'text',
+				'instructions' => 'Enter some text for the more work button.',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5487282da9c73',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/home-page.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 5,
+	));
+	register_field_group(array (
 		'id' => 'acf_testimonials-section',
 		'title' => 'Testimonials Section',
 		'fields' => array (
@@ -934,7 +1011,7 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 5,
+		'menu_order' => 6,
 	));
 	register_field_group(array (
 		'id' => 'acf_clients-section',
@@ -1028,7 +1105,7 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 6,
+		'menu_order' => 7,
 	));
 	register_field_group(array (
 		'id' => 'acf_contact-section',
@@ -1159,6 +1236,6 @@ if(function_exists("register_field_group"))
 			'hide_on_screen' => array (
 			),
 		),
-		'menu_order' => 7,
+		'menu_order' => 8,
 	));
 }

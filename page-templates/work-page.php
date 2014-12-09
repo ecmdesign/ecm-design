@@ -39,34 +39,32 @@ get_header(); ?>
 										<div class="row">
 											<?php // loop through posts
 											while( $the_query->have_posts() ): $the_query->the_post(); ?>
-												<div class="col-sm-4">
-													<div class="work-image">
-														<?php /* Image */
-														if ( has_post_thumbnail() ) { ?>
-															<a href="<?php the_permalink(); ?>">
-																<?php the_post_thumbnail( 'work-thumb' ); ?>
-															</a>
-														<?php } ?>
+												<div class="col-sm-4 work-image">
+													<?php /* Image */
+													if ( has_post_thumbnail() ) { ?>
+														<a href="<?php the_permalink(); ?>">
+															<?php the_post_thumbnail( 'work-thumb' ); ?>
+														</a>
+													<?php } ?>
 
-														<!-- Title -->
-														<h4><?php the_title(); ?></h4>
+													<!-- Title -->
+													<h4><?php the_title(); ?></h4>
 
-														<?php /* Categories */
-														if ( !empty( get_the_terms( $post->ID, 'work_category' ) ) ) { ?>
-															<div class="cats">
-																<?php // set up term list w/separators
-																$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );
-																echo $terms; ?>
-															</div>
-														<?php } ?>
+													<?php /* Categories */
+													if ( !empty( get_the_terms( $post->ID, 'work_category' ) ) ) { ?>
+														<div class="cats">
+															<?php // set up term list w/separators
+															$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );
+															echo $terms; ?>
+														</div>
+													<?php } ?>
 
-														<?php /* Item Link */
-														if ( get_field( 'item_link' ) ) { ?>
-															<a href="<?php get_field( 'item_link' ); ?>" target="_blank">View the website</a>
-														<?php } else { ?>
-															<a href="<?php the_permalink(); ?>">View this item</a>
-														<?php } ?>
-													</div>
+													<?php /* Item Link */
+													if ( get_field( 'item_link' ) ) { ?>
+														<a href="<?php get_field( 'item_link' ); ?>" target="_blank">View the website</a>
+													<?php } else { ?>
+														<a href="<?php the_permalink(); ?>">View this item</a>
+													<?php } ?>
 												</div>
 											<?php endwhile; ?>
 										</div><!--.row -->
