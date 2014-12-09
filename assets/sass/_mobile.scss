@@ -121,11 +121,15 @@ Header
 	span {
 		color: $link-color;
 	}
-	&.accent {
+	&.contrast {
 		background-color: $link-color;
 		border-bottom: none;
 		.logo {
 			background-image: url('../img/logo-white.svg');
+			opacity: 1.0;
+			&:hover {
+				opacity: 0.75;
+			}
 		}
 		a {
 			color: white;
@@ -344,12 +348,15 @@ Home Page
 /* More Work */
 .work-section {
 }
-.work-thumb {
+%work-thumb {
 	margin-bottom: 15px;
 	display: block;
 	height: 375px;
 	background-position: 50% 50%;
 	background-size: cover;
+}
+.work-thumb {
+	@extend %work-thumb;
 }
 .more-work-link {
 	display: block;
@@ -429,9 +436,6 @@ About Page
 	}
 	.entry-content p {
 		line-height: 1.75em;
-	}
-	.spacer {
-		padding: 2.5em 0;
 	}
 }
 /* Slider */
@@ -639,7 +643,7 @@ Work Page
 .work-page {
 }
 .work-image {
-	margin-bottom: 30px;
+	margin-bottom: 2.5em;
 	img {
 		&:hover {
 			opacity: 0.75;
@@ -657,6 +661,16 @@ Work Page
 			color: $body-color;
 		}
 	}
+}
+
+/*--------------------------------------------------------------
+Work Single
+--------------------------------------------------------------*/
+.image-area {
+	margin-bottom: 2.5em;
+}
+.work-thumb-large {
+	@extend %work-thumb;
 }
 
 

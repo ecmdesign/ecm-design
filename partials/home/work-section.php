@@ -66,9 +66,9 @@ if ( have_rows( 'work_items' ) ) {
 							} ?>
 
 							<?php /* Button */
-							if ( get_sub_field( 'item_link' ) ) { ?>
-								<a class="button pill text-smaller" href="<?php the_sub_field( 'item_link' ); ?>">Learn more</a>
-							<?php } ?>
+							// first get permalink using item ID
+							$item_link = get_permalink( $item_id ); ?>
+							<a class="button pill text-smaller" href="<?php echo $item_link; ?>">Learn more</a>
 
 							<?php // add the work item to the 'excluded' array
 							$exclude_list = array_push( $excluded, $item_id ); ?>
