@@ -11,8 +11,8 @@ $sans-alt: 'Lato', sans-serif;
 $serif: Georgia, Palatino, serif;
 
 /* Colors */
-$blue: #80A3B7;
-$brown: #907E71;
+$blue: #80A1B6;
+$brown: #9A857A;
 $charcoal: #404040;
 $gray-light: #E3E3E3;
 
@@ -25,13 +25,15 @@ $fancy-font: $serif;
 $heading-font: $sans-alt;
 
 /* Colors */
-$accent-color: darken($brown, 10%);
+$accent-color: darken($brown, 5%);
 $body-color: $charcoal;
 $body-light: lighten($body-color, 25%);
-$border-color: $gray-light;
-$link-color: darken($blue, 10%);
+$border-light: $gray-light;
+$border-dark: darken($border-light, 5%);
+$link-color: $blue;
+$nav-bg: darken($link-color, 10%);
 $pill-color: lighten($body-light, 20%);
-$section-bg: lighten($border-color, 9%);
+$section-bg: lighten($border-light, 9%);
 
 /* Social */
 $facebook: #3C599B;

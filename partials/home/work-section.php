@@ -96,7 +96,7 @@ $args = array(
 $the_query = new WP_Query( $args );
 
 if ( $the_query->have_posts() ) { ?>
-	<div class="section more-work-section">
+	<div class="section m-work-section">
 		<div class="container">
 			<!-- Create option for headline below -->
 			<h2 class="headline fancy-headline">More of our work</h2>
@@ -104,7 +104,7 @@ if ( $the_query->have_posts() ) { ?>
 			<div class="row">
 				<?php // loop through posts
 				while( $the_query->have_posts() ): $the_query->the_post(); ?>
-					<div class="col-sm-4">
+					<div class="col-sm-4 m-work-image">
 						<?php /* Image */
 						if ( has_post_thumbnail() ) { ?>
 							<a href="<?php the_permalink(); ?>">

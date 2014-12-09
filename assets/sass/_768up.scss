@@ -36,7 +36,7 @@ Header
 /* Navigation */
 .main-navigation {
 	li {
-		color: white;
+		color: $link-color;
 		padding-left: 0;
 		padding-right: 1.0em;
 		&:after {
@@ -53,6 +53,15 @@ Header
 	a {
 		font-size: 16px;
 		font-size: 1.6rem;
+	}
+}
+.site-header {
+	&.accent {
+		.main-navigation {
+			li {
+				color: white;
+			}
+		}
 	}
 }
 
@@ -90,10 +99,18 @@ Home Page
 	}
 }
 
-/* Work */
+/* Work Items */
 .work-image {
 	margin-bottom: 0;
 }
+
+/* More Work */
+.m-work-image {
+	img {
+		margin-bottom: 0;
+	}
+}
+
 
 /*--------------------------------------------------------------
 About Page

@@ -48,7 +48,7 @@ Forms
 input[type="search"],
 input[type="submit"],
 button {
-	border: 1px solid $border-color;
+	border: 1px solid $border-light;
 	padding: 0.175em 0.35em;
 }
 input[type="search"] {
@@ -58,7 +58,7 @@ input[type="search"] {
 input[type="submit"],
 button {
 	-webkit-appearance: button;
-	background-color: lighten($border-color, 6.5%);
+	background-color: lighten($border-light, 6.5%);
 	color: lighten($body-color, 20%);
 }
 textarea {
