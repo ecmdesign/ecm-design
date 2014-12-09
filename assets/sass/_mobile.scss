@@ -43,7 +43,7 @@ Global
  %color-button {
 	background-color: $accent-color;
 	color: white;
-	padding: 1.0em 1.25em;
+	padding: 0.75em 1.25em;
 	border-radius: 5px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -90,9 +90,9 @@ Global
 	padding: 4.0em;
 	h1 {
 		margin: 0;
-		font-size: 4.0em;
+		font-size: 48px;
+		font-size: 4.8rem;
 		font-weight: 300;
-
 	}
 }
 
@@ -107,14 +107,26 @@ Header
 	border-bottom: 1px solid lighten($border-light, 5%);
 	.logo {
 		display: block;
+		margin: 0 auto;
 		width: 131px;
 		height: 43px;
 		background: url('../img/logo.svg') left top no-repeat;
 		background-size: contain;
+		opacity: 0.75;
+		&:hover {
+			opacity: 1.0;
+			@include animate;
+		}
+	}
+	span {
+		color: $link-color;
 	}
 	&.accent {
 		background-color: $link-color;
 		border-bottom: none;
+		.logo {
+			background-image: url('../img/logo-white.svg');
+		}
 		a {
 			color: white;
 			&:hover,
@@ -123,8 +135,8 @@ Header
 				@include animate;
 			}
 		}
-		.logo {
-			background-image: url('../img/logo-white.svg');
+		span {
+			color: white;
 		}
 	}
 }
@@ -154,9 +166,6 @@ Header
 /* Contact */
 .site-contact {
 	display: none;
-	span {
-		color: white;
-	}
 }
 
 /*--------------------------------------------------------------
@@ -168,6 +177,7 @@ Content
 .entry-title,
 .page-title {
 	margin-top: 0;
+	font-weight: 400;
 }
 .page-header {
 	margin-top: 0;
@@ -219,7 +229,7 @@ Home Page
 		top: 0; left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(255, 255, 255, 0.75);
+		background-color: rgba(255, 255, 255, 0.8);
 		z-index: 1;
 	}
 	&.contrast {
@@ -255,6 +265,7 @@ Home Page
 		font-size: 2.0rem;
 		font-weight: 300;
 		line-height: 1.5;
+		margin-bottom: 1.0em;
 	}
 }
 .hero-image {
@@ -299,48 +310,49 @@ Home Page
 }
 
 /* Work Items */
-.work-section {
+.feat-work-section {
 	h2 {
 		margin-bottom: 0.75em;
+		font-weight: 400;
 	}
 	p {
 		font-weight: 300;
 	}
 }
-.work-image {
-	margin-bottom: 1.0em;
+.feat-work-item {
+	.cats {
+		color: darken($border-light, 15%);
+		font-weight: 300;
+		a {
+			color: darken($border-light, 15%);
+			border-bottom: 1px dotted transparent;
+			&:hover {
+				border-color: darken($border-light, 15%);
+				@include animate;
+			}
+		}
+	}
 }
-.item-info {
+.feat-work-info {
 	display: table-cell;
 	height: 100%;
 	vertical-align: middle;
 }
-.cat-list {
-	color: darken($border-light, 15%);
-	font-weight: 300;
-	a {
-		color: darken($border-light, 15%);
-		border-bottom: 1px dotted transparent;
-		&:hover {
-			border-color: darken($border-light, 15%);
-			@include animate;
-		}
-	}
-}
 
 /* More Work */
-.m-work-section {
+.work-section {
 }
-.m-work-image {
-	img {
-		display: block;
-		margin: 0 auto 1.5em;
-	}
-	&:last-of-type {
-		img {
-			margin-bottom: 0;
-		}
-	}
+.work-thumb {
+	margin-bottom: 15px;
+	display: block;
+	height: 375px;
+	background-position: 50% 50%;
+	background-size: cover;
+}
+.more-work-link {
+	display: block;
+	margin-top: 2.0em;
+	text-align: center;
 }
 
 /* Testimonials */
@@ -509,6 +521,9 @@ Contact Page
 		margin-bottom: 2.75em;
 	}
 }
+.contact-area {
+	padding-top: 1.5em;
+}
 
 /* Forms */
 .wpcf7 {
@@ -588,6 +603,32 @@ Contact Page
 		&:hover {
 			background-color: darken($link-color, 10%);
 			@include animate;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+Work Page
+--------------------------------------------------------------*/
+.work-page {
+}
+.work-image {
+	margin-bottom: 30px;
+	img {
+		&:hover {
+			opacity: 0.75;
+			@include animate;
+		}
+	}
+	h4 {
+		font-weight: 500;
+		margin: 0.75em 0 0.25em;
+	}
+	.cats {
+		@include text_small;
+		font-weight: 300;
+		a {
+			color: $body-color;
 		}
 	}
 }

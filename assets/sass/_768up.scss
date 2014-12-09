@@ -12,6 +12,14 @@ Global
 	height: 100%;
 }
 
+/* Headlines */
+.text-hero {
+	h1 {
+		font-size: 64px;
+		font-size: 6.4rem;
+	}
+}
+
 
 /*--------------------------------------------------------------
 Header
@@ -84,9 +92,6 @@ Home Page
 	text-align: left;
 }
 .hero-callout {
-	.button {
-		margin: 1.0em 0 0.5em;
-	}
 }
 .hero-image {
 	display: block;
@@ -99,18 +104,11 @@ Home Page
 	}
 }
 
-/* Work Items */
-.work-image {
-	margin-bottom: 0;
-}
-
 /* More Work */
-.m-work-image {
-	img {
-		margin-bottom: 0;
-	}
+.work-thumb {
+	margin-bottom: 0;
+	height: 175px;
 }
-
 
 /*--------------------------------------------------------------
 About Page
@@ -128,4 +126,10 @@ About Page
 	.service {
 		margin-bottom: 1.75em;
 	}
+}
+
+/*--------------------------------------------------------------
+Work Page
+--------------------------------------------------------------*/
+.work-page {
 }

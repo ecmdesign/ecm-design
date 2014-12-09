@@ -50,12 +50,12 @@ function _s_home_ID() {
 
 /**
  * Allow SVG upload to media library
- */
+ *//*
 function _s_allow_svg_mime( $mimes ) {
 	$mimes['svg'] = 'image/svg+xml';
 	return $mimes;
 }
-add_filter( 'upload_mimes', '_s_allow_svg_mime' );
+add_filter( 'upload_mimes', '_s_allow_svg_mime' ); */
 
 /**
  * Detect current template

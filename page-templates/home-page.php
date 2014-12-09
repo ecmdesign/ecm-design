@@ -27,6 +27,11 @@ get_header(); ?>
 		get_template_part( 'partials/home/work', 'section' );
 	} ?>
 
+	<?php /* More Work Section */
+	if ( get_field( 'enable_more_work' ) ) {
+		get_template_part( 'partials/home/more_work', 'section' );
+	} ?>
+
 	<?php /* Testimonials Section */
 	if ( get_field( 'enable_testimonials' ) ) {
 		get_template_part( 'partials/home/testimonials', 'section' );
