@@ -41,6 +41,15 @@ function _s_thumbnail_url( $size ) {
 }
 
 /**
+ * Post Thumbnail alt text function
+ */
+function _s_thumbnail_alt() {
+	$img_id = get_post_thumbnail_id();
+	$img_alt = get_post_meta( $img_id, '_wp_attachment_image_alt', true );
+	return $img_alt;
+}
+
+/**
  * Get home page ID
  */
 function _s_home_ID() {

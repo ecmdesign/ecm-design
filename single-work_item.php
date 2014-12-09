@@ -26,10 +26,11 @@ get_header(); ?>
 									<?php /* Featured Image */
 									if ( has_post_thumbnail() ) {
 										// set up thumnail sizes
+										$feat_alt = _s_thumbnail_alt();
 										$feat_lg = _s_thumbnail_url( 'full' );
 										$feat_sm = _s_thumbnail_url( 'large' ); ?>
 
-										<a class="work-thumb-large" href="<?php echo $feat_lg; ?>" style="background-image: url('<?php echo $feat_sm; ?>');">
+										<a class="work-thumb-large swipebox" href="<?php echo $feat_lg; ?>" title="<?php echo $feat_alt; ?>" style="background-image: url('<?php echo $feat_sm; ?>');">
 										</a>
 									<?php } ?>
 
@@ -40,11 +41,12 @@ get_header(); ?>
 											while( have_rows( 'item_images' ) ): the_row();
 												// set image to variable
 												$misc_img = get_sub_field( 'image' );
+												$img_alt = $misc_img['alt'];
 												$img_lg = $misc_img['url'];
-												$img_sm = $misc_img['sizes']['work-thumb']; ?>
+												$img_sm = $misc_img['sizes']['medium']; ?>
 
 												<div class="col-sm-4">
-													<a class="work-thumb" href="<?php echo $img_lg; ?>" style="background-image: url('<?php echo $img_sm; ?>');">
+													<a class="work-thumb swipebox" href="<?php echo $img_lg; ?>" title="<?php echo $img_alt; ?>" style="background-image: url('<?php echo $img_sm; ?>');">
 													</a>
 												</div>
 											<?php endwhile; ?>
@@ -71,5 +73,11 @@ get_header(); ?>
 
 		</div><!-- .row -->
 	</div><!-- .container -->
+
+	<script>
+	jQuery(window).ready(function($){
+		$('.swipebox').swipebox();
+	});
+	</script>
 
 <?php get_footer(); ?>

@@ -35,7 +35,7 @@ if ( $the_query->have_posts() ) { ?>
 				while( $the_query->have_posts() ): $the_query->the_post(); ?>
 					<div class="col-sm-4">
 						<?php /* Image */
-						$work_img = _s_thumbnail_url( 'work-thumb' ); ?>
+						$work_img = _s_thumbnail_url( 'medium' ); ?>
 
 						<a class="work-thumb" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $work_img; ?>');">
 						</a>

@@ -31,7 +31,7 @@ get_header(); ?>
 											<?php /* Image */
 											if ( has_post_thumbnail() ) { ?>
 												<a href="<?php the_permalink(); ?>">
-													<?php the_post_thumbnail( 'work-thumb' ); ?>
+													<?php the_post_thumbnail( 'medium' ); ?>
 												</a>
 											<?php } ?>
 
