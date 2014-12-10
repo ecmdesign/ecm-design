@@ -68,27 +68,31 @@ function _s_phone_number( $phone ) {
 /**
  * Custom excerpt using word count
  */
-function _s_custom_excerpt( $word_count ) {
-	// first get the content
-	$content = get_the_content();
-	// set up the read more
-	$read_more = ' <a class="read-more" href="' . get_the_permalink() . '">[...]</a>';
-	// now use CSS-Tricks truncate function: http://goo.gl/AApx1a
-	$word_count = $word_count + 1;
-	$content = explode( ' ', $content, $word_count );
-	array_pop( $content );
-	$content = implode( ' ', $content ) . $read_more;
+function _s_custom_excerpt( $more_text = '', $stripteaser = 0, $more_file = '' ) {
+	$content = get_the_content( $more_text, $stripteaser, $more_file );
+	$content = apply_filters( 'the_content', $content );
+	$content = strip_tags( $content, '<p>' );
+	// remove <p> tags left after stripping images
+	$content = preg_replace( '/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '', $content );
 	return $content;
 }
 
+
 /**
- * Add class when images are inserted
+ * Add classes to image anchor tags
  */
-function _s_custom_image_class( $class ) {
-	$class .= ' swipebox';
-	return $class;
+function _s_custom_image_classes( $content ) {
+	// add classes separated by spaces
+	$classes = 'swipebox';
+	// check for class existance
+	if ( preg_match('/<a.*? class=".*?"><img/', $content ) ) {
+		$content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content );
+	} else {
+		$content = preg_replace('/(<a.*?)><img/', '$1 class="' . $classes . '" ><img', $content );
+	}
+	return $content;
 }
-add_filter( 'get_image_tag_class', '_s_custom_image_class' );
+add_filter( 'the_content', '_s_custom_image_classes' );
 
 /**
  * Detect current template

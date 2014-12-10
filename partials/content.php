@@ -20,9 +20,7 @@
 		<?php
 			// first check if this is the blog page
 			if ( is_home() ) {
-				// set up custom excerpt
-				$excerpt = _s_custom_excerpt( 50 );
-				echo wpautop( $excerpt );
+				echo _s_custom_excerpt( $more_link_text = '[...]' );
 			} else {
 				/* translators: %s: Name of current post */
 				the_content( sprintf(

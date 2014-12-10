@@ -241,16 +241,13 @@ Blog
 	}
 	.entry-content {
 		margin-top: 2.0em;
-		img {
-			margin-bottom: 0.5em;
-		}
 	}
 }
 .entry-content {
 	.wp-caption {
 		max-width: 100%;
 		background-color: lighten($border-light, 5%);
-		margin-bottom: 2.0em;
+		margin-bottom: 1.5em;
 	}
 	.wp-caption-text {
 		padding: 0 0.75em 0.5em;
