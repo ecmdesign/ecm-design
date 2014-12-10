@@ -164,11 +164,10 @@ function _s_enqueue_scripts() {
 	}
 
 	/* Work Items */
-	if ( is_singular( 'work_item' ) ) {
+	if ( is_singular( 'work_item' ) || is_singular( 'post' ) ) {
 		wp_enqueue_style( '_s-swipebox' );
 		wp_enqueue_script( '_s-swipebox' );
 	}
-
 }
 add_action( 'wp_enqueue_scripts', '_s_enqueue_scripts' );
 

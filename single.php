@@ -36,4 +36,10 @@ get_header(); ?>
 		</div><!-- .row -->
 	</div><!-- .container -->
 
+	<script>
+	jQuery(window).ready(function($){
+		$('.swipebox').swipebox();
+	});
+	</script>
+
 <?php get_footer(); ?>

@@ -66,13 +66,29 @@ function _s_phone_number( $phone ) {
 }
 
 /**
- * Allow SVG upload to media library
- *//*
-function _s_allow_svg_mime( $mimes ) {
-	$mimes['svg'] = 'image/svg+xml';
-	return $mimes;
+ * Custom excerpt using word count
+ */
+function _s_custom_excerpt( $word_count ) {
+	// first get the content
+	$content = get_the_content();
+	// set up the read more
+	$read_more = ' <a class="read-more" href="' . get_the_permalink() . '">[...]</a>';
+	// now use CSS-Tricks truncate function: http://goo.gl/AApx1a
+	$word_count = $word_count + 1;
+	$content = explode( ' ', $content, $word_count );
+	array_pop( $content );
+	$content = implode( ' ', $content ) . $read_more;
+	return $content;
 }
-add_filter( 'upload_mimes', '_s_allow_svg_mime' ); */
+
+/**
+ * Add class when images are inserted
+ */
+function _s_custom_image_class( $class ) {
+	$class .= ' swipebox';
+	return $class;
+}
+add_filter( 'get_image_tag_class', '_s_custom_image_class' );
 
 /**
  * Detect current template

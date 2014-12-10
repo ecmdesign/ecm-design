@@ -176,7 +176,7 @@ Header
 Content
 --------------------------------------------------------------*/
 .site-content {
-	padding: 2.25em 0;
+	padding: 2.5em 0;
 }
 .entry-title,
 .page-title {
@@ -195,6 +195,71 @@ Content
 	}
 }
 
+/*--------------------------------------------------------------
+Blog
+--------------------------------------------------------------*/
+.blog {
+	.entry-title {
+		margin-bottom: 0;
+	}
+	.entry-content {
+		margin-top: 2.0em;
+	}
+}
+.comments-area {
+	.logged-in-as {
+		font-weight: 300;
+	}
+	.comment-form-comment {
+		margin-bottom: 0.75em;
+		label {
+			font-weight: normal;
+		}
+		textarea {
+			border: 1px solid $border-dark;
+			padding: 0.25em 0.5em;
+			width: 100%;
+			max-height: 150px;
+		}
+	}
+	.form-submit {
+		input {
+			@extend %wpcf7-submit;
+		}
+	}
+}
+/* Single */
+.single {
+	.entry-title {
+		margin-bottom: 0.25em;
+	}
+	.entry-meta {
+		font-weight: 300;
+		.updated {
+			display: none; // prevents two dates
+		}
+	}
+	.entry-content {
+		margin-top: 2.0em;
+		img {
+			margin-bottom: 0.5em;
+		}
+	}
+}
+.entry-content {
+	.wp-caption {
+		max-width: 100%;
+		background-color: lighten($border-light, 5%);
+		margin-bottom: 2.0em;
+	}
+	.wp-caption-text {
+		padding: 0 0.75em 0.5em;
+		text-align: center;
+		color: lighten($body-light, 15%);
+		line-height: 1.25;
+		font-weight: 300;
+	}
+}
 
 /*--------------------------------------------------------------
 Home Page
@@ -571,10 +636,13 @@ Contact Page
 		max-height: 150px;
 	}
 	input[type="submit"] {
-		@extend %color-button;
-		@include text_small;
-		padding: 0.5em 1.0em;
+		@extend %wpcf7-submit;
 	}
+}
+%wpcf7-submit {
+	@extend %color-button;
+	@include text_small;
+	padding: 0.5em 1.0em;
 }
 
 /* Google Map */

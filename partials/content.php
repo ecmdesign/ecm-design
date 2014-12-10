@@ -7,21 +7,29 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php _s_posted_on(); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
+		<?php /* Feat Image */
+		if ( has_post_thumbnail() ) { ?>
+			<a href="<?php the_permalink(); ?>">
+				<?php the_post_thumbnail( array( 125, 125 ), array( 'class' => 'alignleft' ) ); ?>
+			</a>
+		<?php } ?>
+
 		<?php
-			/* translators: %s: Name of current post */
-			the_content( sprintf(
-				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ), 
-				the_title( '<span class="screen-reader-text">"', '"</span>', false )
-			) );
+			// first check if this is the blog page
+			if ( is_home() ) {
+				// set up custom excerpt
+				$excerpt = _s_custom_excerpt( 50 );
+				echo wpautop( $excerpt );
+			} else {
+				/* translators: %s: Name of current post */
+				the_content( sprintf(
+					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
+					the_title( '<span class="screen-reader-text">"', '"</span>', false )
+				) );
+			}
 		?>
 
 		<?php
@@ -31,8 +39,4 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php _s_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
