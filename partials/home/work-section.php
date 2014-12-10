@@ -46,7 +46,8 @@ if ( have_rows( 'work_items' ) ) {
 							$title = $item[0]->post_title; ?>
 
 							<?php /* Categories */
-							if ( !empty( get_the_terms( $item_id, 'work_category' ) ) ) { ?>
+							$cats = get_the_terms( $item_id, 'work_category' );
+							if ( !empty( $cats ) ) { ?>
 								<div class="cats">
 									<?php // set up term list w/separators
 									$terms = get_the_term_list( $item_id, 'work_category', '', ' / ', '' );
