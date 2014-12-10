@@ -58,6 +58,14 @@ function _s_home_ID() {
 }
 
 /**
+ * Strip phone number formatting
+ */
+function _s_phone_number( $phone ) {
+	$phone = preg_replace( '/[^0-9]/', '', $phone );
+	return $phone;
+}
+
+/**
  * Allow SVG upload to media library
  *//*
 function _s_allow_svg_mime( $mimes ) {

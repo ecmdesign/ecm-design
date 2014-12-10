@@ -51,9 +51,21 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'main-nav' ) ); ?>
 				</nav><!-- #site-navigation -->
 
-				<div class="site-contact">
-					<span>Call: <a href="tel:6037787147">603-778-7147</a></span>
-				</div>
+				<?php /* Phone/Email */
+				if ( get_theme_mod( 'phone_number' ) ) {
+					// format phone number and email
+					$phone_raw = get_theme_mod( 'phone_number' );
+					$phone = _s_phone_number( $phone_raw );
+					$email = get_theme_mod( 'contact_email' ); ?>
+
+					<div class="site-contact">
+						<span class="text-phone">Call: <a href="tel:<?php echo $phone; ?>"><?php echo $phone_raw; ?></a></span>
+						<a class="icon-phone icon-phone-circled" href="tel:<?php echo $phone; ?>"></a>
+						<?php if ( get_theme_mod( 'contact_email' ) ) { ?>
+							<a class="icon-email icon-mail-circled" href="mailto:<?php echo $email; ?>"></a>
+						<?php } ?>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 	</header><!-- #masthead -->

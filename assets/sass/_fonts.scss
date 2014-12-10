@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 /* Fontello */
-$version: "10264405";
+$version: "6714824";
 @font-face {
 	font-family: 'fontello';
 	src: url('../fonts/fontello.eot?@{version}');
@@ -63,3 +63,5 @@ $version: "10264405";
 .icon-left-open-big:before { content: '\e806'; } /* '' */
 .icon-right-open-big:before { content: '\e807'; } /* '' */
 .icon-search-1:before { content: '\e809'; } /* '' */
+.icon-mail-circled:before { content: '\e80b'; } /* '' */
+.icon-phone-circled:before { content: '\e80c'; } /* '' */

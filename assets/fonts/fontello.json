@@ -101,6 +101,18 @@
       "css": "search-1",
       "code": 59401,
       "src": "modernpics"
+    },
+    {
+      "uid": "7cb7e246fd23672429db603c0077dc79",
+      "css": "mail-circled",
+      "code": 59403,
+      "src": "elusive"
+    },
+    {
+      "uid": "23a1de57eb7b0c8281656a3ddadf3ee3",
+      "css": "phone-circled",
+      "code": 59404,
+      "src": "elusive"
     }
   ]
 }
