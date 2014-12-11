@@ -55,5 +55,36 @@ Home Page
 Work Single
 --------------------------------------------------------------*/
 .work-thumb-large {
-	height: 650px;
+	height: 528px;
+}
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+.site-footer {
+	text-align: left;
+	.site-logo {
+		margin-right: 30px;
+		padding: 0.5em 45px;
+		padding-left: 0;
+		border-right: 1px solid darken($border-dark, 2.5%);
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+.footer-info {
+	display: table;
+}
+.info-block {
+	display: table-cell;
+	margin-bottom: 0;
+	padding-right: 45px;
+}
+
+/* Hide on desktop */
+.footer-sep,
+.footer-icons {
+	display: none;
 }

@@ -51,7 +51,8 @@ get_header(); ?>
 													<h4><?php the_title(); ?></h4>
 
 													<?php /* Categories */
-													if ( !empty( get_the_terms( $post->ID, 'work_category' ) ) ) { ?>
+													$cats = get_the_terms( $post->ID, 'work_category' );
+													if ( !empty( $cats ) ) { ?>
 														<div class="cats">
 															<?php // set up term list w/separators
 															$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );

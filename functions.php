@@ -102,7 +102,7 @@ function _s_widgets_init() {
 		'after_title'   => '</h3>',
 	) );
 }
-add_action( 'widgets_init', '_s_widgets_init' );
+//add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
  * Register scripts and styles.

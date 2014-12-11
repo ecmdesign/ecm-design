@@ -11,8 +11,22 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-		</div><!-- .site-info -->
+		<div class="container">
+			<div class="site-info row">
+				<div class="col-md-offset-1 col-md-2 site-logo">
+					<!-- Logo -->
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/logo-white.svg" />
+					</a>
+				</div>
+
+				<div class="col-md-8">
+					<div class="footer-info">
+						<?php get_template_part( 'partials/footer', 'info' ); ?>
+					</div><!-- .footer-info -->
+				</div>
+			</div><!-- .row -->
+		</div><!-- .container -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

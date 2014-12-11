@@ -79,7 +79,7 @@ a {
 		color: darken($link-color, 10%);
 	}
 	&:hover {
-		@include animate;
+		@include animated;
 	}
 }
 

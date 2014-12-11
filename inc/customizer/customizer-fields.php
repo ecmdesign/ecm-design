@@ -75,10 +75,17 @@ function _s_customizer_add_fields( $wp_customize ) {
 		'section'		=> 'social_media',
 		'type'			=> 'url',
 	) );
-	$wp_customize->add_setting( 'dribbble_url' );
-	$wp_customize->add_control( 'dribbble_url', array(
-		'label'			=> 'Dribbble URL',
-		'description'	=> 'Add a link to your Dribbble page here.',
+	$wp_customize->add_setting( 'gplus_url' );
+	$wp_customize->add_control( 'gplus_url', array(
+		'label'			=> 'Google+ URL',
+		'description'	=> 'Add a link to your Google+ page here.',
+		'section'		=> 'social_media',
+		'type'			=> 'url',
+	) );
+	$wp_customize->add_setting( 'linkedin_url' );
+	$wp_customize->add_control( 'linkedin_url', array(
+		'label'			=> 'LinkedIn URL',
+		'description'	=> 'Add a link to your LinkedIn page here.',
 		'section'		=> 'social_media',
 		'type'			=> 'url',
 	) );

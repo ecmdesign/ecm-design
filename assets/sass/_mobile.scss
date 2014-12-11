@@ -3,6 +3,61 @@
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+.site-header {
+	position: relative;
+	z-index: 999;
+	text-align: center;
+	padding: 1.5em 0 1.25em;
+	border-bottom: 1px solid lighten($border-light, 5%);
+	span {
+		color: $link-color;
+	}
+	.site-logo {
+		@extend %site-logo;
+	}
+}
+%site-logo {
+	display: block;
+	margin: 0 auto;
+	width: 131px;
+	height: 43px;
+	opacity: 0.75;
+	&:hover {
+		opacity: 1.0;
+		@include animated;
+	}
+}
+.site-branding,
+.main-navigation {
+	display: block;
+}
+.site-branding {
+	margin: 0 0 1.25em;
+}
+
+/* Navigation */
+.main-navigation {
+	text-align: center;
+	li {
+		display: inline;
+		padding: 0 0.5em;
+	}
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+}
+
+/* Contact Info */
+.header-contact {
+	display: none;
+}
+
+/*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
 
@@ -85,91 +140,16 @@ Global
 	}
 }
 .text-hero {
+	padding: 3.5em 1.5em 4.5em;
+	margin-bottom: 2.75em;
 	text-align: center;
 	background-color: $section-bg;
-	padding: 4.0em;
 	h1 {
 		margin: 0;
 		font-size: 48px;
 		font-size: 4.8rem;
 		font-weight: 300;
 	}
-}
-
-/*--------------------------------------------------------------
-Header
---------------------------------------------------------------*/
-.site-header {
-	position: relative;
-	z-index: 999;
-	text-align: center;
-	padding: 1.5em 0 1.25em;
-	border-bottom: 1px solid lighten($border-light, 5%);
-	.logo {
-		display: block;
-		margin: 0 auto;
-		width: 131px;
-		height: 43px;
-		background: url('../img/logo.svg') left top no-repeat;
-		background-size: contain;
-		opacity: 0.75;
-		&:hover {
-			opacity: 1.0;
-			@include animate;
-		}
-	}
-	span {
-		color: $link-color;
-	}
-	&.contrast {
-		background-color: $link-color;
-		border-bottom: none;
-		.logo {
-			background-image: url('../img/logo-white.svg');
-			opacity: 1.0;
-			&:hover {
-				opacity: 0.75;
-			}
-		}
-		a {
-			color: white;
-			&:hover,
-			&:focus {
-				color: #E3E3E3;
-				@include animate;
-			}
-		}
-		span {
-			color: white;
-		}
-	}
-}
-.site-branding,
-.main-navigation {
-	display: block;
-}
-.site-branding {
-	margin: 0 0 1.25em;
-}
-
-/* Navigation */
-.main-navigation {
-	text-align: center;
-	li {
-		display: inline;
-		padding: 0 0.5em;
-	}
-	a {
-		display: inline-block;
-		text-transform: uppercase;
-		font-size: 14px;
-		font-size: 1.4rem;
-	}
-}
-
-/* Contact */
-.site-contact {
-	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -204,6 +184,9 @@ Blog
 	}
 	.entry-content {
 		margin-top: 2.0em;
+	}
+	.wp-post-image {
+		@include image_lighten;
 	}
 }
 .comments-area {
@@ -241,6 +224,9 @@ Blog
 	}
 	.entry-content {
 		margin-top: 2.0em;
+		img {
+			@include image_lighten(0.9);
+		}
 	}
 }
 .entry-content {
@@ -367,8 +353,8 @@ Home Page
 	}
 }
 .service-icon {
-	max-width: 100px;
-	max-height: 100px;
+	max-width: 75px;
+	max-height: 75px;
 	margin-bottom: 0.75em;
 }
 .service-title {
@@ -396,7 +382,7 @@ Home Page
 			border-bottom: 1px dotted transparent;
 			&:hover {
 				border-color: darken($border-light, 15%);
-				@include animate;
+				@include animated;
 			}
 		}
 	}
@@ -532,7 +518,7 @@ About Page
 		}
 		&:hover {
 			opacity: 1.0;
-			@include animate;
+			@include animated;
 		}
 	}
 }
@@ -609,9 +595,6 @@ Contact Page
 	.site-content {
 		padding-top: 0;
 	}
-	.text-hero {
-		margin-bottom: 2.75em;
-	}
 }
 .contact-area {
 	padding-top: 1.5em;
@@ -655,12 +638,14 @@ Contact Page
 	h3 {
 		font-size: 18px;
 		font-size: 1.8rem;
-		margin: 0 0 3px;
 	}
 	span {
 		display: block;
 		font-size: 14px;
 		font-size: 1.4rem;
+	}
+	h3, span {
+		margin: 0 0 0.25em;
 	}
 }
 .map-search {
@@ -693,11 +678,11 @@ Contact Page
 		background: $link-color url('../img/search.svg') 50% 50% no-repeat;
 		background-size: 24px 24px;
 		border: none;
-		@include flip-horiz;
+		@include flip_horiz;
 		@include text_small;
 		&:hover {
 			background-color: darken($link-color, 10%);
-			@include animate;
+			@include animated;
 		}
 	}
 }
@@ -710,10 +695,7 @@ Work Page
 .work-image {
 	margin-bottom: 2.5em;
 	img {
-		&:hover {
-			opacity: 0.75;
-			@include animate;
-		}
+		@include image_lighten;
 	}
 	h4 {
 		font-weight: 500;
@@ -731,16 +713,167 @@ Work Page
 /*--------------------------------------------------------------
 Work Single
 --------------------------------------------------------------*/
-.image-area {
+.work-thumb-area {
 	margin-bottom: 2.5em;
 }
 .work-thumb-large {
 	@extend %work-thumb;
 }
+.share-area {
+	margin-bottom: 2.0em;
+	text-align: center;
+	@include antialiased;
+	span, a {
+		display: inline-block;
+		line-height: 1.0;
+		vertical-align: middle;
+	}
+	span {
+		color: lighten($body-light, 10%);
+	}
+	a {
+		font-size: 24px;
+		font-size: 2.4rem;
+		width: 1.125em;
+		&.facebook {
+			color: $facebook;
+			&:hover {
+				color: darken($facebook, 5%);
+			}
+		}
+		&.twitter {
+			color: $twitter;
+			&:hover {
+				color: darken($twitter, 5%);
+			}
+		}
+		&.pinterest {
+			color: $pinterest;
+			&:hover {
+				color: darken($pinterest, 5%);
+			}
+		}
+	}
+}
 
+/*--------------------------------------------------------------
+Web Services
+--------------------------------------------------------------*/
+.web_services-page {
+	.site-content {
+		padding: 0;
+	}
+}
+.feature-list {
+	padding-top: 1.0em;
+	.feature {
+		padding-bottom: 0.5em;
+	}
+	h4 {
+		margin-bottom: 1.0em;
+	}
+	p {
+		font-weight: 300;
+	}
+}
 
 /*--------------------------------------------------------------
 Footer
 --------------------------------------------------------------*/
 .site-footer {
+	color: white;
+	padding: 4.5em 0 4.0em;
+	text-align: center;
+	font-size: 14px;
+	font-size: 1.4rem;
+	@include ecm_gradient($link-color, darken($link-color, 4%));
+	a {
+		color: white;
+		&:hover {
+			color: darken(white, 10%);
+		}
+	}
+	.site-logo {
+		display: block;
+	}
+	.link-small {
+		color: $border-dark !important;
+	}
+}
+.footer-info {
+}
+.info-block {
+	font-weight: 300;
+	margin-bottom: 2.5em;
+	h4 {
+		margin-top: 0;
+		font-size: 12px;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		color: $border-dark;
+	}
+	ul {
+		padding-left: 0;
+		list-style-type: none;
+		margin-bottom: 0;
+	}
+	span {
+		display: block;
+	}
+}
+.footer-sep {
+	text-align: center;
+	padding: 2.0em 0;
+	&:before {
+		display: inline-block;
+		content: '';
+		width: 100px;
+		height: 1px;
+		background-color: darken($border-dark, 5%);
+	}
+}
+.footer-icons {
+	a {
+		display: inline-block;
+		padding: 0 0.25em;
+		font-size: 16px;
+		font-size: 1.6rem;
+		vertical-align: middle;
+		&.facebook:hover {
+			color: $facebook;
+		}
+		&.twitter:hover {
+			color: $twitter;
+		}
+		&.gplus:hover {
+			color: $gplus;
+		}
+		&.linkedin:hover {
+			color: $linkedin;
+		}
+	}
+}
+.link-small {
+	font-size: 12px;
+	font-size: 1.2rem;
+	font-weight: 300;
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+/* Hide on mobile */
+.footer-nav,
+.footer-social {
+	display: none;
+}
+
+
+/*--------------------------------------------------------------
+Admin bar
+--------------------------------------------------------------*/
+.ab-top-menu {
+	#wp-admin-bar-search {
+		display: none !important;
+	}
 }

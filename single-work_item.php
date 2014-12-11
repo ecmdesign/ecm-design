@@ -22,7 +22,9 @@ get_header(); ?>
 							</header><!-- .entry-header -->
 
 							<div class="entry-content">
-								<div class="image-area">
+								<?php the_content(); ?>
+
+								<div class="work-thumb-area">
 									<?php /* Featured Image */
 									if ( has_post_thumbnail() ) {
 										// set up thumnail sizes
@@ -54,8 +56,18 @@ get_header(); ?>
 									<?php } ?>
 								</div>
 
+								<?php /* Share */ ?>
+								<div class="share-area">
+									<?php // set up item link
+									$item_link = get_permalink();
+									$item_link = urlencode( $item_link ); ?>
 
-								<?php the_content(); ?>
+									<span>Share:</span>
+									<a class="facebook icon-facebook-circled" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $item_link; ?>" target="_blank"></a>
+									<a class="twitter icon-twitter-circled" href="http://twitter.com/share?url=<?php echo $item_link; ?>" target="_blank"></a>
+									<a class="pinterest icon-pinterest-circled" href="http://pinterest.com/pin/create/button/?url=<?php echo $item_link; ?>" target="_blank"></a>
+								</div>
+
 								<?php
 									wp_link_pages( array(
 										'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),

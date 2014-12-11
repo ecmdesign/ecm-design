@@ -5,14 +5,14 @@
 /*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
-/* Contact */
-.site-contact {
-	.text-phone {
-		display: inline;
-	}
-	.icon-phone,
-	.icon-email {
+/* Contact Info */
+.header-contact {
+	.contact-icons {
 		display: none;
+	}
+	.contact-text {
+		display: block;
+		float: right;
 	}
 }
 
@@ -50,5 +50,12 @@ Home Page
 Work Single
 --------------------------------------------------------------*/
 .work-thumb-large {
-	height: 725px;
+	height: 640px;
+}
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+.info-block {
+	padding-right: 60px;
 }

@@ -3,25 +3,6 @@
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-Global
---------------------------------------------------------------*/
-
-/* Utility */
-.full-height_desktop {
-	position: relative;
-	height: 100%;
-}
-
-/* Headlines */
-.text-hero {
-	h1 {
-		font-size: 64px;
-		font-size: 6.4rem;
-	}
-}
-
-
-/*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
 .site-header {
@@ -37,7 +18,7 @@ Header
 }
 
 .main-navigation,
-.site-contact {
+.header-contact {
 	margin-top: 0.625em;
 }
 
@@ -63,29 +44,42 @@ Header
 		font-size: 1.6rem;
 	}
 }
-.site-header {
-	&.contrast {
-		.main-navigation {
-			li {
-				color: white;
-			}
-		}
-	}
-}
 
-/* Contact */
-.site-contact {
+/* Contact Info */
+.header-contact {
 	display: block;
-	float: right;
-	.text-phone {
+	.contact-icons {
+		float: right;
+	}
+	.contact-text {
 		display: none;
 	}
+}
+.contact-icons {
 	.icon-phone,
 	.icon-email {
 		font-size: 24px;
 		font-size: 2.4rem;
 		line-height: 1.0;
 		@include antialiased;
+	}
+}
+
+/*--------------------------------------------------------------
+Global
+--------------------------------------------------------------*/
+
+/* Utility */
+.full-height_desktop {
+	position: relative;
+	height: 100%;
+}
+
+/* Headlines */
+.text-hero {
+	h1 {
+		font-size: 64px;
+		font-size: 6.4rem;
 	}
 }
 
@@ -164,6 +158,12 @@ Work Page
 Work Single
 --------------------------------------------------------------*/
 .work-thumb-large {
-	height: 575px;
+	height: 405px;
 	margin-bottom: 30px;
+}
+
+/*--------------------------------------------------------------
+Footer
+--------------------------------------------------------------*/
+.site-footer {
 }

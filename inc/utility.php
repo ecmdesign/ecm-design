@@ -66,6 +66,14 @@ function _s_phone_number( $phone ) {
 }
 
 /**
+ * Format address slug for Google Maps link
+ */
+function _s_map_link_slug( $address, $city_state_zip ) {
+	$map_slug = urlencode( $address ) . '+' . urlencode( $city_state_zip );
+	return $map_slug;
+}
+
+/**
  * Custom excerpt using word count
  */
 function _s_custom_excerpt( $more_text = '', $stripteaser = 0, $more_file = '' ) {

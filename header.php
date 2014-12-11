@@ -43,7 +43,8 @@
 		<div class="container">
 			<div class="row">
 				<div class="site-branding">
-					<a class="logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<a class="site-logo" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/logo.svg" />
 					</a>
 				</div>
 
@@ -51,20 +52,23 @@
 					<?php wp_nav_menu( array( 'theme_location' => 'main-nav' ) ); ?>
 				</nav><!-- #site-navigation -->
 
-				<?php /* Phone/Email */
-				if ( get_theme_mod( 'phone_number' ) ) {
-					// format phone number and email
+				<?php /* Contact info */
+				if ( get_theme_mod( 'phone_number' ) && get_theme_mod( 'contact_email' ) ) { ?>
+				<div class="header-contact">
+					<?php // set up phone number and email
 					$phone_raw = get_theme_mod( 'phone_number' );
 					$phone = _s_phone_number( $phone_raw );
 					$email = get_theme_mod( 'contact_email' ); ?>
 
-					<div class="site-contact">
-						<span class="text-phone">Call: <a href="tel:<?php echo $phone; ?>"><?php echo $phone_raw; ?></a></span>
+					<div class="contact-icons">
 						<a class="icon-phone icon-phone-circled" href="tel:<?php echo $phone; ?>"></a>
-						<?php if ( get_theme_mod( 'contact_email' ) ) { ?>
-							<a class="icon-email icon-mail-circled" href="mailto:<?php echo $email; ?>"></a>
-						<?php } ?>
+						<a class="icon-email icon-mail-circled" href="mailto:<?php echo $email; ?>"></a>
 					</div>
+
+					<div class="contact-text">
+						<span>Call: <a href="tel:<?php echo $phone; ?>"><?php echo $phone_raw; ?></a></span>
+					</div>
+				</div>
 				<?php } ?>
 			</div>
 		</div>
