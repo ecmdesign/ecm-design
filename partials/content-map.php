@@ -28,7 +28,7 @@ $link_slug = _s_map_link_slug( $s_address, $city_state ); ?>
 	</form>
 </div>
 
-<script src="http://maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
+<script src="//maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script type="text/javascript">
 //<![CDATA[
 function _s_google_map() {
