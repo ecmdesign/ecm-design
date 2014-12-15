@@ -22,7 +22,7 @@
 
 				<div class="col-md-8">
 					<div class="footer-info">
-						<?php get_template_part( 'partials/footer', 'info' ); ?>
+						<?php get_template_part( 'partials/content', 'footer' ); ?>
 					</div><!-- .footer-info -->
 				</div>
 			</div><!-- .row -->
