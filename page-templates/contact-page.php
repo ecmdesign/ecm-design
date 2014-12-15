@@ -32,15 +32,17 @@ get_header(); ?>
 										if ( get_field( 'contact_forms' ) ) {
 											// set forms to a variable
 											$forms = get_field( 'contact_forms' ); ?>
-											<div class="col-sm-6">
+											<div class="col-md-6 contact-form">
 												<?php echo $forms[0]; ?>
 											</div>
 										<?php } ?>
 
 										<?php /* Map */
-										if ( get_field( 'google_map' ) ) {
-											get_template_part( 'partials/content', 'map' );
-										} ?>
+										if ( get_field( 'google_map' ) ) { ?>
+											<div class="col-md-6">
+												<?php get_template_part( 'partials/content', 'map' ); ?>
+											</div>
+										<?php } ?>
 
 										<?php
 											wp_link_pages( array(

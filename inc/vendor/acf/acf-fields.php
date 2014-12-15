@@ -920,6 +920,48 @@ if(function_exists("register_field_group"))
 				'formatting' => 'html',
 				'maxlength' => '',
 			),
+			array (
+				'key' => 'field_548f0b8b53dcf',
+				'label' => 'More Work Items',
+				'name' => 'more_work_items',
+				'type' => 'repeater',
+				'instructions' => 'Add work items to the "More Work" section by clicking "Add Row" below.',
+				'required' => 1,
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5487282da9c73',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'sub_fields' => array (
+					array (
+						'key' => 'field_548f0d91e54bf',
+						'label' => 'Work Item',
+						'name' => 'work_item',
+						'type' => 'post_object',
+						'instructions' => 'Select a work item here.',
+						'required' => 1,
+						'column_width' => '',
+						'post_type' => array (
+							0 => 'work_item',
+						),
+						'taxonomy' => array (
+							0 => 'all',
+						),
+						'allow_null' => 1,
+						'multiple' => 0,
+					),
+				),
+				'row_min' => 3,
+				'row_limit' => 3,
+				'layout' => 'row',
+				'button_label' => 'Add Row',
+			),
 		),
 		'location' => array (
 			array (

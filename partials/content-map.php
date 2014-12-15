@@ -18,15 +18,13 @@ $city_state = get_theme_mod( 'city_state_zip' );
 $link_slug = _s_map_link_slug( $s_address, $city_state ); ?>
 
 <!-- Google Map -->
-<div class="col-sm-6">
-	<div id="map" class="google-map" style="width: 100%; height: 358px;"></div>
+<div id="map" class="google-map" style="width: 100%; height: 358px;"></div>
 
-	<form class="map-search" method="get" action="//maps.google.com/maps" target="_blank">
-		<input type="text" name="saddr" placeholder="Where are you?" />
-		<input type="submit" name="submit" value="" />
-		<input type="hidden" name="daddr" value="<?php echo $link_slug; ?>" />
-	</form>
-</div>
+<form class="map-search" method="get" action="//maps.google.com/maps" target="_blank">
+	<input type="text" name="saddr" placeholder="Where are you?" />
+	<input type="submit" name="submit" value="" />
+	<input type="hidden" name="daddr" value="<?php echo $link_slug; ?>" />
+</form>
 
 <script src="//maps.googleapis.com/maps/api/js?sensor=false" type="text/javascript"></script>
 <script type="text/javascript">

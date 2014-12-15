@@ -13,13 +13,13 @@
 		<h2 class="headline fancy-headline"><?php echo $headline; ?></h2>
 	<?php } ?>
 
-	<?php /* Services */
+	<?php /* Clients */
 	if ( have_rows( 'clients' ) ) { ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-offset-1 col-sm-10">
 					<div class="row">
-						<?php /* Clients */
+						<?php // loop through repeater rows
 						while( have_rows( 'clients' ) ): the_row(); ?>
 							<div class="col-xs-3 client">
 								<?php /* Icons */

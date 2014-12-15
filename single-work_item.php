@@ -56,6 +56,8 @@ get_header(); ?>
 									<?php } ?>
 								</div>
 
+								<?php _s_post_nav( 'Prev item', 'Next item' ); ?>
+
 								<?php /* Share */ ?>
 								<div class="share-area">
 									<?php // set up item link

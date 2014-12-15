@@ -59,10 +59,19 @@ Work Single
 }
 
 /*--------------------------------------------------------------
+Contact Page
+--------------------------------------------------------------*/
+.contact-form {
+	margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
 Footer
 --------------------------------------------------------------*/
 .site-footer {
 	text-align: left;
+	font-size: 14px;
+	font-size: 1.4rem;
 	.site-logo {
 		margin-right: 30px;
 		padding: 0.5em 45px;
@@ -81,6 +90,14 @@ Footer
 	display: table-cell;
 	margin-bottom: 0;
 	padding-right: 45px;
+	h4 {
+		font-size: 12px;
+		font-size: 1.2rem;
+	}
+}
+.link-small {
+	font-size: 12px;
+	font-size: 1.2rem;
 }
 
 /* Hide on desktop */
