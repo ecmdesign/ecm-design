@@ -10,7 +10,7 @@ get_header(); ?>
 	<div class="container">
 		<div class="row">
 
-			<div class="col-sm-offset-2 col-sm-8">
+			<div class="col-sm-10 col-sm-offset-1">
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main" role="main">
 

@@ -139,10 +139,42 @@ Global
 	}
 }
 .text-hero {
-	padding: 3.5em 1.5em 4.5em;
+	position: relative;
+	padding: 2.5em 1.5em 3.5em;
 	margin-bottom: 2.75em;
 	text-align: center;
 	background-color: $section-bg;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 50% 50%;
+	&.has_bg {
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0; left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+		h1, .cats {
+			position: relative;
+			z-index: 9999;
+		}
+		&.contrast {
+			color: white;
+			.cats, .cats a {
+				color: #AAA;
+			}
+			&:before {
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+		}
+	}
+	.cats, .cats a {
+		color: lighten($body-color, 30%);
+		@include antialiased;
+	}
 }
 .text-hero,
 .entry-header {
@@ -158,7 +190,7 @@ Global
 	padding-top: 0 !important;
 }
 .no-top-margin {
-	margin-top: 0;
+	margin-top: 0 !important;
 }
 
 /* Admin bar */
@@ -248,6 +280,7 @@ Blog
 	.entry-content {
 		margin-top: 2.0em;
 		img {
+			margin-bottom: 0.5em;
 			@include image_lighten(0.9);
 		}
 	}
@@ -293,6 +326,7 @@ Home Page
 
 /* Hero */
 .hero-section {
+	position: relative;
 	text-align: center;
 	background-color: darken($section-bg, 15%);
 	background-repeat: no-repeat;
@@ -312,16 +346,17 @@ Home Page
 	&.contrast {
 		color: white;
 		&:after {
-			background-color: rgba(0, 0, 0, 0.5);
+			background-color: rgba(0, 0, 0, 0.6);
 		}
 		.button {
 			background-color: white;
-			color: lighten($body-color, 20%);
+			color: $link-color;
 			font-weight: 700;
+			@include antialiased;
 			&:hover,
 			&:focus {
 				background-color: darken(white, 10%);
-				color: lighten($body-color, 15%);
+				color: darken($link-color, 10%);
 			}
 		}
 	}
@@ -733,12 +768,24 @@ Work Page
 /*--------------------------------------------------------------
 Work Single
 --------------------------------------------------------------*/
+.single-work_item {
+}
 .work-images {
-	padding-top: 1.5em;
-	margin-bottom: 3.5em;
+	margin-bottom: 1.5em;
+	.work-thumb {
+		margin-bottom: 30px;
+	}
 }
 .work-thumb-large {
 	@extend %work-thumb;
+}
+.work-thumb-new {
+	img {
+		display: block;
+		max-width: 75%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+	}
 }
 .post-navigation {
 	padding: 0.5em 0;
@@ -786,6 +833,9 @@ Work Single
 Web Services
 --------------------------------------------------------------*/
 .web_services-page {
+	.site-content {
+		padding-bottom: 0;
+	}
 }
 .feature-list {
 	padding-top: 1.0em;
@@ -807,7 +857,7 @@ Footer
 	color: white;
 	padding: 4.5em 0 4.0em;
 	text-align: center;
-	@include ecm_gradient($link-color, darken($link-color, 4%));
+	@include ecm_gradient($link-color, darken($link-color, 5%));
 	a {
 		color: white;
 		&:hover {

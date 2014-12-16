@@ -94,3 +94,10 @@ Effects
 	filter: FlipH;
 	-ms-filter: "FlipH";
 }
+@mixin vert_align {
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+	top: 50%;
+}

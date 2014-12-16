@@ -8,15 +8,17 @@
 get_header(); ?>
 
 	<?php /* Headline */
-	if ( get_field( 'custom_heading' ) ) { ?>
-		<div class="text-hero">
+	if ( get_field( 'custom_heading' ) ) {
+		// set up hero background
+		$bg_image = _s_thumb_img_url( 'large' ); ?>
+		<div class="text-hero<?php if ( !empty( $bg_image ) ): echo ' has_bg contrast'; endif; ?>" style="background-image: url('<?php echo $bg_image; ?>');">
 			<h1 class="xl-heading"><?php the_field( 'custom_heading' ); ?></h1>
 		</div>
 	<?php } ?>
 
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-12">
+			<div class="col-sm-10 col-sm-offset-1">
 
 				<div id="primary" class="content-area">
 					<main id="main" class="site-main" role="main">

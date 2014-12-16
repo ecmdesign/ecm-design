@@ -67,7 +67,7 @@ add_filter( 'body_class', '_s_page_template_slug' );
 function _s_thumb_img_url( $size ) {
 	// hat tip: http://goo.gl/fzHOaB
 	$img_id = get_post_thumbnail_id();
-	$img_array = wp_get_attachment_image_src( $img_id, $size, true );
+	$img_array = wp_get_attachment_image_src( $img_id, $size );
 	$img_url = $img_array[0];
 	return $img_url;
 }
