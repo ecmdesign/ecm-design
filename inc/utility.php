@@ -6,12 +6,44 @@
  */
 
 /**
+ * Clean up some header items
+ */
+// hat tip: http://gomakethings.com/remove-junk-from-the-wordpress-header/
+remove_action('wp_head', 'rsd_link');
+remove_action('wp_head', 'wlwmanifest_link');
+remove_action('wp_head', 'wp_generator');
+remove_action('wp_head', 'feed_links_extra', 3);
+remove_action('wp_head', 'start_post_rel_link');
+remove_action('wp_head', 'index_rel_link');
+remove_action('wp_head', 'adjacent_posts_rel_link');
+remove_action('wp_head', 'rel_canonical', 10, 0 );
+remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
+
+/**
  * Flush rewrite rules on theme activation
  */
 function _s_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', '_s_flush_rewrite_rules' );
+
+/**
+ * Google analytics setup
+ */
+function _s_google_analytics() { ?>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', '<?php echo get_theme_mod( 'analytics_code' ); ?>', 'auto');
+		ga('send', 'pageview');
+	</script>
+<?php }
+if ( get_theme_mod( 'analytics_code' ) ) {
+	add_action( 'wp_head', '_s_google_analytics' );
+}
 
 /**
  * Add page template slug body class
@@ -32,7 +64,7 @@ add_filter( 'body_class', '_s_page_template_slug' );
 /**
  * Post Thumbnail URL function
  */
-function _s_thumbnail_url( $size ) {
+function _s_thumb_img_url( $size ) {
 	// hat tip: http://goo.gl/fzHOaB
 	$img_id = get_post_thumbnail_id();
 	$img_array = wp_get_attachment_image_src( $img_id, $size, true );
@@ -43,7 +75,7 @@ function _s_thumbnail_url( $size ) {
 /**
  * Post Thumbnail alt text function
  */
-function _s_thumbnail_alt() {
+function _s_thumb_alt_text() {
 	$img_id = get_post_thumbnail_id();
 	$img_alt = get_post_meta( $img_id, '_wp_attachment_image_alt', true );
 	return $img_alt;
@@ -52,7 +84,7 @@ function _s_thumbnail_alt() {
 /**
  * Get home page ID
  */
-function _s_home_ID() {
+function _s_home_page_ID() {
 	$home_id = get_option( 'page_on_front' );
 	return $home_id;
 }

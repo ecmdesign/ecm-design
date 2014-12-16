@@ -10,7 +10,7 @@ get_header(); ?>
 	<?php /* Headline */
 	if ( get_field( 'custom_heading' ) ) { ?>
 		<div class="text-hero">
-			<h1><?php the_field( 'custom_heading' ); ?></h1>
+			<h1 class="xl-heading"><?php the_field( 'custom_heading' ); ?></h1>
 		</div>
 	<?php } ?>
 
@@ -24,7 +24,11 @@ get_header(); ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								<div class="entry-content">
+								<header class="entry-header<?php if ( get_field( 'custom_heading' ) ): echo ' hidden'; endif; ?>">
+									<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+								</header><!-- .entry-header -->
+
+								<div class="entry-content<?php if ( get_field( 'custom_heading' ) ): echo ' no-top-margin'; endif; ?>">
 									<?php the_content(); ?>
 									<?php
 										wp_link_pages( array(

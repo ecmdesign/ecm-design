@@ -75,8 +75,9 @@ Global
 }
 
 /* Headlines */
-.text-hero {
-	h1 {
+.text-hero,
+.entry-header {
+	.xl-heading {
 		font-size: 64px;
 		font-size: 6.4rem;
 	}
@@ -123,10 +124,6 @@ Home Page
 About Page
 --------------------------------------------------------------*/
 .about-page {
-	h1 {
-		font-size: 64px;
-		font-size: 6.4rem;
-	}
 }
 /* Slider */
 .slider__arrows {

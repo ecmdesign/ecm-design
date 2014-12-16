@@ -17,14 +17,12 @@ get_header(); ?>
 						<?php while ( have_posts() ) : the_post(); ?>
 
 							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								<div class="entry-content">
-									<?php /* Headline */
-									if ( get_field( 'custom_heading' ) ) { ?>
-										<h1><?php the_field( 'custom_heading' ); ?></h1>
-									<?php } ?>
+								<header class="entry-header<?php if ( get_field( 'custom_heading' ) ): echo ' hidden'; endif; ?>">
+									<?php the_title( '<h1 class="entry-title xl-heading">', '</h1>' ); ?>
+								</header><!-- .entry-header -->
 
+								<div class="entry-content<?php if ( get_field( 'custom_heading' ) ): echo ' no-top-margin'; endif; ?>">
 									<?php the_content(); ?>
-
 									<?php
 										wp_link_pages( array(
 											'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),

@@ -26,7 +26,7 @@
 						setup_postdata( $post ); ?>
 
 						<?php /* Image */
-						$work_img = _s_thumbnail_url( 'medium' ); ?>
+						$work_img = _s_thumb_img_url( 'medium' ); ?>
 
 						<a class="work-thumb" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $work_img; ?>');">
 						</a>

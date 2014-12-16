@@ -143,12 +143,22 @@ Global
 	margin-bottom: 2.75em;
 	text-align: center;
 	background-color: $section-bg;
-	h1 {
-		margin: 0;
+}
+.text-hero,
+.entry-header {
+	.xl-heading {
 		font-size: 48px;
 		font-size: 4.8rem;
 		font-weight: 300;
 	}
+}
+
+/* Margins & padding */
+.no-top-padding {
+	padding-top: 0 !important;
+}
+.no-top-margin {
+	margin-top: 0;
 }
 
 /* Admin bar */
@@ -166,7 +176,7 @@ Content
 }
 .entry-title,
 .page-title {
-	margin: 0 0 1.0em;
+	margin: 0 0 0.75em;
 	font-weight: 400;
 }
 .page-title {
@@ -226,8 +236,8 @@ Blog
 }
 /* Single */
 .single {
-	.entry-title {
-		margin-bottom: 0.25em;
+	.xl-heading {
+		margin-bottom: 0.175em;
 	}
 	.entry-meta {
 		font-weight: 300;
@@ -490,12 +500,6 @@ About Page
 	.site-content {
 		padding-bottom: 0;
 	}
-	h1 {
-		margin: 0 0 0.75em;
-		font-size: 48px;
-		font-size: 4.8rem;
-		font-weight: 300;
-	}
 	.entry-content {
 		margin-top: 0;
 		p {
@@ -609,11 +613,6 @@ About Page
 /*--------------------------------------------------------------
 Contact Page
 --------------------------------------------------------------*/
-.contact-page {
-	.site-content {
-		padding-top: 0;
-	}
-}
 .contact-area {
 	padding-top: 1.5em;
 }
@@ -734,9 +733,9 @@ Work Page
 /*--------------------------------------------------------------
 Work Single
 --------------------------------------------------------------*/
-.work-thumb-area {
-	padding-top: 0.75em;
-	margin-bottom: 2.5em;
+.work-images {
+	padding-top: 1.5em;
+	margin-bottom: 3.5em;
 }
 .work-thumb-large {
 	@extend %work-thumb;
@@ -787,9 +786,6 @@ Work Single
 Web Services
 --------------------------------------------------------------*/
 .web_services-page {
-	.site-content {
-		padding: 0;
-	}
 }
 .feature-list {
 	padding-top: 1.0em;
