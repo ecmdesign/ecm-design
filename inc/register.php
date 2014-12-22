@@ -6,7 +6,7 @@
  */
 
 /* Work Items */
-function ecm_register_cpt_work_item() {
+function _s_register_cpt_work_item() {
 	$labels = array(
 		'name'					=> _x( 'Work Items', 'post type general name', '_s' ),
 		'singular_name'			=> _x( 'Work Item', 'post type singular name', '_s' ),
@@ -40,10 +40,10 @@ function ecm_register_cpt_work_item() {
 	);
 	register_post_type( 'work_item', $args );
 }
-add_action( 'init', 'ecm_register_cpt_work_item' );
+add_action( 'init', '_s_register_cpt_work_item' );
 
 /* Work Category */
-function ecm_register_tax_work() {
+function _s_register_tax_work() {
 	$labels = array(
 		'name'				=> _x( 'Work Categories', 'taxonomy general name' ),
 		'singular_name'		=> _x( 'Work Category', 'taxonomy singular name' ),
@@ -67,4 +67,4 @@ function ecm_register_tax_work() {
 	);
 	register_taxonomy( 'work_category', array( 'work_item' ), $args );
 }
-add_action( 'init', 'ecm_register_tax_work' );
+add_action( 'init', '_s_register_tax_work' );

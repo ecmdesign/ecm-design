@@ -7,39 +7,48 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="content" class="site-content">
 
-		<?php if ( have_posts() ) : ?>
+		<div class="container">
+			<div class="row">
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+				<div class="col-sm-10">
+					<section id="primary" class="content-area">
+						<main id="main" class="site-main" role="main">
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+						<?php if ( have_posts() ) : ?>
 
-				<?php
-				/**
-				 * Run the loop for the search to output the results.
-				 * If you want to overload this in a child theme then include a file
-				 * called content-search.php and that will be used instead.
-				 */
-				get_template_part( 'partials/content', 'search' );
-				?>
+							<header class="page-header">
+								<h1 class="page-title"><?php printf( __( 'Search Results for: %s', '_s' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+							</header><!-- .page-header -->
 
-			<?php endwhile; ?>
+							<?php /* Start the Loop */ ?>
+							<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php _s_paging_nav(); ?>
+								<?php
+								/**
+								 * Run the loop for the search to output the results.
+								 * If you want to overload this in a child theme then include a file
+								 * called content-search.php and that will be used instead.
+								 */
+								get_template_part( 'partials/content', 'search' );
+								?>
 
-		<?php else : ?>
+							<?php endwhile; ?>
 
-			<?php get_template_part( 'partials/content', 'none' ); ?>
+							<?php _s_paging_nav(); ?>
 
-		<?php endif; ?>
+						<?php else : ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+							<?php get_template_part( 'partials/content', 'none' ); ?>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+						<?php endif; ?>
+
+						</main><!-- #main -->
+					</div><!-- #primary -->
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+
+	<?php get_footer(); ?>

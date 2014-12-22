@@ -123,7 +123,7 @@ function _s_custom_excerpt( $more_text = '', $stripteaser = 0, $more_file = '' )
  */
 function _s_custom_image_classes( $content ) {
 	// add classes separated by spaces
-	$classes = 'swipebox';
+	$classes = '';
 	// check for class existance
 	if ( preg_match('/<a.*? class=".*?"><img/', $content ) ) {
 		$content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content );
@@ -132,13 +132,13 @@ function _s_custom_image_classes( $content ) {
 	}
 	return $content;
 }
-add_filter( 'the_content', '_s_custom_image_classes' );
+//add_filter( 'the_content', '_s_custom_image_classes' );
 
 /**
  * Detect current template
- *//*
+ */
 function _s_show_template() {
 	global $template;
 	print_r( $template );
 }
-add_action( 'wp_head', '_s_show_template' ); */
+//add_action( 'wp_head', '_s_show_template' );

@@ -7,38 +7,40 @@
 
 get_header(); ?>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
+	<div id="content" class="site-content<?php if ( get_field( 'custom_heading' ) ): echo ' no-top-padding'; endif; ?>">
 
-				<div id="primary" class="content-area">
-					<main id="main" class="site-main" role="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
 
-						<?php while ( have_posts() ) : the_post(); ?>
+					<div id="primary" class="content-area">
+						<main id="main" class="site-main" role="main">
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-								<header class="entry-header">
-									<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-								</header><!-- .entry-header -->
+							<?php while ( have_posts() ) : the_post(); ?>
 
-								<div class="entry-content">
-									<?php the_content(); ?>
-									<?php
-										wp_link_pages( array(
-											'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
-											'after'  => '</div>',
-										) );
-									?>
-								</div><!-- .entry-content -->
-							</article><!-- #post-## -->
+								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+									<header class="entry-header">
+										<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+									</header><!-- .entry-header -->
 
-						<?php endwhile; // end of the loop. ?>
+									<div class="entry-content">
+										<?php the_content(); ?>
+										<?php
+											wp_link_pages( array(
+												'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+												'after'  => '</div>',
+											) );
+										?>
+									</div><!-- .entry-content -->
+								</article><!-- #post-## -->
 
-					</main><!-- #main -->
-				</div><!-- #primary -->
+							<?php endwhile; // end of the loop. ?>
 
-			</div><!-- .col-sm-12 -->
-		</div><!-- .row -->
-	</div><!-- .container -->
+						</main><!-- #main -->
+					</div><!-- #primary -->
 
-<?php get_footer(); ?>
+				</div><!-- .col-sm-12 -->
+			</div><!-- .row -->
+		</div><!-- .container -->
+
+	<?php get_footer(); ?>

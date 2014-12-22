@@ -12,7 +12,6 @@ module.exports = function(grunt) {
       ]
     },
     sass: {
-      // http://goo.gl/K45kWw
       options: {
         // https://github.com/sass/node-sass/issues/337
         //sourceComments: 'map',
@@ -29,8 +28,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'assets/sass/bootstrap/*.scss',
-          'assets/sass/*.scss',
+          'assets/sass/**/*.scss'
         ],
         tasks: ['sass']
       },
@@ -41,14 +39,13 @@ module.exports = function(grunt) {
         tasks: ['jshint']
       },
       livereload: {
-        // http://goo.gl/TTGV6E
         options: {
           livereload: true
         },
         files: [
           'assets/css/*.css',
           'page-templates/*.php',
-          'templates/*.php',
+          'partials/**/*.php',
           '*.php',
         ]
       }

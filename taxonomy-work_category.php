@@ -9,60 +9,62 @@
 
 get_header(); ?>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
+	<div id="content" class="site-content">
 
-				<section id="primary" class="content-area">
-					<main id="main" class="site-main" role="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
 
-					<?php if ( have_posts() ) : ?>
+					<section id="primary" class="content-area">
+						<main id="main" class="site-main" role="main">
 
-						<header class="entry-header">
-							<h1 class="entry-title">Taxonomy</h1>
-						</header><!-- .entry-header -->
+						<?php if ( have_posts() ) : ?>
 
-						<div class="entry-content">
-							<div class="row">
-								<?php /* Start the Loop */ ?>
-								<?php while ( have_posts() ) : the_post(); ?>
-									<div class="col-sm-4">
-										<div class="work-image">
-											<?php /* Image */
-											if ( has_post_thumbnail() ) { ?>
-												<a href="<?php the_permalink(); ?>">
-													<?php the_post_thumbnail( 'medium' ); ?>
-												</a>
-											<?php } ?>
+							<header class="entry-header">
+								<h1 class="entry-title">Taxonomy</h1>
+							</header><!-- .entry-header -->
 
-											<!-- Title -->
-											<h4><?php the_title(); ?></h4>
+							<div class="entry-content">
+								<div class="row">
+									<?php /* Start the Loop */ ?>
+									<?php while ( have_posts() ) : the_post(); ?>
+										<div class="col-sm-4">
+											<div class="work-image">
+												<?php /* Image */
+												if ( has_post_thumbnail() ) { ?>
+													<a href="<?php the_permalink(); ?>">
+														<?php the_post_thumbnail( 'medium' ); ?>
+													</a>
+												<?php } ?>
 
-											<?php /* Categories */
-											if ( !empty( get_the_terms( $post->ID, 'work_category' ) ) ) { ?>
-												<div class="cats">
-													<?php // set up term list w/separators
-													$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );
-													echo $terms; ?>
-												</div>
-											<?php } ?>
+												<!-- Title -->
+												<h4><?php the_title(); ?></h4>
+
+												<?php /* Categories */
+												if ( !empty( get_the_terms( $post->ID, 'work_category' ) ) ) { ?>
+													<div class="cats">
+														<?php // set up term list w/separators
+														$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );
+														echo $terms; ?>
+													</div>
+												<?php } ?>
+											</div>
 										</div>
-									</div>
-								<?php endwhile; ?>
-							</div>
-						</div><!-- .entry-content -->
+									<?php endwhile; ?>
+								</div>
+							</div><!-- .entry-content -->
 
-					<?php else : ?>
+						<?php else : ?>
 
-						<?php get_template_part( 'partials/content', 'none' ); ?>
+							<?php get_template_part( 'partials/content', 'none' ); ?>
 
-					<?php endif; ?>
+						<?php endif; ?>
 
-					</main><!-- #main -->
-				</section><!-- #primary -->
+						</main><!-- #main -->
+					</section><!-- #primary -->
 
-			</div><!-- .col-sm-12 -->
-		</div><!-- .row -->
-	</div><!-- .container -->
+				</div><!-- .col-sm-12 -->
+			</div><!-- .row -->
+		</div><!-- .container -->
 
-<?php get_footer(); ?>
+	<?php get_footer(); ?>
