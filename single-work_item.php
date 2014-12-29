@@ -51,8 +51,7 @@ get_header(); ?>
 							$feat_lg = _s_thumb_img_url( 'full' );
 							$feat_sm = _s_thumb_img_url( 'large' ); ?>
 
-							<a class="work-thumb-large swipebox" href="<?php echo $feat_lg; ?>" alt="<?php echo $feat_alt; ?>" style="background-image: url('<?php echo $feat_sm; ?>');">
-							</a>
+							<a class="work-thumb-large swipebox" href="<?php echo $feat_lg; ?>" alt="<?php echo $feat_alt; ?>" style="background-image: url('<?php echo $feat_sm; ?>');"></a>
 						<?php } ?>
 
 						<?php /* More Images */
@@ -67,13 +66,19 @@ get_header(); ?>
 									$img_sm = $misc_img['sizes']['medium']; ?>
 
 									<div class="col-sm-4">
-										<a class="work-thumb swipebox" href="<?php echo $img_lg; ?>" alt="<?php echo $img_alt; ?>" style="background-image: url('<?php echo $img_sm; ?>');">
-										</a>
+										<a class="work-thumb swipebox" href="<?php echo $img_lg; ?>" alt="<?php echo $img_alt; ?>" style="background-image: url('<?php echo $img_sm; ?>');"></a>
 									</div>
 								<?php endwhile; ?>
 							</div>
 						<?php } ?>
 					</div>
+
+				<?php /* Item Link */
+					if ( get_field( 'item_link' ) ) { ?>
+						<div class="item-link">
+							<a class="button color-button text-small" href="<?php the_field( 'item_link' ); ?>" target="_blank">View the website</a>
+						</div>
+					<?php } ?>
 
 					<?php _s_post_nav( 'Prev item', 'Next item' ); ?>
 

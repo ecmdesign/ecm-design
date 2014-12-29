@@ -769,7 +769,6 @@ Work Single
 .single-work_item {
 }
 .work-images {
-	margin-bottom: 1.5em;
 	.work-thumb {
 		margin-bottom: 30px;
 	}
@@ -789,6 +788,10 @@ Work Single
 	padding: 0.5em 0;
 	border-top: 1px dotted $border-light;
 	border-bottom: 1px dotted $border-light;
+}
+.item-link {
+	text-align: center;
+	margin-bottom: 30px;
 }
 .share-area {
 	margin-bottom: 2.0em;

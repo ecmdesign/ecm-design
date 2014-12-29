@@ -28,8 +28,7 @@
 						<?php /* Image */
 						$work_img = _s_thumb_img_url( 'medium' ); ?>
 
-						<a class="work-thumb" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $work_img; ?>');">
-						</a>
+						<a class="work-thumb" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $work_img; ?>');"></a>
 
 						<?php // reset postdata
 						wp_reset_postdata(); ?>

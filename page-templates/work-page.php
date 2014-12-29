@@ -62,12 +62,9 @@ get_header(); ?>
 															</div>
 														<?php } ?>
 
-														<?php /* Item Link */
-														if ( get_field( 'item_link' ) ) { ?>
-															<a href="<?php get_field( 'item_link' ); ?>" target="_blank">View the website</a>
-														<?php } else { ?>
-															<a href="<?php the_permalink(); ?>">View this item</a>
-														<?php } ?>
+														<?php /* Item Link */ ?>
+														<a href="<?php the_permalink(); ?>">View this item</a>
+
 													</div>
 												<?php endwhile; ?>
 											</div><!--.row -->

@@ -74,13 +74,7 @@ function my_theme_register_required_plugins() {
 			'slug'				=> 'force-regenerate-thumbnails',
 			'required'			=> true,
 			'force_activation'	=> true,
-		),
-		array(
-			'name'				=> 'Resize Image After Upload',
-			'slug'				=> 'resize-image-after-upload',
-			'required'			=> true,
-			'force_activation'	=> false,
-		),
+		)
 	);
 	$plugins_remote = array(
 		array(
@@ -94,6 +88,12 @@ function my_theme_register_required_plugins() {
 			'slug'				=> 'bruteprotect',
 			'required'			=> true,
 			'force_activation'	=> true,
+		),
+		array(
+			'name'				=> 'Imsanity',
+			'slug'				=> 'imsanity',
+			'required'			=> true,
+			'force_activation'	=> false,
 		),
 	);
 	/* if on remote server, merge local and remote plugin arrays */
