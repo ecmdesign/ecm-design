@@ -90,8 +90,8 @@ function my_theme_register_required_plugins() {
 			'force_activation'	=> true,
 		),
 		array(
-			'name'				=> 'Imsanity',
-			'slug'				=> 'imsanity',
+			'name'				=> 'Resize Image After Upload',
+			'slug'				=> 'resize-image-after-upload',
 			'required'			=> true,
 			'force_activation'	=> false,
 		),

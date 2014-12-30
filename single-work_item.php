@@ -48,8 +48,8 @@ get_header(); ?>
 						if ( has_post_thumbnail() ) {
 							// set up thumnail sizes
 							$feat_alt = _s_thumb_alt_text();
-							$feat_lg = _s_thumb_img_url( 'full' );
-							$feat_sm = _s_thumb_img_url( 'large' ); ?>
+							$feat_lg = _s_feat_img_url( 'full' );
+							$feat_sm = _s_feat_img_url( 'large' ); ?>
 
 							<a class="work-thumb-large swipebox" href="<?php echo $feat_lg; ?>" alt="<?php echo $feat_alt; ?>" style="background-image: url('<?php echo $feat_sm; ?>');"></a>
 						<?php } ?>

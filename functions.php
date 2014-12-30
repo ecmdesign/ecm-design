@@ -151,12 +151,6 @@ function _s_enqueue_scripts() {
 	wp_enqueue_script( '_s-bootstrap' );
 	wp_enqueue_script( '_s-modernizr' );
 
-	/* About Page */
-	if ( is_page_template( 'page-templates/about-page.php' ) ) {
-		wp_enqueue_style( '_s-glide' );
-		wp_enqueue_script( '_s-glide' );
-	}
-
 	/* Home Page */
 	if ( is_front_page() ) {
 		wp_enqueue_style( '_s-glide' );

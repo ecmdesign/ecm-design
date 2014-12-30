@@ -12,7 +12,7 @@ get_header(); ?>
 		<?php /* Headline */
 		if ( get_field( 'custom_heading' ) ) {
 			// set up hero background
-			$bg_image = _s_thumb_img_url( 'large' ); ?>
+			$bg_image = _s_feat_img_url( 'large' ); ?>
 			<div class="text-hero<?php if ( !empty( $bg_image ) ): echo ' has_bg contrast'; endif; ?>" style="background-image: url('<?php echo $bg_image; ?>');">
 				<h1 class="xl-heading"><?php the_field( 'custom_heading' ); ?></h1>
 			</div>

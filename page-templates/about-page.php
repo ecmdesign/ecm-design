@@ -47,22 +47,10 @@ get_header(); ?>
 			</div><!-- .row -->
 		</div><!-- .container -->
 
-		<?php /* Gallery */
-		if ( have_rows( 'image_gallery' ) ) { ?>
-			<div class="slider about-slider">
-				<ul class="slider__wrapper">
-					<?php // loop through slider images
-					while( have_rows( 'image_gallery' ) ): the_row(); ?>
-						<li class="slider__item">
-							<?php // get the image
-							$image = get_sub_field( 'image' );
-							$img_url = $image['sizes']['gallery-image'];
-							$img_alt = $image['alt']; ?>
-
-							<img src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
-						</li>
-					<?php endwhile; ?>
-				</ul>
+		<?php /* Feat Image */
+		if ( has_post_thumbnail() ) {
+			$feat_img = _s_feat_img_url( 'full' ); ?>
+			<div class="feat-img-area" style="background-image: url('<?php echo $feat_img; ?>');">
 			</div>
 		<?php } ?>
 
@@ -134,19 +122,5 @@ get_header(); ?>
 				</div><!-- .container -->
 			</div>
 		<?php } ?>
-
-		<script>
-		jQuery(window).ready(function($){
-			$('.slider').glide({
-				autoplay: 7000,
-				hoverpause: true,
-				arrows: true,
-				arrowRightText: '',
-				arrowLeftText: '',
-				navigation: true,
-				keyboard: true
-			});
-		});
-		</script>
 
 	<?php get_footer(); ?>

@@ -12,31 +12,6 @@ if(function_exists("register_field_group"))
 		'title' => 'About Fields',
 		'fields' => array (
 			array (
-				'key' => 'field_5480b4419f1fa',
-				'label' => 'Image Gallery',
-				'name' => 'image_gallery',
-				'type' => 'repeater',
-				'instructions' => 'Add images to the gallery by clicking "Add Row" below.',
-				'sub_fields' => array (
-					array (
-						'key' => 'field_5480b49d9f1fb',
-						'label' => 'Image',
-						'name' => 'image',
-						'type' => 'image',
-						'instructions' => 'Upload an image here.',
-						'required' => 1,
-						'column_width' => '',
-						'save_format' => 'object',
-						'preview_size' => 'thumbnail',
-						'library' => 'all',
-					),
-				),
-				'row_min' => 2,
-				'row_limit' => '',
-				'layout' => 'row',
-				'button_label' => 'Add Row',
-			),
-			array (
 				'key' => 'field_54875daac9140',
 				'label' => 'Services Intro',
 				'name' => 'services_intro',

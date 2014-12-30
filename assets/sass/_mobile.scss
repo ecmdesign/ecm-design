@@ -193,6 +193,15 @@ Global
 	margin-top: 0 !important;
 }
 
+/* Image Areas */
+.feat-img-area {
+	width: 100%;
+	height: 300px;
+	background-size: cover;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+
 /* Admin bar */
 .ab-top-menu {
 	#wp-admin-bar-search {
@@ -767,6 +776,9 @@ Work Page
 Work Single
 --------------------------------------------------------------*/
 .single-work_item {
+	article {
+		margin-bottom: 1.0em;
+	}
 }
 .work-images {
 	.work-thumb {
