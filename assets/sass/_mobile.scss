@@ -3,61 +3,6 @@
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-Header
---------------------------------------------------------------*/
-.site-header {
-	position: relative;
-	z-index: 999;
-	text-align: center;
-	padding: 1.75em 0 1.5em;
-	border-bottom: 1px solid lighten($border-light, 5%);
-	span {
-		color: $link-color;
-	}
-	.site-logo {
-		@extend %site-logo;
-	}
-}
-%site-logo {
-	display: block;
-	margin: 0 auto;
-	width: 131px;
-	height: 43px;
-	opacity: 0.75;
-	&:hover {
-		opacity: 1.0;
-		@include animated;
-	}
-}
-.site-branding,
-.main-navigation {
-	display: block;
-}
-.site-branding {
-	margin: 0 0 2.0em;
-}
-
-/* Navigation */
-.main-navigation {
-	text-align: center;
-	li {
-		display: inline;
-		padding: 0 0.475em;
-	}
-	a {
-		display: inline-block;
-		text-transform: uppercase;
-		font-size: 14px;
-		font-size: 1.4rem;
-	}
-}
-
-/* Contact Info */
-.header-contact {
-	display: none;
-}
-
-/*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
 /* Utility */
@@ -112,18 +57,22 @@ Global
 }
 
 /* Text */
+.text-center {
+	text-align: center;
+}
 .text-small {
-	@include text_small;
+	font-size: 14px;
+	font-size: 1.4rem;
 }
 .text-smaller {
-	@include text_smaller;
+	font-size: 12px;
+	font-size: 1.2rem;
+}
+.text-light {
+	font-weight: 300;
 }
 
 /* Headlines */
-.headline {
-	text-align: center;
-	font-family: $heading-font;
-}
 .fancy-headline {
 	font-size: 22px;
 	font-size: 2.2rem;
@@ -161,6 +110,9 @@ Global
 			position: relative;
 			z-index: 9999;
 		}
+		h1 {
+			text-shadow: 3px 3px 6px #333;
+		}
 		&.contrast {
 			color: white;
 			.cats, .cats a {
@@ -184,8 +136,14 @@ Global
 		font-weight: 300;
 	}
 }
+.accent-heading {
+	margin: 0 0 1.0em;
+	color: $accent-color;
+	text-transform: uppercase;
+	font-weight: 700;
+}
 
-/* Margins & padding */
+/* Margins/Padding */
 .no-top-padding {
 	padding-top: 0 !important;
 }
@@ -202,11 +160,66 @@ Global
 	background-repeat: no-repeat;
 }
 
-/* Admin bar */
+/* Admin Bar */
 .ab-top-menu {
 	#wp-admin-bar-search {
 		display: none !important;
 	}
+}
+
+/*--------------------------------------------------------------
+Header
+--------------------------------------------------------------*/
+.site-header {
+	position: relative;
+	z-index: 999;
+	text-align: center;
+	padding: 1.75em 0 1.5em;
+	border-bottom: 1px solid $border-color;
+	span {
+		color: $link-color;
+	}
+	.site-logo {
+		@extend %site-logo;
+	}
+}
+%site-logo {
+	display: block;
+	margin: 0 auto;
+	width: 131px;
+	height: 43px;
+	opacity: 0.75;
+	&:hover {
+		opacity: 1.0;
+		@include animated;
+	}
+}
+.site-branding,
+.main-navigation {
+	display: block;
+}
+.site-branding {
+	margin: 0 0 2.0em;
+}
+
+/* Navigation */
+.main-navigation {
+	text-align: center;
+	li {
+		display: inline;
+		padding: 0 0.475em;
+	}
+	a {
+		display: inline-block;
+		text-transform: uppercase;
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+}
+
+/* Contact Info */
+.header-contact {
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -230,7 +243,7 @@ Content
 }
 
 .entry-content {
-	p {
+	p, li {
 		@include antialiased;
 	}
 }
@@ -263,7 +276,7 @@ Blog
 			font-weight: normal;
 		}
 		textarea {
-			border: 1px solid $border-dark;
+			border: 1px solid $border-color;
 			padding: 0.25em 0.5em;
 			width: 100%;
 			max-height: 150px;
@@ -297,7 +310,7 @@ Blog
 .entry-content {
 	.wp-caption {
 		max-width: 100%;
-		background-color: lighten($border-light, 5%);
+		background-color: $border-color;
 		margin-bottom: 1.5em;
 	}
 	.wp-caption-text {
@@ -379,7 +392,6 @@ Home Page
 		margin: 0 0 0.75em;
 		font-size: 44px;
 		font-size: 4.4rem;
-		font-family: $heading-font;
 	}
 	p {
 		font-size: 20px;
@@ -442,13 +454,13 @@ Home Page
 }
 .feat-work-item {
 	.cats {
-		color: darken($border-light, 15%);
+		color: darken($border-color, 15%);
 		font-weight: 300;
 		a {
-			color: darken($border-light, 15%);
+			color: darken($border-color, 15%);
 			border-bottom: 1px dotted transparent;
 			&:hover {
-				border-color: darken($border-light, 15%);
+				border-color: darken($border-color, 15%);
 				@include animated;
 			}
 		}
@@ -518,7 +530,6 @@ Home Page
 %contact-section {
 	text-align: center;
 	h2 {
-		font-family: $heading-font;
 		margin-bottom: 0.375em;
 	}
 	p {
@@ -548,53 +559,6 @@ About Page
 		margin-top: 0;
 		p {
 			line-height: 1.75em;
-		}
-	}
-}
-/* Slider */
-.about-slider {
-	ul {
-		padding: 0;
-		list-style-type: none;
-	}
-	img {
-		display: block;
-		width: 100%;
-	}
-}
-.slider__arrows {
-	display: none;
-	a {
-		color: white;
-		opacity: 0.75;
-		font-size: 48px;
-		font-size: 4.8rem;
-		line-height: 1.0;
-		margin-bottom: -1.0em;
-		&.slider__arrows-item--left:before {
-			content: '\e806';
-		}
-		&.slider__arrows-item--right:before {
-			content: '\e807';
-		}
-		&:before {
-			font-family: 'fontello';
-		}
-		&:hover {
-			opacity: 1.0;
-			@include animated;
-		}
-	}
-}
-.slider__nav {
-	a {
-		border: 1px solid white;
-		background-color: transparent;
-		height: 0.75em;
-		width: 0.75em;
-		border-radius: 50%;
-		&.slider__nav-item--current {
-			background-color: white;
 		}
 	}
 }
@@ -713,16 +677,20 @@ Contact Page
 .map-search {
 	position: relative;
 	::-webkit-input-placeholder {
-	    color: $border-dark;
+	    color: $placeholder-text;
+	    @include antialiased;
 	}
 	:-moz-placeholder {
-	   color: $border-dark;
+	   color: $placeholder-text;
+	   @include antialiased;
 	}
 	::-moz-placeholder {
-	   color: $border-dark;
+	   color: $placeholder-text;
+	   @include antialiased;
 	}
 	:-ms-input-placeholder {
-	   color: $border-dark;
+	   color: $placeholder-text;
+	   @include antialiased;
 	}
 	input[type="text"] {
 		border: 1px solid $border-dark;
@@ -776,69 +744,35 @@ Work Page
 Work Single
 --------------------------------------------------------------*/
 .single-work_item {
-	article {
-		margin-bottom: 1.0em;
+	.entry-content {
+		margin-top: 0;
+	}
+	.work-image {
+		margin-bottom: 1.5em;
+	}
+	h4 {
+		font-size: 16px;
+		font-size: 1.6rem;
 	}
 }
-.work-images {
-	.work-thumb {
-		margin-bottom: 30px;
+.fancy-header {
+	padding: 0.75em 0;
+	border-top: 1px dotted darken($border-color, 5%);
+	border-bottom: 1px dotted darken($border-color, 5%);
+	margin: 2.5em 0;
+	h2 {
+		font-weight: 300;
+		margin-bottom: 0;
 	}
 }
-.work-thumb-large {
-	@extend %work-thumb;
-}
-.work-thumb-new {
-	img {
-		display: block;
-		max-width: 75%;
-		margin: 0 auto;
-		margin-bottom: 30px;
-	}
-}
-.post-navigation {
-	padding: 0.5em 0;
-	border-top: 1px dotted $border-light;
-	border-bottom: 1px dotted $border-light;
-}
-.item-link {
-	text-align: center;
-	margin-bottom: 30px;
-}
-.share-area {
-	margin-bottom: 2.0em;
-	text-align: center;
-	@include antialiased;
-	span, a {
-		display: inline-block;
-		line-height: 1.0;
-		vertical-align: middle;
-	}
-	span {
-		color: lighten($body-light, 10%);
-	}
-	a {
-		font-size: 32px;
-		font-size: 3.2rem;
-		width: 1.125em;
-		&.facebook {
-			color: $facebook;
-			&:hover {
-				color: darken($facebook, 5%);
-			}
-		}
-		&.twitter {
-			color: $twitter;
-			&:hover {
-				color: darken($twitter, 5%);
-			}
-		}
-		&.pinterest {
-			color: $pinterest;
-			&:hover {
-				color: darken($pinterest, 5%);
-			}
-		}
+.work-cats {
+	list-style-type: none;
+	padding-left: 0;
+	margin-bottom: 1.5em;
+	li:before {
+		padding-right: 0.25em;
+		content: '\2022';
+		color: $link-color;
 	}
 }
 
@@ -881,7 +815,7 @@ Footer
 		display: block;
 	}
 	.link-small {
-		color: $border-dark !important;
+		color: $border-color !important;
 	}
 }
 .info-block {
@@ -892,7 +826,7 @@ Footer
 		font-size: 14px;
 		font-size: 1.4rem;
 		text-transform: uppercase;
-		color: $border-dark;
+		color: $border-color;
 	}
 	ul {
 		padding-left: 0;
@@ -911,7 +845,7 @@ Footer
 		content: '';
 		width: 100px;
 		height: 1px;
-		background-color: darken($border-dark, 5%);
+		background-color: darken($border-color, 5%);
 	}
 }
 .footer-icons {

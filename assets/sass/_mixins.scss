@@ -6,14 +6,14 @@
 Variables
 --------------------------------------------------------------*/
 /* Fonts */
-$sans-serif: 'Roboto', sans-serif;
+$sans-serif: 'Open Sans', sans-serif;
 $sans-alt: 'Lato', sans-serif;
 $serif: Georgia, Palatino, serif;
 
 /* Colors */
 $blue: #80A1B6;
 $brown: #9A857A;
-$charcoal: #404040;
+$charcoal: #505050;
 $gray-light: #E3E3E3;
 
 /*--------------------------------------------------------------
@@ -28,12 +28,13 @@ $heading-font: $sans-alt;
 $accent-color: darken($brown, 5%);
 $body-color: $charcoal;
 $body-light: lighten($body-color, 25%);
-$border-light: $gray-light;
-$border-dark: darken($border-light, 5%);
+$border-color: lighten($gray-light, 5%);
+$border-dark: darken($border-color, 5%);
 $link-color: $blue;
 $nav-bg: darken($link-color, 10%);
 $pill-color: lighten($body-light, 20%);
-$section-bg: lighten($border-light, 9%);
+$placeholder-text: darken($border-dark, 12.5%);
+$section-bg: lighten($border-color, 4%);
 
 /* Social */
 $gplus: #D4452A;

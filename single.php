@@ -7,34 +7,38 @@
 
 get_header(); ?>
 
-	<div class="container">
-		<div class="row">
+	<div id="content" class="site-content">
 
-			<div class="col-sm-10">
-				<div id="primary" class="content-area">
-					<main id="main" class="site-main" role="main">
+		<div class="container">
+			<div class="row">
 
-					<?php while ( have_posts() ) : the_post(); ?>
+				<div class="col-sm-10">
+					<div id="primary" class="content-area">
+						<main id="main" class="site-main" role="main">
 
-						<?php get_template_part( 'partials/content', 'single' ); ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php _s_post_nav(); ?>
+							<?php get_template_part( 'partials/content', 'single' ); ?>
 
-						<?php
-							// If comments are open or we have at least one comment, load up the comment template
-							if ( comments_open() || '0' != get_comments_number() ) :
-								comments_template();
-							endif;
-						?>
+							<?php _s_post_nav(); ?>
 
-					<?php endwhile; // end of the loop. ?>
+							<?php
+								// If comments are open or we have at least one comment, load up the comment template
+								if ( comments_open() || '0' != get_comments_number() ) :
+									comments_template();
+								endif;
+							?>
 
-					</main><!-- #main -->
-				</div><!-- #primary -->
-			</div>
+						<?php endwhile; // end of the loop. ?>
 
-		</div><!-- .row -->
-	</div><!-- .container -->
+						</main><!-- #main -->
+					</div><!-- #primary -->
+				</div>
+
+			</div><!-- .row -->
+		</div><!-- .container -->
+
+	</div>
 
 	<script>
 	jQuery(window).ready(function($){

@@ -23,7 +23,7 @@
 <meta name="msapplication-TileImage" content="<?php bloginfo( 'template_directory' ); ?>/assets/img/icons/favicon-144.png">
 
 <!-- Web fonts -->
-<link href='//fonts.googleapis.com/css?family=Lato:400,700|Roboto:400,500,300,400italic,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Open+Sans:400italic,300,600,400' rel='stylesheet' type='text/css'>
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

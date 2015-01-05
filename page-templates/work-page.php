@@ -40,33 +40,9 @@ get_header(); ?>
 										if ( $the_query->have_posts() ) { ?>
 											<div class="row">
 												<?php // loop through posts
-												while( $the_query->have_posts() ): $the_query->the_post(); ?>
-													<div class="col-sm-4 work-image">
-														<?php /* Image */
-														if ( has_post_thumbnail() ) { ?>
-															<a href="<?php the_permalink(); ?>">
-																<?php the_post_thumbnail( 'medium' ); ?>
-															</a>
-														<?php } ?>
-
-														<!-- Title -->
-														<h4><?php the_title(); ?></h4>
-
-														<?php /* Categories */
-														$cats = get_the_terms( $post->ID, 'work_category' );
-														if ( !empty( $cats ) ) { ?>
-															<div class="cats">
-																<?php // set up term list w/separators
-																$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );
-																echo $terms; ?>
-															</div>
-														<?php } ?>
-
-														<?php /* Item Link */ ?>
-														<a href="<?php the_permalink(); ?>">View this item</a>
-
-													</div>
-												<?php endwhile; ?>
+												while( $the_query->have_posts() ): $the_query->the_post();
+													get_template_part( 'partials/work', 'image' );
+												endwhile; ?>
 											</div><!--.row -->
 										<?php }
 										wp_reset_postdata(); ?>

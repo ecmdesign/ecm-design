@@ -10,7 +10,7 @@
 	<?php /* Headline */
 	if ( get_field( 'services_headline' ) ) {
 		$headline = get_field( 'services_headline' ); ?>
-		<h2 class="headline fancy-headline"><?php echo $headline; ?></h2>
+		<h2 class="fancy-headline text-center"><?php echo $headline; ?></h2>
 	<?php } ?>
 
 	<?php /* Services */

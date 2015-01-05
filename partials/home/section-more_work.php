@@ -10,7 +10,7 @@
 	<?php /* Headline */
 	if ( get_field( 'more_work_headline' ) ) {
 		$headline = get_field( 'more_work_headline' ); ?>
-		<h2 class="headline fancy-headline"><?php echo $headline; ?></h2>
+		<h2 class="fancy-headline text-center"><?php echo $headline; ?></h2>
 	<?php } ?>
 
 	<?php /* Work Items */
