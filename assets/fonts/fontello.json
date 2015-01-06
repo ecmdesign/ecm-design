@@ -49,6 +49,12 @@
       ]
     },
     {
+      "uid": "2cfb3f2b46b34a1790aec0aa846297b6",
+      "css": "menu",
+      "code": 59393,
+      "src": "entypo"
+    },
+    {
       "uid": "884cfc3e6e2d456dd2a2ca0dbb9e6337",
       "css": "left-open-big",
       "code": 59398,
@@ -79,45 +85,15 @@
       "src": "entypo"
     },
     {
-      "uid": "ce1d525f3f31024c6a6b38f5e9a88953",
-      "css": "facebook-circled",
-      "code": 59396,
-      "src": "entypo"
-    },
-    {
       "uid": "b945f4ac2439565661e8e4878e35d379",
       "css": "gplus",
       "code": 59405,
       "src": "entypo"
     },
     {
-      "uid": "818a6c2a76c89800632c0335e9cdafee",
-      "css": "gplus-circled",
-      "code": 59406,
-      "src": "entypo"
-    },
-    {
-      "uid": "689febe699d74bc8862965555503e445",
-      "css": "pinterest",
-      "code": 59402,
-      "src": "entypo"
-    },
-    {
-      "uid": "2e9c0fdd4d59598cb122801ab80222e7",
-      "css": "pinterest-circled",
-      "code": 59400,
-      "src": "entypo"
-    },
-    {
       "uid": "7132e1233bc16cd1b6efe7e29d3613a5",
       "css": "linkedin",
       "code": 59392,
-      "src": "entypo"
-    },
-    {
-      "uid": "21adad41ffebf469b2370d26bcb8a3c4",
-      "css": "linkedin-circled",
-      "code": 59393,
       "src": "entypo"
     },
     {

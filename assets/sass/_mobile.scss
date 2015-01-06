@@ -186,8 +186,8 @@ Header
 %site-logo {
 	display: block;
 	margin: 0 auto;
-	width: 131px;
-	height: 43px;
+	max-width: 100px;
+	height: auto;
 	opacity: 0.75;
 	&:hover {
 		opacity: 1.0;
@@ -197,13 +197,12 @@ Header
 .site-branding,
 .main-navigation {
 	display: block;
-}
-.site-branding {
-	margin: 0 0 2.0em;
+	float: left;
 }
 
 /* Navigation */
 .main-navigation {
+	float: right;
 	text-align: center;
 	li {
 		display: inline;
@@ -215,6 +214,15 @@ Header
 		font-size: 14px;
 		font-size: 1.4rem;
 	}
+}
+.menu-toggle {
+	color: $link-color;
+	border: none;
+	padding: 0;
+	font-size: 28px;
+	font-size: 2.8rem;
+	line-height: 1.0;
+	vertical-align: middle;
 }
 
 /* Contact Info */
@@ -750,10 +758,6 @@ Work Single
 	.work-image {
 		margin-bottom: 1.5em;
 	}
-	h4 {
-		font-size: 16px;
-		font-size: 1.6rem;
-	}
 }
 .fancy-header {
 	padding: 0.75em 0;
@@ -810,12 +814,12 @@ Footer
 		&:hover {
 			color: darken(white, 10%);
 		}
+		&.link-small {
+			color: $border-dark;
+		}
 	}
 	.site-logo {
 		display: block;
-	}
-	.link-small {
-		color: $border-color !important;
 	}
 }
 .info-block {
@@ -826,7 +830,7 @@ Footer
 		font-size: 14px;
 		font-size: 1.4rem;
 		text-transform: uppercase;
-		color: $border-color;
+		color: $border-dark;
 	}
 	ul {
 		padding-left: 0;
@@ -845,7 +849,7 @@ Footer
 		content: '';
 		width: 100px;
 		height: 1px;
-		background-color: darken($border-color, 5%);
+		background-color: darken($border-dark, 10%);
 	}
 }
 .footer-icons {

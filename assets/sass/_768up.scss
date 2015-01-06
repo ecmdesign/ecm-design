@@ -8,9 +8,8 @@ Header
 .site-header {
 	padding: 1.25em 0;
 }
-.site-branding,
-.main-navigation {
-	float: left;
+%site-logo {
+	max-width: 131px;
 }
 .site-branding {
 	margin-right: 3.0em;
@@ -42,26 +41,6 @@ Header
 	a {
 		font-size: 16px;
 		font-size: 1.6rem;
-	}
-}
-
-/* Contact Info */
-.header-contact {
-	display: block;
-	.contact-icons {
-		float: right;
-	}
-	.contact-text {
-		display: none;
-	}
-}
-.contact-icons {
-	.icon-phone,
-	.icon-email {
-		font-size: 24px;
-		font-size: 2.4rem;
-		line-height: 1.0;
-		@include antialiased;
 	}
 }
 

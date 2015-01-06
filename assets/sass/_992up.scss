@@ -13,11 +13,32 @@ Header
 
 /* Navigation */
 .main-navigation {
+	float: left;
 	li {
 		padding-right: 1.0em;
 		&:after {
 			padding-left: 1.0em;
 		}
+	}
+}
+
+/* Contact Info */
+.header-contact {
+	display: block;
+	.contact-icons {
+		float: right;
+	}
+	.contact-text {
+		display: none;
+	}
+}
+.contact-icons {
+	.icon-phone,
+	.icon-email {
+		font-size: 24px;
+		font-size: 2.4rem;
+		line-height: 1.0;
+		@include antialiased;
 	}
 }
 

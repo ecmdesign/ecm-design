@@ -27,7 +27,7 @@ get_header(); ?>
 
 						<div class="row">
 							<div class="col-md-4 col-md-push-8">
-								<div class="entry-content text-small">
+								<div class="entry-content">
 									<h4 class="accent-heading">Overview</h4>
 									<?php the_content(); ?>
 

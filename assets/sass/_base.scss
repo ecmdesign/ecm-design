@@ -121,12 +121,14 @@ Menus
 	left: 100%;
 }
 
-/* Small menu *//*
+/* Small menu */
 .menu-toggle {
 	display: none;
 }
 @media screen and (max-width: 767px) {
-	.menu-toggle,
+	.menu-toggle {
+		display: inline-block;
+	}
 	.main-navigation.toggled .nav-menu {
 		display: block;
 	}
@@ -134,7 +136,7 @@ Menus
 	.main-navigation ul {
 		display: none;
 	}
-}*/
+}
 
 .site-main .comment-navigation,
 .site-main .paging-navigation,
