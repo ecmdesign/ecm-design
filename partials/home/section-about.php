@@ -9,7 +9,7 @@
 <div class="section about-section">
 	<div class="container">
 		<div class="row">
-			<div class="col-sm-offset-1 col-sm-10">
+			<div class="col-md-offset-2 col-md-8">
 				<div class="about-area">
 					<?php /* Headline */
 					if ( get_field( 'about_headline' ) ) { ?>

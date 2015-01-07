@@ -108,7 +108,7 @@ Global
 		}
 		h1, .cats {
 			position: relative;
-			z-index: 9999;
+			z-index: 300;
 		}
 		h1 {
 			text-shadow: 3px 3px 6px #333;
@@ -172,10 +172,11 @@ Header
 --------------------------------------------------------------*/
 .site-header {
 	position: relative;
-	z-index: 999;
-	text-align: center;
 	padding: 1.75em 0 1.5em;
+	text-align: center;
+	background-color: white;
 	border-bottom: 1px solid $border-color;
+	z-index: 500;
 	span {
 		color: $link-color;
 	}
@@ -350,7 +351,7 @@ Home Page
 	// prevent hero image overlap
 	&:nth-child(2) {
 		position: relative;
-		z-index: 99999;
+		z-index: 400;
 	}
 }
 
@@ -432,7 +433,7 @@ Home Page
 /* Services */
 .services-section {
 	text-align: center;
-	z-index: 999;
+	z-index: 200;
 }
 .service {
 	p {
@@ -728,22 +729,60 @@ Contact Page
 /*--------------------------------------------------------------
 Work Page
 --------------------------------------------------------------*/
-.work-page {
-}
 .work-image {
 	margin-bottom: 2.5em;
+
+}
+.work {
+	position: relative;
+	overflow: hidden;
+	margin-bottom: 30px;
+	&:before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		transition: all 0.25s ease-in-out;
+	}
 	img {
 		@include image_lighten;
 	}
-	h4 {
-		font-weight: 500;
-		margin: 0.75em 0 0.25em;
+}
+
+.work-detail {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 30px;
+	text-align: center;
+	transition: all 0.25s ease-in-out;
+	&:before {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		margin-right: -10px;
+		vertical-align: middle;
+		width: 10px;
 	}
-	.cats {
-		@include text_small;
-		font-weight: 300;
-		a {
-			color: $body-color;
+	.content {
+		display: inline-block;
+		text-align: left;
+		vertical-align: middle;
+		width: 100%;
+		h4 {
+			font-weight: 500;
+			margin: 0.75em 0 0.25em;
+		}
+		.cats {
+			@include text_small;
+			font-weight: 300;
+			a {
+				color: $body-color;
+			}
 		}
 	}
 }

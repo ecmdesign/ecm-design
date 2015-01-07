@@ -28,7 +28,29 @@
 						<?php /* Image */
 						$work_img = _s_feat_img_url( 'medium' ); ?>
 
-						<a class="work-thumb" href="<?php the_permalink(); ?>" style="background-image: url('<?php echo $work_img; ?>');"></a>
+						<a href="<?php the_permalink(); ?>">
+							<article class="work">
+								<header class="work-detail">
+									<div class="content">
+										<!-- Title -->
+										<h4><?php the_title(); ?></h4>
+
+										<?php /* Categories */
+										$cats = get_the_terms( $post->ID, 'work_category' );
+										if ( !empty( $cats ) ) { ?>
+											<div class="cats">
+												<?php // set up term list w/separators
+												$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );
+												echo $terms; ?>
+											</div>
+										<?php } ?>
+									</div>
+								</header>
+
+								<!-- Image -->
+								<img src="<?php echo $work_img; ?>" />
+							</article>
+						</a>
 
 						<?php // reset postdata
 						wp_reset_postdata(); ?>
