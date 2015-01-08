@@ -360,6 +360,53 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
+		'id' => 'acf_work-page-fields',
+		'title' => 'Work Page Fields',
+		'fields' => array (
+			array (
+				'key' => 'field_54aef6b50ec8f',
+				'label' => 'Work Items',
+				'name' => 'work_items',
+				'type' => 'relationship',
+				'instructions' => 'Select the work items to appear on the work page.',
+				'required' => 1,
+				'return_format' => 'object',
+				'post_type' => array (
+					0 => 'work_item',
+				),
+				'taxonomy' => array (
+					0 => 'all',
+				),
+				'filters' => array (
+					0 => 'search',
+				),
+				'result_elements' => array (
+					0 => 'featured_image',
+					1 => 'post_title',
+				),
+				'max' => 18,
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/work-page.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
 		'id' => 'acf_hero-section',
 		'title' => 'Hero Section',
 		'fields' => array (
