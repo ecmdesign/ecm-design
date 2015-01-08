@@ -9,7 +9,7 @@
 <?php /* Image */
 if ( has_post_thumbnail() ) { ?>
 	<div class="col-sm-4">
-		<a href="<?php the_permalink(); ?>">
+		<a href="<?php the_permalink(); ?>" class="work">
 			<article class="work">
 				<header class="work-detail">
 					<div class="content">

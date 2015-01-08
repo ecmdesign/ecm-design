@@ -30,6 +30,14 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<script>
+/* BackgroundCheck */
+BackgroundCheck.init({
+	targets: '.work-detail',
+	images: '.work img'
+});
+</script>
+
 <?php wp_footer(); ?>
 
 </body>

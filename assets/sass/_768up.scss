@@ -141,18 +141,31 @@ About Page
 /*--------------------------------------------------------------
 Work Page
 --------------------------------------------------------------*/
-.work-page {
-}
-.work-image {
+.work {
+	&:hover {
+		.work-detail {
+			opacity: 1.0;
+			@include screen_effect(0, 0, 0, 0.4);
+		}
+	}
 	&:nth-of-type(3n+4) {
 		clear: left;
+	}
+}
+.work-detail {
+	opacity: 0;
+	.content {
+		h4 {
+			font-size: 18px;
+			font-size: 1.8rem;
+		}
+		.cats {
+			font-size: 12px;
+			font-size: 1.2rem;
+		}
 	}
 }
 
 /*--------------------------------------------------------------
 Work Single
 --------------------------------------------------------------*/
-.work-thumb-large {
-	height: 405px;
-	margin-bottom: 30px;
-}

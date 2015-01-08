@@ -97,15 +97,7 @@ Global
 	background-size: cover;
 	background-position: 50% 50%;
 	&.has_bg {
-		&:before {
-			content: '';
-			display: block;
-			position: absolute;
-			top: 0; left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: rgba(255, 255, 255, 0.8);
-		}
+		@include screen_effect(255, 255, 255, 0.8);
 		h1, .cats {
 			position: relative;
 			z-index: 300;
@@ -115,11 +107,9 @@ Global
 		}
 		&.contrast {
 			color: white;
+			@include screen_effect(0, 0, 0, 0.6);
 			.cats, .cats a {
 				color: #AAA;
-			}
-			&:before {
-				background-color: rgba(0, 0, 0, 0.6);
 			}
 		}
 	}
@@ -362,23 +352,13 @@ Home Page
 	background-color: darken($section-bg, 15%);
 	background-repeat: no-repeat;
 	background-size: cover;
+	@include screen_effect(255, 255, 255, 0.8);
 	.section {
 		background-color: transparent;
 	}
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0; left: 0;
-		width: 100%;
-		height: 100%;
-		background-color: rgba(255, 255, 255, 0.8);
-		z-index: 1;
-	}
 	&.contrast {
 		color: white;
-		&:after {
-			background-color: rgba(0, 0, 0, 0.6);
-		}
+		@include screen_effect(0, 0, 0, 0.6);
 		.button {
 			background-color: white;
 			color: $link-color;
@@ -731,58 +711,44 @@ Work Page
 --------------------------------------------------------------*/
 .work-image {
 	margin-bottom: 2.5em;
-
 }
 .work {
 	position: relative;
 	overflow: hidden;
 	margin-bottom: 30px;
-	&:before {
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		z-index: 1;
-		transition: all 0.25s ease-in-out;
-	}
-	img {
-		@include image_lighten;
+	&:hover {
+		cursor: pointer;
 	}
 }
-
 .work-detail {
 	position: absolute;
 	top: 0;
-	right: 0;
-	bottom: 0;
 	left: 0;
-	padding: 30px;
-	text-align: center;
+	width: 100%;
+	height: 100%;
 	transition: all 0.25s ease-in-out;
-	&:before {
-		content: "";
-		display: inline-block;
-		height: 100%;
-		margin-right: -10px;
-		vertical-align: middle;
-		width: 10px;
-	}
+	@include screen_effect(0, 0, 0, 0.4);
 	.content {
-		display: inline-block;
-		text-align: left;
-		vertical-align: middle;
-		width: 100%;
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		bottom: 20px;
+		left: 20px;
+		margin-top: -1.5em;
 		h4 {
+			font-family: $body-font;
 			font-weight: 500;
-			margin: 0.75em 0 0.25em;
+			font-size: 28px;
+			font-size: 2.8rem;
+			color: white;
+			margin: 0 0 0.375em;
 		}
 		.cats {
 			@include text_small;
 			font-weight: 300;
-			a {
-				color: $body-color;
-			}
+		}
+		.cats, .cats a {
+			color: darken($border-dark, 15%);
 		}
 	}
 }
@@ -817,6 +783,9 @@ Work Single
 		content: '\2022';
 		color: $link-color;
 	}
+}
+.item-info {
+	margin-bottom: 2.0em;
 }
 
 /*--------------------------------------------------------------
