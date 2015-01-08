@@ -9,7 +9,7 @@
 <?php /* Image */
 if ( has_post_thumbnail() ) { ?>
 	<div class="col-sm-4">
-		<a href="<?php the_permalink(); ?>" class="work">
+		<a href="<?php the_permalink(); ?>">
 			<article class="work">
 				<header class="work-detail">
 					<div class="content">
@@ -20,9 +20,17 @@ if ( has_post_thumbnail() ) { ?>
 						$cats = get_the_terms( $post->ID, 'work_category' );
 						if ( !empty( $cats ) ) { ?>
 							<div class="cats">
-								<?php // set up term list w/separators
-								$terms = get_the_term_list( $post->ID, 'work_category', '', ' / ', '' );
-								echo $terms; ?>
+								<?php // loop through cats, but set counter first because
+									  // we're going to output the last item in a different manner.
+								$counter = 0;
+								foreach ( $cats as $cat ) {
+									$counter++;
+									if ( $counter < count($cats) ) {
+										echo $cat->name . ' / ';
+									} else {
+										echo $cat->name;
+									}
+								} ?>
 							</div>
 						<?php } ?>
 					</div>
