@@ -21,8 +21,21 @@ get_header(); ?>
 							<h1 class="entry-title xl-heading">Work</h1>
 						</header><!-- .entry-header -->
 
-						<header class="fancy-header">
+						<header class="sub-header bordered">
 							<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+
+							<!-- Navigation -->
+							<div class="work-nav work-nav_top">
+								<?php next_post_link( '<div class="work-next">%link</div>', '<span>%title</span>', '', '' ); ?>
+								<div class="work-home">
+									<?php // create link to work page
+									$work = get_page_by_path( 'work' );
+									$work_link = get_permalink( $work->ID ); ?>
+
+									<a href="<?php echo $work_link; ?>"></a>
+								</div>
+								<?php previous_post_link( '<div class="work-prev">%link</div>', '<span>%title</span>', '', '' ); ?>
+							</div>
 						</header><!-- .entry-header -->
 
 						<div class="row">
@@ -70,6 +83,20 @@ get_header(); ?>
 								<?php } ?>
 							</div>
 						</div><!-- .row -->
+
+						<!-- Navigation -->
+						<div class="work-nav work-nav_bottom">
+							<?php next_post_link( '<div class="work-next">%link</div>', '<span>%title</span>', '', '' ); ?>
+							<div class="work-home">
+								<?php // create link to work page
+								$work = get_page_by_path( 'work' );
+								$work_link = get_permalink( $work->ID ); ?>
+
+								<a href="<?php echo $work_link; ?>"></a>
+							</div>
+							<?php previous_post_link( '<div class="work-prev">%link</div>', '<span>%title</span>', '', '' ); ?>
+						</div>
+
 					</article><!-- #post-## -->
 
 				<?php endwhile; // end of the loop. ?>

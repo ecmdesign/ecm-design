@@ -7,6 +7,7 @@ Header
 --------------------------------------------------------------*/
 /* Contact Info */
 .header-contact {
+	margin-top: 0.625em;
 	.contact-icons {
 		display: none;
 	}
@@ -36,21 +37,9 @@ Home Page
 	}
 }
 
-/* More Work */
-.work-thumb {
-	height: 300px;
-}
-
 /* Testimonials */
 .tst-text {
 	padding: 0 10%;
-}
-
-/*--------------------------------------------------------------
-Work Single
---------------------------------------------------------------*/
-.work-thumb-large {
-	height: 640px;
 }
 
 /*--------------------------------------------------------------

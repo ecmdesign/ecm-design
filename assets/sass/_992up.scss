@@ -24,6 +24,7 @@ Header
 
 /* Contact Info */
 .header-contact {
+	float: right;
 	display: block;
 	.contact-icons {
 		float: right;
@@ -35,8 +36,10 @@ Header
 .contact-icons {
 	.icon-phone,
 	.icon-email {
-		font-size: 24px;
-		font-size: 2.4rem;
+		display: block;
+		float: left;
+		font-size: 28px;
+		font-size: 2.8rem;
 		line-height: 1.0;
 		@include antialiased;
 	}
@@ -75,11 +78,6 @@ Home Page
 	}
 }
 
-/* More Work */
-.work-thumb {
-	height: 250px;
-}
-
 /*--------------------------------------------------------------
 Work Page
 --------------------------------------------------------------*/
@@ -98,8 +96,23 @@ Work Page
 /*--------------------------------------------------------------
 Work Single
 --------------------------------------------------------------*/
-.work-thumb-large {
-	height: 528px;
+.single-work_item {
+	.entry-content {
+		margin-top: 0;
+	}
+	.work-image {
+		margin-bottom: 1.5em;
+	}
+}
+.sub-header {
+	overflow: hidden;
+	h2 {
+		float: left;
+	}
+}
+.work-nav_top {
+	display: block;
+	float: right;
 }
 
 /*--------------------------------------------------------------

@@ -21,6 +21,11 @@ Global
 .spacer {
 	padding: 1.5em 0;
 }
+.bordered {
+	padding: 0.75em 0;
+	border-top: 1px dotted darken($border-color, 5%);
+	border-bottom: 1px dotted darken($border-color, 5%);
+}
 
 /* Buttons */
 .button {
@@ -464,16 +469,6 @@ Home Page
 /* More Work */
 .work-section {
 }
-%work-thumb {
-	margin-bottom: 15px;
-	display: block;
-	height: 300px;
-	background-position: 50% 50%;
-	background-size: cover;
-}
-.work-thumb {
-	@extend %work-thumb;
-}
 .more-work-link {
 	display: block;
 	margin-top: 2.0em;
@@ -761,15 +756,58 @@ Work Single
 		margin-bottom: 1.5em;
 	}
 }
-.fancy-header {
-	padding: 0.75em 0;
-	border-top: 1px dotted darken($border-color, 5%);
-	border-bottom: 1px dotted darken($border-color, 5%);
+.sub-header {
 	margin: 2.5em 0;
 	h2 {
 		font-weight: 300;
 		margin-bottom: 0;
 	}
+}
+.work-nav {
+	div {
+		display: inline-block;
+	}
+	a {
+		display: block;
+		border: 1px solid $border-color;
+		text-align: center;
+		width: 50px;
+		padding: 3px 0;
+		border-radius: 3px;
+		color: $link-color;
+		&:before {
+			font-family: 'fontello';
+		}
+		&:hover {
+			background-color: $border-color;
+			@include animated;
+		}
+	}
+	span {
+		display: none;
+	}
+}
+.work-next {
+	a:before {
+		content: '\e806';
+	}
+}
+.work-home {
+	a:before {
+		content: '\e808';
+	}
+}
+.work-prev {
+	a:before {
+		content: '\e807';
+	}
+}
+.work-nav_top {
+	display: none;
+}
+.work-nav_bottom {
+	margin-top: 1.5em;
+	text-align: center;
 }
 .work-cats {
 	list-style-type: none;

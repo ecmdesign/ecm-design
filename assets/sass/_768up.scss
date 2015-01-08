@@ -16,9 +16,11 @@ Header
 	margin-bottom: 0;
 }
 
-.main-navigation,
-.header-contact {
+.main-navigation {
 	margin-top: 0.625em;
+}
+.header-contact {
+	margin-top: 0.5em;
 }
 
 /* Navigation */
@@ -99,12 +101,6 @@ Home Page
 		max-width: 375px;
 		margin-bottom: -160px;
 	}
-}
-
-/* More Work */
-.work-thumb {
-	margin-bottom: 0;
-	height: 175px;
 }
 
 /*--------------------------------------------------------------

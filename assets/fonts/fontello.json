@@ -97,15 +97,33 @@
       "src": "entypo"
     },
     {
+      "uid": "a42f298da5c64e646a5d532724cd6e15",
+      "css": "home-outline",
+      "code": 59396,
+      "src": "typicons"
+    },
+    {
       "uid": "id8wp0cygl9trzbhlbd9o0fygiesi629",
       "css": "search-1",
       "code": 59401,
       "src": "modernpics"
     },
     {
+      "uid": "5eb43711f62fb4dcbef10d0224c28065",
+      "css": "th-thumb-empty",
+      "code": 59402,
+      "src": "mfglabs"
+    },
+    {
       "uid": "7cb7e246fd23672429db603c0077dc79",
       "css": "mail-circled",
       "code": 59403,
+      "src": "elusive"
+    },
+    {
+      "uid": "76f961b11f65300838a5a78856aca30f",
+      "css": "th-large",
+      "code": 59400,
       "src": "elusive"
     },
     {
