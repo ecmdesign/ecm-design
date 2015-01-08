@@ -27,25 +27,22 @@ get_header(); ?>
 										<?php the_content(); ?>
 
 										<?php /* Work Items */
-										$args = array(
-											'post_type' => 'work_item',
-											'post_status' => 'publish',
-											'posts_per_page', '3',
-											'orderby' => 'date',
-											'order' => 'DESC',
-										);
-										// create new query
-										$the_query = new WP_Query( $args );
+										$posts = get_field( 'work_items' );
 
-										if ( $the_query->have_posts() ) { ?>
+										// check if items exist
+										if ( $posts ): ?>
 											<div class="row">
-												<?php // loop through posts
-												while( $the_query->have_posts() ): $the_query->the_post();
+												<?php // loop through the items
+												foreach( $posts as $post ):
+													// set up the postdata
+													setup_postdata( $post );
+													// get the work image template
 													get_template_part( 'partials/work', 'image' );
-												endwhile; ?>
-											</div><!--.row -->
-										<?php }
-										wp_reset_postdata(); ?>
+												// end the loop, reset $posts variable
+												endforeach; wp_reset_postdata(); ?>
+											</div>
+										<?php endif; ?>
+
 									</div><!-- .entry-content -->
 								</article><!-- #post-## -->
 
