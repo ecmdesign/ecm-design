@@ -27,7 +27,7 @@ get_header(); ?>
 										} ?>
 									</header><!-- .entry-header -->
 
-									<div class="entry-content<?php if ( get_field( 'custom_heading' ) ): echo ' no-top-margin'; endif; ?>">
+									<div class="entry-content">
 										<?php the_content(); ?>
 										<?php
 											wp_link_pages( array(

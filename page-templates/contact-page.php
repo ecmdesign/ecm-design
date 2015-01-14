@@ -7,16 +7,12 @@
 
 get_header(); ?>
 
-	<div id="content" class="site-content<?php if ( get_field( 'custom_heading' ) ): echo ' no-top-padding'; endif; ?>">
+	<div id="content" class="site-content">
 
 		<?php /* Headline */
 		if ( get_field( 'custom_heading' ) ) {
-			// set up hero background
-			$bg_image = _s_feat_img_url( 'large' ); ?>
-			<div class="text-hero<?php if ( !empty( $bg_image ) ): echo ' has_bg contrast'; endif; ?>" style="background-image: url('<?php echo $bg_image; ?>');">
-				<h1 class="xl-heading"><?php the_field( 'custom_heading' ); ?></h1>
-			</div>
-		<?php } ?>
+			get_template_part( 'partials/custom', 'heading' );
+		} ?>
 
 		<div class="container">
 			<div class="row">
@@ -28,11 +24,11 @@ get_header(); ?>
 							<?php while ( have_posts() ) : the_post(); ?>
 
 								<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-									<header class="entry-header<?php if ( get_field( 'custom_heading' ) ): echo ' hidden'; endif; ?>">
+									<header class="entry-header">
 										<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 									</header><!-- .entry-header -->
 
-									<div class="entry-content<?php if ( get_field( 'custom_heading' ) ): echo ' no-top-margin'; endif; ?>">
+									<div class="entry-content">
 										<?php the_content(); ?>
 
 										<div class="row contact-area">

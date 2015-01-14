@@ -135,6 +135,20 @@ function _s_custom_image_classes( $content ) {
 //add_filter( 'the_content', '_s_custom_image_classes' );
 
 /**
+ * Conditional 'hero' body class
+ */
+function _s_hero_body_class( $classes = '' ) {
+	global $post;
+	if ( get_field( 'custom_heading' ) ) {
+		$classes[] = 'has-hero';
+	} else {
+		$classes[] = 'no-hero';
+	}
+	return $classes;
+}
+add_filter( 'body_class', '_s_hero_body_class' );
+
+/**
  * Detect current template
  */
 function _s_show_template() {

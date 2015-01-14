@@ -139,9 +139,6 @@ Global
 }
 
 /* Margins/Padding */
-.no-top-padding {
-	padding-top: 0 !important;
-}
 .no-top-margin {
 	margin-top: 0 !important;
 }
@@ -156,18 +153,15 @@ Global
 }
 
 /* Admin Bar */
-.ab-top-menu {
-	#wp-admin-bar-search {
-		display: none !important;
-	}
-}
 
 /*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
 .site-header {
-	position: relative;
-	padding: 1.75em 0 1.5em;
+	position: fixed;
+	top: 0; left: 0;
+	width: 100%;
+	padding: 1.25em 0;
 	text-align: center;
 	background-color: white;
 	border-bottom: 1px solid $border-color;
@@ -212,9 +206,10 @@ Header
 	}
 }
 .menu-toggle {
+	padding: 0;
 	color: $link-color;
 	border: none;
-	padding: 0;
+	background-color: transparent;
 	font-size: 28px;
 	font-size: 2.8rem;
 	line-height: 1.0;
@@ -231,6 +226,7 @@ Content
 --------------------------------------------------------------*/
 .site-content {
 	padding: 2.5em 0;
+	margin-top: 83px;
 }
 .entry-title,
 .page-title {
@@ -249,6 +245,19 @@ Content
 .entry-content {
 	p, li {
 		@include antialiased;
+	}
+}
+
+/* Hero Stuff */
+.has-hero {
+	.site-content {
+		padding-top: 0;
+	}
+	.entry-header {
+		display: none;
+	}
+	.entry-content {
+		margin-top: 0;
 	}
 }
 
@@ -332,6 +341,7 @@ Home Page
 .home {
 	.site-content {
 		padding: 0;
+		margin-top: 0;
 	}
 }
 .section {
@@ -349,53 +359,60 @@ Home Page
 		z-index: 400;
 	}
 }
+#home-sections {
+}
 
-/* Hero */
-.hero-section {
+/* Slides */
+.slide-area {
 	position: relative;
-	text-align: center;
-	background-color: darken($section-bg, 15%);
-	background-repeat: no-repeat;
+	height: 600px;
 	background-size: cover;
-	@include screen_effect(255, 255, 255, 0.8);
-	.section {
-		background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	@include screen_effect(0, 0, 0, 0.4);
+}
+.slide-area_text {
+	position: absolute;
+	top: 50%;
+	width: 100%;
+	margin-top: -1.5em;
+	color: white;
+	text-align: right;
+	h1, h2, .button {
+		display: block;
+		float: right;
+		clear: both;
 	}
-	&.contrast {
-		color: white;
-		@include screen_effect(0, 0, 0, 0.6);
-		.button {
-			background-color: white;
-			color: $link-color;
-			font-weight: 700;
-			@include antialiased;
-			&:hover,
-			&:focus {
-				background-color: darken(white, 10%);
-				color: darken($link-color, 10%);
-			}
+	h1, h2 {
+		margin: 0 0 0.5em;
+	}
+	h1 {
+		font-size: 18px;
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		font-weight: 700;
+		letter-spacing: 1px;
+	}
+	h2 {
+		font-size: 54px;
+		font-size: 5.4rem;
+		font-weight: 300;
+		line-height: 1.0;
+		max-width: 85%;
+	}
+	.button {
+		padding: 0.375em 0.75em;
+		border-radius: 3px;
+		color: $border-color;
+		border: 1px solid $border-color;
+		&:hover {
+			background-color: $link-color;
+			border-color: $link-color;
+			color: white;
 		}
 	}
 }
-.home-area {
-	position: relative;
-	z-index: 100;
-}
-.hero-callout {
-	h1 {
-		margin: 0 0 0.75em;
-		font-size: 44px;
-		font-size: 4.4rem;
-	}
-	p {
-		font-size: 20px;
-		font-size: 2.0rem;
-		font-weight: 300;
-		line-height: 1.5;
-		margin-bottom: 1.0em;
-	}
-}
-.hero-image {
+.slide-area_more {
 	display: none;
 }
 
@@ -537,10 +554,12 @@ About Page
 --------------------------------------------------------------*/
 .about-page {
 	.site-content {
-		padding-bottom: 0;
+		padding: 2.5em 0 0;
+	}
+	.entry-header {
+		display: block;
 	}
 	.entry-content {
-		margin-top: 0;
 		p {
 			line-height: 1.75em;
 		}

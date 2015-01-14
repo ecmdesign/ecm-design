@@ -26,6 +26,7 @@ $heading-font: $sans-alt;
 
 /* Colors */
 $accent-color: darken($brown, 5%);
+$accent-dark: lighten($accent-color, 25%);
 $body-color: $charcoal;
 $body-light: lighten($body-color, 25%);
 $border-color: lighten($gray-light, 5%);

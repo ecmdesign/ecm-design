@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="content" class="site-content<?php if ( get_field( 'custom_heading' ) ): echo ' no-top-padding'; endif; ?>">
+	<div id="content" class="site-content">
 
 		<div class="container">
 			<div class="row">

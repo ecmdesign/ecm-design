@@ -1,6 +1,48 @@
 /*--------------------------------------------------------------
->>> _plugins.scss
+>>> _extras.scss
 --------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Admin Bar
+--------------------------------------------------------------*/
+.ab-top-menu {
+	#wp-admin-bar-search {
+		display: none !important;
+	}
+}
+.admin-bar {
+	.site-header {
+		top: 46px;
+	}
+	.slide-section {
+		margin-top: -46px;
+	}
+}
+@media only screen and (min-width: 783px) {
+	.admin-bar {
+		.site-header {
+			top: 32px;
+		}
+		.slide-section {
+			margin-top: -32px;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+Headroom
+--------------------------------------------------------------*/
+.headroom {
+	-webkit-transition: transform 200ms linear;
+	-moz-transition: transform 200ms linear;
+	transition: transform 200ms linear;
+}
+.headroom--pinned {
+	transform: translateY(0%);
+}
+.headroom--unpinned {
+	transform: translateY(-100%);
+}
 
 /*--------------------------------------------------------------
 Animate.css
@@ -286,20 +328,4 @@ Animate.css
 .fadeInUp {
 	-webkit-animation-name: fadeInUp;
 	animation-name: fadeInUp;
-}
-
-/*--------------------------------------------------------------
-Headroom
---------------------------------------------------------------*/
-.headroom {
-	transition: transform 200ms linear;
-	@include animated;
-}
-.headroom--pinned {
-	display: block;
-	transform: translateY(0%);
-}
-.headroom--unpinned {
-	display: none;
-	transform: translateY(-100%);
 }

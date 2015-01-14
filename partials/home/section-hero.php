@@ -6,49 +6,43 @@
  */
 ?>
 
-<?php /* Background */
-$hero_bg = get_field( 'hero_background' );
-$bg_url = $hero_bg['url']; ?>
+<?php // set up slide query
+$args = array(
+	'post_type' => 'slide',
+	'posts_per_page' => 1,
+	'post_status' => 'publish',
+	'orderby' => 'rand',
+	'order' => 'ASC',
+);
+$my_query = new WP_Query( $args );
+// check if query has posts
+if ( $my_query->have_posts() ): ?>
+	<div class="slide-section">
+		<?php // loop through slides
+		while( $my_query->have_posts() ): $my_query->the_post();
+			// set up slide background
+			$bg_img = _s_feat_img_url( 'full' ); ?>
+			<div class="slide-area" style="background-image: url('<?php echo $bg_img; ?>');">
+				<div class="slide-area_text">
+					<div class="container">
+						<!-- Title -->
+						<h1><?php the_title(); ?></h1>
 
-<!-- add 'contrast' class below to change color scheme -->
-<div class="hero-section contrast" style="background-image: url('<?php echo $bg_url; ?>');">
-	<div class="home-area container">
-		<div class="section">
-			<div class="row">
-				<?php /* Headline */
-				if ( get_field( 'hero_headline' ) && get_field( 'hero_text' ) ) { ?>
-					<div class="hero-callout">
-						<div class="col-sm-6">
-							<h1 class="heading_large">
-								<?php the_field( 'hero_headline' ); ?>
-							</h1>
+						<!-- Caption -->
+						<?php if ( get_field( 'slide_caption' ) ) { ?>
+							<h2><?php the_field( 'slide_caption' ); ?></h2>
+						<?php } ?>
 
-							<?php /* Text */
-							if ( get_field( 'hero_text' ) ) {
-								$hero_text = get_field( 'hero_text' );
-								echo wpautop( $hero_text );
-							} ?>
-
-							<?php /* Button */
-							if ( get_field( 'hero_button_text' ) && get_field( 'hero_button_url' ) ) { ?>
-								<a class="button color-button text-small" href="<?php the_field( 'hero_button_url' ); ?>">
-									<?php the_field( 'hero_button_text' ); ?>
-								</a>
-							<?php } ?>
-						</div>
+						<!-- Button -->
+						<?php if ( get_field( 'button_link' ) && get_field( 'button_text' ) ) { ?>
+							<a class="button" href="<?php the_field( 'button_link' ); ?>"><?php the_field( 'button_text' ); ?></a>
+						<?php } ?>
 					</div>
-				<?php } ?>
+				</div>
+				<div class="slide-area_more">
+					<a class="icon-down-open" href="#home-sections"></a>
+				</div>
 			</div>
-		</div><!-- .section -->
-
-		<?php /* Hero Image */
-		if ( get_field( 'hero_image' ) ) {
-			$hero_img = get_field( 'hero_image' );
-			$img_alt = $hero_img['alt'];
-			$img_url = $hero_img['url']; ?>
-			<div class="hero-image animated bounceInRight">
-				<img src="<?php echo $img_url; ?>" alt="<?php echo $img_alt; ?>" />
-			</div>
-		<?php } ?>
-	</div><!-- .home-area -->
-</div><!-- .hero-section -->
+		<?php endwhile; ?>
+	</div>
+<?php endif; wp_reset_postdata(); ?>

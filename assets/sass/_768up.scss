@@ -6,7 +6,6 @@
 Header
 --------------------------------------------------------------*/
 .site-header {
-	padding: 1.25em 0;
 }
 %site-logo {
 	max-width: 131px;
@@ -86,20 +85,39 @@ Home Page
 	padding: 56px 0;
 }
 
-/* Hero */
-.hero-section {
-	text-align: left;
+/* Slides */
+.slide-area {
+	height: 100%;
+	height: 100vh;
 }
-.hero-callout {
+.slide-area_text {
+	h1 {
+		font-size: 20px;
+		font-size: 2.0rem;
+	}
+	h2 {
+		font-size: 64px;
+		font-size: 6.4rem;
+		max-width: none;
+	}
 }
-.hero-image {
+.slide-area_more {
 	display: block;
 	position: absolute;
-	right: 0;
-	bottom: 0;
-	img {
-		max-width: 375px;
-		margin-bottom: -160px;
+	bottom: 30px;
+	width: 100%;
+	text-align: center;
+	a {
+		color: $border-dark;
+		font-size: 28px;
+		font-size: 2.8rem;
+		&:active,
+		&:focus {
+			color: white;
+		}
+		&:hover {
+			color: $link-color;
+		}
 	}
 }
 
