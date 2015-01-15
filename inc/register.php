@@ -126,7 +126,7 @@ function _s_register_slides() {
 		'has_archive'			=> false,
 		'hierarchical'			=> false,
 		'menu_position'			=> null,
-		'supports'				=> array( 'title', 'thumbnail', 'revisions' ),
+		'supports'				=> array( 'title', 'author', 'thumbnail', 'revisions' ),
 		'taxonomies'			=> array(),
 	);
 	register_post_type( 'slide', $args );

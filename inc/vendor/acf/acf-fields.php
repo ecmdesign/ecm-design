@@ -481,8 +481,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
-		'id' => 'acf_about-section',
-		'title' => 'About Section',
+		'id' => 'acf_home-about',
+		'title' => 'Home About',
 		'fields' => array (
 			array (
 				'key' => 'field_5476287d77e7e',
@@ -609,8 +609,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 2,
 	));
 	register_field_group(array (
-		'id' => 'acf_services-section',
-		'title' => 'Services Section',
+		'id' => 'acf_home-services',
+		'title' => 'Home Services',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ed23a096b',
@@ -748,8 +748,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 3,
 	));
 	register_field_group(array (
-		'id' => 'acf_work-section',
-		'title' => 'Work Section',
+		'id' => 'acf_home-work',
+		'title' => 'Home Work',
 		'fields' => array (
 			array (
 				'key' => 'field_5474edc6e97f5',
@@ -855,8 +855,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 4,
 	));
 	register_field_group(array (
-		'id' => 'acf_more-work-section',
-		'title' => 'More Work Section',
+		'id' => 'acf_home-more-work',
+		'title' => 'Home More Work',
 		'fields' => array (
 			array (
 				'key' => 'field_5487282da9c73',
@@ -972,15 +972,15 @@ if(function_exists("register_field_group"))
 		),
 		'options' => array (
 			'position' => 'normal',
-			'layout' => 'no_box',
+			'layout' => 'default',
 			'hide_on_screen' => array (
 			),
 		),
 		'menu_order' => 5,
 	));
 	register_field_group(array (
-		'id' => 'acf_testimonials-section',
-		'title' => 'Testimonials Section',
+		'id' => 'acf_home-testimonials',
+		'title' => 'Home Testimonials',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ed4a0f2c9',
@@ -1103,8 +1103,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 6,
 	));
 	register_field_group(array (
-		'id' => 'acf_clients-section',
-		'title' => 'Clients Section',
+		'id' => 'acf_home-clients',
+		'title' => 'Home Clients',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ed6065b02',
@@ -1197,8 +1197,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 7,
 	));
 	register_field_group(array (
-		'id' => 'acf_contact-section',
-		'title' => 'Contact Section',
+		'id' => 'acf_home-contact',
+		'title' => 'Home Contact',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ee1948f51',

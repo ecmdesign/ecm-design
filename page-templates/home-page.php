@@ -67,7 +67,7 @@ get_header(); ?>
 				var target = this.hash;
 				var $target = $(target);
 				$('html, body').stop().animate({
-					'scrollTop': $target.offset().top - 83
+					'scrollTop': $target.offset().top
 				}, 750, 'swing' );
 			});
 		});
