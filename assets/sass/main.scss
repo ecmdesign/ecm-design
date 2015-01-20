@@ -11,9 +11,13 @@ Bootstrap
 Base
 --------------------------------------------------------------*/
 @import "_mixins";
-@import "_fonts";
 @import "_base";
-@import "_extras";
+
+/*--------------------------------------------------------------
+Utility
+--------------------------------------------------------------*/
+@import "_fonts";
+@import "_utility";
 
 /*--------------------------------------------------------------
 Media Queries
@@ -32,4 +36,11 @@ Media Queries
 }
 @media only screen and (min-width: 1200px) {
 	@import "_1200up";
+}
+
+/* Retina */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+       only screen and (min--moz-device-pixel-ratio: 1.5),
+       only screen and (min-device-pixel-ratio: 1.5) {
+	@import "_retina";
 }

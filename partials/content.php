@@ -13,7 +13,7 @@
 		<?php /* Feat Image */
 		if ( has_post_thumbnail() ) { ?>
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( array( 125, 125 ), array( 'class' => 'alignleft' ) ); ?>
+				<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
 			</a>
 		<?php } ?>
 

@@ -3,6 +3,27 @@
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
+Utility
+--------------------------------------------------------------*/
+.full-height_desktop {
+	position: relative;
+	height: 100%;
+}
+.text-hero {
+	padding: 3.5em 1.5em 4.5em;
+}
+.text-hero,
+.entry-header {
+	.xl-heading {
+		font-size: 64px;
+		font-size: 6.4rem;
+	}
+}
+.feat-img-area {
+	height: 375px;
+}
+
+/*--------------------------------------------------------------
 Header
 --------------------------------------------------------------*/
 .site-header {
@@ -38,37 +59,15 @@ Header
 				display: none;
 			}
 		}
+		// prevent dropdown menu
+		ul {
+			display: none;
+		}
 	}
 	a {
 		font-size: 16px;
 		font-size: 1.6rem;
 	}
-}
-
-/*--------------------------------------------------------------
-Global
---------------------------------------------------------------*/
-/* Utility */
-.full-height_desktop {
-	position: relative;
-	height: 100%;
-}
-
-/* Headlines */
-.text-hero {
-	padding: 3.5em 1.5em 4.5em;
-}
-.text-hero,
-.entry-header {
-	.xl-heading {
-		font-size: 64px;
-		font-size: 6.4rem;
-	}
-}
-
-/* Image Areas */
-.feat-img-area {
-	height: 375px;
 }
 
 /*--------------------------------------------------------------
@@ -81,6 +80,9 @@ Content
 /*--------------------------------------------------------------
 Home Page
 --------------------------------------------------------------*/
+.site-content {
+	margin-top: 83px;
+}
 .section {
 	padding: 56px 0;
 }

@@ -5,151 +5,12 @@
 /*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
-/* Utility */
-.full-height {
-	position: relative;
-	height: 100%;
+body {
+	background: #333 url('../img/bg.png') repeat left top;
 }
-.accent-bar:before {
-	display: block;
-	margin: 0.875em 0 1.0em;
-	content: '\2605\2605\2605';
-	text-align: center;
-	font-size: 1.125em;
-	@include antialiased;
+.site {
+	background-color: white;
 }
-.spacer {
-	padding: 1.5em 0;
-}
-.bordered {
-	padding: 0.75em 0;
-	border-top: 1px dotted darken($border-color, 5%);
-	border-bottom: 1px dotted darken($border-color, 5%);
-}
-
-/* Buttons */
-.button {
-	display: inline-block;
-}
-.pill {
-	padding: 0.75em 2.0em;
-	color: $pill-color;
-	text-transform: uppercase;
-	border: 2px solid $pill-color;
-	border-radius: 500px;
-	letter-spacing: 1px;
-	&:hover,
-	&:focus {
-		border-color: $link-color;
-		color: $link-color;
-	}
-}
- %color-button {
-	background-color: $accent-color;
-	color: white;
-	padding: 0.75em 1.25em;
-	border-radius: 5px;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	&:hover,
-	&:focus {
-		background-color: $link-color;
-		color: white;
-	}
-}
-.color-button {
-	@extend %color-button;
-}
-
-/* Text */
-.text-center {
-	text-align: center;
-}
-.text-small {
-	font-size: 14px;
-	font-size: 1.4rem;
-}
-.text-smaller {
-	font-size: 12px;
-	font-size: 1.2rem;
-}
-.text-light {
-	font-weight: 300;
-}
-
-/* Headlines */
-.fancy-headline {
-	font-size: 22px;
-	font-size: 2.2rem;
-	margin: 0 0 2.0em;
-	text-transform: uppercase;
-	&:after {
-		content: "";
-		display: block;
-		height: 3px;
-		width: 30px;
-		margin: 0.25em auto 0;
-		background-color: $link-color;
-	}
-}
-.text-hero {
-	position: relative;
-	padding: 2.5em 1.5em 3.5em;
-	margin-bottom: 2.75em;
-	text-align: center;
-	background-color: $section-bg;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: 50% 50%;
-	&.has_bg {
-		@include screen_effect(0, 0, 0, 0.4);
-		color: white;
-		h1, .cats {
-			position: relative;
-			z-index: 300;
-		}
-		h1 {
-			@include text_shadow(#222);
-		}
-		.cats, .cats a {
-			color: #AAA;
-		}
-	}
-	.cats, .cats a {
-		color: lighten($body-color, 30%);
-		@include antialiased;
-	}
-}
-.text-hero,
-.entry-header {
-	.xl-heading {
-		font-size: 48px;
-		font-size: 4.8rem;
-		font-weight: 300;
-	}
-}
-.accent-heading {
-	margin: 0 0 1.0em;
-	color: $accent-color;
-	text-transform: uppercase;
-	font-weight: 700;
-}
-
-/* Margins/Padding */
-.no-top-margin {
-	margin-top: 0 !important;
-}
-
-/* Image Areas */
-.feat-img-area {
-	width: 100%;
-	height: 300px;
-	background-size: cover;
-	background-position: 50% 50%;
-	background-repeat: no-repeat;
-}
-
-/* Admin Bar */
 
 /*--------------------------------------------------------------
 Header
@@ -211,6 +72,9 @@ Header
 	font-size: 2.8rem;
 	line-height: 1.0;
 	vertical-align: middle;
+	&:focus {
+		outline: none;
+	}
 }
 
 /* Contact Info */
@@ -223,7 +87,7 @@ Content
 --------------------------------------------------------------*/
 .site-content {
 	padding: 2.5em 0;
-	margin-top: 83px;
+	margin-top: 73px;
 }
 .entry-title,
 .page-title {

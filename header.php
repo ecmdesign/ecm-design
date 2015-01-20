@@ -39,6 +39,9 @@
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', '_s' ); ?></a>
 
+	<!-- Mobile menu -->
+	<div id="mobile-menu"></div>
+
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="row">
@@ -51,7 +54,7 @@
 
 					<nav id="site-navigation" class="main-navigation" role="navigation">
 						<button class="menu-toggle icon-menu" aria-controls="menu" aria-expanded="false"></button>
-						<?php wp_nav_menu( array( 'theme_location' => 'main-nav' ) ); ?>
+						<?php wp_nav_menu( array( 'theme_location' => 'main-nav', 'container_class' => 'main-menu' ) ); ?>
 					</nav><!-- #site-navigation -->
 
 					<?php /* Contact info */
