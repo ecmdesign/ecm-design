@@ -30,6 +30,20 @@ function _s_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
+	/* Hero pages */
+	if ( get_field( 'custom_heading' ) ) {
+		$classes[] = 'has-hero';
+	} else {
+		$classes[] = 'no-hero';
+	}
+
+	/* Page Templates */
+	if ( is_page_template( 'page-templates/about-page.php' ) ):
+		$classes[] = 'about-page'; endif;
+	if ( is_page_template( 'page-templates/contact-page.php' ) ):
+		$classes[] = 'contact-page'; endif;
+	if ( is_page_template( 'page-templates/web_services-page.php' ) ):
+		$classes[] = 'web_services-page'; endif;
 
 	return $classes;
 }

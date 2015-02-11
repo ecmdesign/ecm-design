@@ -5,9 +5,6 @@
 /*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
-body {
-	background: #333 url('../img/bg.png') repeat left top;
-}
 .site {
 	background-color: white;
 }
@@ -135,6 +132,19 @@ Blog
 	.wp-post-image {
 		@include image_lighten;
 	}
+	.hentry {
+		padding-top: 2.0em;
+	}
+	.post-item {
+		&:first-of-type {
+			.hentry {
+				padding-top: 0;
+			}
+		}
+		&:nth-of-type(even) {
+			background-color: $section-bg;
+		}
+	}
 }
 .comments-area {
 	overflow: hidden;
@@ -164,15 +174,6 @@ Blog
 }
 /* Single */
 .single {
-	.xl-heading {
-		margin-bottom: 0.175em;
-	}
-	.entry-meta {
-		font-weight: 300;
-		.updated {
-			display: none; // prevents two dates
-		}
-	}
 	.entry-content {
 		margin-top: 2.0em;
 		img {
@@ -193,6 +194,17 @@ Blog
 		color: lighten($body-light, 15%);
 		line-height: 1.25;
 		font-weight: 300;
+	}
+}
+.blog, .single {
+	.xl-heading {
+		margin-bottom: 0.175em;
+	}
+	.entry-meta {
+		font-weight: 300;
+		.updated {
+			display: none; // prevents two dates
+		}
 	}
 }
 

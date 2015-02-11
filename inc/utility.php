@@ -20,14 +20,6 @@ remove_action('wp_head', 'rel_canonical', 10, 0 );
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0 );
 
 /**
- * Flush rewrite rules on theme activation
- */
-function _s_flush_rewrite_rules() {
-	flush_rewrite_rules();
-}
-add_action( 'after_switch_theme', '_s_flush_rewrite_rules' );
-
-/**
  * Google analytics setup
  */
 function _s_google_analytics() { ?>
@@ -46,23 +38,31 @@ if ( get_theme_mod( 'analytics_code' ) ) {
 }
 
 /**
- * Add page template slug body class
+ * Display template or query object
  */
-function _s_page_template_slug( $slug ) {
-	global $post;
-	if ( isset( $post ) ) {
-		$classes[] = get_page_template_slug( $post->ID );
-		// get only template name if in subfolder
-		$class_slug = ltrim( strstr( $classes[0], '/' ), '/' );
-		// remove the file extension
-		$slug[] = str_replace( '.php', '', $class_slug );
-	}
-	return $slug;
+function _s_show_template() {
+	global $template;
+	print_r( $template );
 }
-add_filter( 'body_class', '_s_page_template_slug' );
+function _s_show_query_object() {
+	$query_object = get_queried_object();
+	echo '<pre>';
+	print_r( $query_object );
+	echo '</pre>';
+}
+//add_action( 'wp_head', '_s_show_template' );
+//add_action( 'wp_head', '_s_show_query_object' );
 
 /**
- * Post Thumbnail URL function
+ * Flush rewrite rules on theme activation
+ */
+function _s_flush_rewrite_rules() {
+	flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', '_s_flush_rewrite_rules' );
+
+/**
+ * Post thumbnail URL function
  */
 function _s_feat_img_url( $size ) {
 	// hat tip: http://goo.gl/fzHOaB
@@ -73,9 +73,9 @@ function _s_feat_img_url( $size ) {
 }
 
 /**
- * Post Thumbnail alt text function
+ * Post thumbnail alt text function
  */
-function _s_thumb_alt_text() {
+function _s_feat_img_alt() {
 	$img_id = get_post_thumbnail_id();
 	$img_alt = get_post_meta( $img_id, '_wp_attachment_image_alt', true );
 	return $img_alt;
@@ -98,61 +98,35 @@ function _s_phone_number( $phone ) {
 }
 
 /**
+ * Custom excerpt w/HTML tags
+ */
+// hat-tip: http://goo.gl/EMi3EN
+function _s_better_excerpt( $text ) {
+	global $post;
+	if ( '' == $text ) {
+		$allowed = '<strong><em><a><p>';
+		$link = get_permalink();
+		$text = get_the_content( '' );
+		$text = apply_filters( 'the_content', $text );
+		$text = str_replace( '\]\]\>', ']]&gt;', $text );
+		$text = strip_tags( $text, $allowed );
+		$length = 100;
+		$words = explode( ' ', $text, $length + 1 );
+		if ( count( $words ) > $length ) {
+			array_pop( $words );
+			array_push( $words, '<a href="' . $link . '">[...]</a>' );
+			$text = implode( ' ', $words );
+		}
+		return $text;
+	}
+}
+remove_filter( 'get_the_excerpt', 'wp_trim_excerpt' );
+add_filter( 'get_the_excerpt', '_s_better_excerpt' );
+
+/**
  * Format address slug for Google Maps link
  */
 function _s_map_link_slug( $address, $city_state_zip ) {
 	$map_slug = urlencode( $address ) . '+' . urlencode( $city_state_zip );
 	return $map_slug;
 }
-
-/**
- * Custom excerpt using word count
- */
-function _s_custom_excerpt( $more_text = '', $stripteaser = 0, $more_file = '' ) {
-	$content = get_the_content( $more_text, $stripteaser, $more_file );
-	$content = apply_filters( 'the_content', $content );
-	$content = strip_tags( $content, '<p>' );
-	// remove <p> tags left after stripping images
-	$content = preg_replace( '/<p>\\s*?(<a .*?><img.*?><\\/a>|<img.*?>)?\\s*<\\/p>/s', '', $content );
-	return $content;
-}
-
-
-/**
- * Add classes to image anchor tags
- */
-function _s_custom_image_classes( $content ) {
-	// add classes separated by spaces
-	$classes = '';
-	// check for class existance
-	if ( preg_match('/<a.*? class=".*?"><img/', $content ) ) {
-		$content = preg_replace('/(<a.*? class=".*?)(".*?><img)/', '$1 ' . $classes . '$2', $content );
-	} else {
-		$content = preg_replace('/(<a.*?)><img/', '$1 class="' . $classes . '" ><img', $content );
-	}
-	return $content;
-}
-//add_filter( 'the_content', '_s_custom_image_classes' );
-
-/**
- * Conditional 'hero' body class
- */
-function _s_hero_body_class( $classes = '' ) {
-	global $post;
-	if ( get_field( 'custom_heading' ) ) {
-		$classes[] = 'has-hero';
-	} else {
-		$classes[] = 'no-hero';
-	}
-	return $classes;
-}
-add_filter( 'body_class', '_s_hero_body_class' );
-
-/**
- * Detect current template
- */
-function _s_show_template() {
-	global $template;
-	print_r( $template );
-}
-//add_action( 'wp_head', '_s_show_template' );

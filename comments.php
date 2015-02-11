@@ -18,7 +18,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<?php if (comments_open()) : ?>
+<?php if ( comments_open() ): ?>
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 	    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -32,4 +32,4 @@ if ( post_password_required() ) {
 	    })();
 	</script>
 	<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<?php endif; // comments_open ?>
+<?php endif; ?>

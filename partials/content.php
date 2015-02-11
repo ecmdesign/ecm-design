@@ -7,6 +7,10 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title xl-heading"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+
+		<div class="entry-meta">
+			<?php _s_posted_on(); ?>
+		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
@@ -17,18 +21,7 @@
 			</a>
 		<?php } ?>
 
-		<?php
-			// first check if this is the blog page
-			if ( is_home() ) {
-				echo _s_custom_excerpt( $more_link_text = '[...]' );
-			} else {
-				/* translators: %s: Name of current post */
-				the_content( sprintf(
-					__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', '_s' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				) );
-			}
-		?>
+		<?php the_excerpt(); ?>
 
 		<?php
 			wp_link_pages( array(

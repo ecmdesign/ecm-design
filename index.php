@@ -14,26 +14,29 @@
 get_header(); ?>
 
 	<div id="content" class="site-content">
-
-		<div class="container">
-			<div class="row">
-
-				<div class="col-sm-10">
-					<div id="primary" class="content-area">
-						<main id="main" class="site-main" role="main">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
 
 						<?php if ( have_posts() ) : ?>
 
 							<?php /* Start the Loop */ ?>
 							<?php while ( have_posts() ) : the_post(); ?>
 
-								<?php
-									/* Include the Post-Format-specific template for the content.
-									 * If you want to override this in a child theme, then include a file
-									 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-									 */
-									get_template_part( 'partials/content', get_post_format() );
-								?>
+								<div class="post-item">
+									<div class="container">
+										<div class="row">
+											<div class="col-sm-10">
+												<?php
+													/* Include the Post-Format-specific template for the content.
+													 * If you want to override this in a child theme, then include a file
+													 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+													 */
+													get_template_part( 'partials/content', get_post_format() );
+												?>
+											</div>
+										</div><!-- .row -->
+									</div><!-- .container -->
+								</div>
 
 							<?php endwhile; ?>
 
@@ -45,11 +48,8 @@ get_header(); ?>
 
 						<?php endif; ?>
 
-						</main><!-- #main -->
-					</div><!-- #primary -->
-				</div>
-
-			</div><!-- .row -->
-		</div><!-- .container -->
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div>
 
 	<?php get_footer(); ?>
