@@ -21,22 +21,8 @@ get_header(); ?>
 							<h1 class="entry-title xl-heading">Work</h1>
 						</header><!-- .entry-header -->
 
-						<header class="sub-header bordered">
-							<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-							<!-- Navigation -->
-							<div class="work-nav work-nav_top">
-								<?php next_post_link( '<div class="work-next">%link</div>', '<span>%title</span>', '', '' ); ?>
-								<div class="work-home">
-									<?php // create link to work page
-									$work = get_page_by_path( 'work' );
-									$work_link = get_permalink( $work->ID ); ?>
-
-									<a href="<?php echo $work_link; ?>"></a>
-								</div>
-								<?php previous_post_link( '<div class="work-prev">%link</div>', '<span>%title</span>', '', '' ); ?>
-							</div>
-						</header><!-- .entry-header -->
+						<?php /* Work Nav */
+						get_template_part( 'templates/work/work', 'single_nav' ); ?>
 
 						<div class="row">
 							<div class="col-md-4 col-md-push-8">
@@ -60,7 +46,7 @@ get_header(); ?>
 											<?php /* Item Link */
 											if ( get_field( 'item_link' ) ) { ?>
 												<h4 class="accent-heading">Website</h4>
-												<a class="text-light" href="<?php the_field( 'item_link' ); ?>" target="_blank"><?php the_field( 'item_link' ); ?></a>
+												<a href="<?php the_field( 'item_link' ); ?>" target="_blank"><?php the_field( 'item_link' ); ?></a>
 											<?php } ?>
 										</div>
 								</div><!-- .entry-content -->

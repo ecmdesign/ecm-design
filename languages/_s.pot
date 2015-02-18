@@ -139,7 +139,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-page.php:25 inc/template-tags.php:122
+#: content-page.php:25 lib/template-tags.php:122
 msgid "Edit"
 msgstr ""
 
@@ -171,69 +171,69 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: inc/extras.php:63
+#: lib/extras.php:63
 msgid "Page %s"
 msgstr ""
 
-#: inc/template-tags.php:21
+#: lib/template-tags.php:21
 msgid "Posts navigation"
 msgstr ""
 
-#: inc/template-tags.php:25
+#: lib/template-tags.php:25
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr ""
 
-#: inc/template-tags.php:29
+#: lib/template-tags.php:29
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:52
+#: lib/template-tags.php:52
 msgid "Post navigation"
 msgstr ""
 
-#: inc/template-tags.php:55
+#: lib/template-tags.php:55
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
 msgstr ""
 
-#: inc/template-tags.php:56
+#: lib/template-tags.php:56
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: inc/template-tags.php:82
+#: lib/template-tags.php:82
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:87
+#: lib/template-tags.php:87
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
 
-#: inc/template-tags.php:104 inc/template-tags.php:110
+#: lib/template-tags.php:104 lib/template-tags.php:110
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:106
+#: lib/template-tags.php:106
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:112
+#: lib/template-tags.php:112
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:118
+#: lib/template-tags.php:118
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:118
+#: lib/template-tags.php:118
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:118
+#: lib/template-tags.php:118
 msgid "% Comments"
 msgstr ""
 

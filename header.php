@@ -59,18 +59,18 @@
 
 					<?php /* Contact info */
 					if ( get_theme_mod( 'phone_number' ) && get_theme_mod( 'contact_email' ) ) { ?>
-					<div class="header-contact">
+					<div class="header-contact hidden-xs hidden-sm">
 						<?php // set up phone number and email
 						$phone_raw = get_theme_mod( 'phone_number' );
 						$phone = _s_phone_number( $phone_raw );
 						$email = get_theme_mod( 'contact_email' ); ?>
 
-						<div class="contact-icons">
+						<div class="contact-icons visible-md">
 							<a class="icon-phone icon-phone-circled" href="tel:<?php echo $phone; ?>"></a>
 							<a class="icon-email icon-mail-circled" href="mailto:<?php echo $email; ?>"></a>
 						</div>
 
-						<div class="contact-text">
+						<div class="contact-text hidden-xs">
 							<span>Call: <a href="tel:<?php echo $phone; ?>"><?php echo $phone_raw; ?></a></span>
 						</div>
 					</div>

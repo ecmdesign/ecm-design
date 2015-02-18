@@ -28,14 +28,17 @@ get_header(); ?>
 								<div class="row">
 									<?php /* Start the Loop */ ?>
 									<?php while ( have_posts() ) : the_post();
-										get_template_part( 'partials/work', 'image' );
+
+										// get the work image template
+										get_template_part( 'templates/work/work', 'image' );
+
 									endwhile; ?>
 								</div>
 							</div><!-- .entry-content -->
 
 						<?php else : ?>
 
-							<?php get_template_part( 'partials/content', 'none' ); ?>
+							<?php get_template_part( 'templates/content', 'none' ); ?>
 
 						<?php endif; ?>
 

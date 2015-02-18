@@ -11,7 +11,7 @@ get_header(); ?>
 
 		<?php /* Headline */
 		if ( get_field( 'custom_heading' ) ) {
-			get_template_part( 'partials/custom', 'heading' );
+			get_template_part( 'templates/content', 'heading' );
 		} ?>
 
 		<div class="container">

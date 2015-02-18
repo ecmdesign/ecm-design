@@ -25,7 +25,6 @@ Header
 /* Contact Info */
 .header-contact {
 	float: right;
-	display: block;
 	.contact-icons {
 		float: right;
 	}
@@ -41,7 +40,6 @@ Header
 		font-size: 28px;
 		font-size: 2.8rem;
 		line-height: 1.0;
-		@include antialiased;
 	}
 }
 
@@ -82,7 +80,8 @@ Work Page
 			font-size: 2.4rem;
 		}
 		.cats {
-			@include text_small;
+			font-size: 14px;
+			font-size: 1.4rem;
 		}
 	}
 }
@@ -105,7 +104,6 @@ Work Single
 	}
 }
 .work-nav_top {
-	display: block;
 	float: right;
 }
 

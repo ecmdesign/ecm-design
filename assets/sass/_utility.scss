@@ -18,7 +18,6 @@ html {
 	content: '\2605\2605\2605';
 	text-align: center;
 	font-size: 1.125em;
-	@include antialiased;
 }
 .spacer {
 	padding: 1.5em 0;
@@ -47,6 +46,7 @@ Buttons
 	border: 2px solid $pill-color;
 	border-radius: 500px;
 	letter-spacing: 1px;
+	@include font-smoothing(off);
 	&:hover,
 	&:focus {
 		border-color: $link-color;
@@ -60,6 +60,7 @@ Buttons
 	border-radius: 5px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
+	@include font-smoothing(off);
 	&:hover,
 	&:focus {
 		background-color: $link-color;
@@ -83,9 +84,6 @@ Text
 .text-smaller {
 	font-size: 12px;
 	font-size: 1.2rem;
-}
-.text-light {
-	font-weight: 300;
 }
 
 /*--------------------------------------------------------------
@@ -130,7 +128,6 @@ Hero Sections
 	}
 	.cats, .cats a {
 		color: lighten($body-color, 30%);
-		@include antialiased;
 	}
 }
 .text-hero,
@@ -234,7 +231,6 @@ Mobile Menu
 			color: white;
 			font-size: 36px;
 			font-size: 3.6rem;
-			@include antialiased;
 			&:hover,
 			&:focus {
 				color: darken(white, 10%);

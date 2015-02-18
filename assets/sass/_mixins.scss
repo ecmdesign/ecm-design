@@ -28,7 +28,7 @@ $heading-font: $sans-alt;
 $accent-color: darken($brown, 5%);
 $accent-dark: lighten($accent-color, 25%);
 $body-color: $charcoal;
-$body-light: lighten($body-color, 25%);
+$body-light: lighten($body-color, 20%);
 $border-color: lighten($gray-light, 5%);
 $border-dark: darken($border-color, 5%);
 $link-color: $blue;
@@ -76,15 +76,15 @@ Effects
 }
 
 /* Text Effects */
-@mixin antialiased {
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-@mixin text_small {
-	font-size: 87.5%;
-}
-@mixin text_smaller {
-	font-size: 75%;
+@mixin font-smoothing($value: on) {
+	@if ($value == on) {
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+	@else {
+		-webkit-font-smoothing: subpixel-antialiased;
+		-moz-osx-font-smoothing: auto;
+	}
 }
 @mixin text_shadow($color) {
 	text-shadow: 3px 3px 5px $color;

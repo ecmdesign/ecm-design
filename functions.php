@@ -174,48 +174,48 @@ add_action( 'wp_enqueue_scripts', '_s_enqueue_scripts' );
 /**
  * Implement the Custom Header feature.
  */
-//require get_template_directory() . '/inc/custom-header.php';
+//require get_template_directory() . '/lib/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require get_template_directory() . '/lib/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require get_template_directory() . '/lib/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer/customizer.php';
-require get_template_directory() . '/inc/customizer/customizer-fields.php';
+require get_template_directory() . '/lib/customizer/customizer.php';
+require get_template_directory() . '/lib/customizer/customizer-fields.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+require get_template_directory() . '/lib/jetpack.php';
 
 /**
  * Utility functions
  */
-require get_template_directory() . '/inc/utility.php';
+require get_template_directory() . '/lib/utility.php';
 
 /**
  * Register post types and taxonomies
  */
-require get_template_directory() . '/inc/register.php';
+require get_template_directory() . '/lib/register.php';
 
 /**
  * TGM Plugin Activation
  */
-require get_template_directory() . '/inc/vendor/tgm/activation.php';
+require get_template_directory() . '/lib/vendor/tgm/activation.php';
 
 /**
  * Advanced Custom Fields
  */
 if ( !in_array( $_SERVER['REMOTE_ADDR'], array( '::1', '127.0.0.1' ) ) ) {
 	define( 'ACF_LITE' , true );
-	require get_template_directory() . '/inc/vendor/acf/acf-fields.php';
+	require get_template_directory() . '/lib/vendor/acf/acf-fields.php';
 }

@@ -11,7 +11,7 @@ get_header(); ?>
 
 		<?php /* Headline */
 		if ( get_field( 'custom_heading' ) ) {
-			get_template_part( 'partials/custom', 'heading' );
+			get_template_part( 'templates/content', 'heading' );
 		} ?>
 
 		<div class="container">
@@ -44,7 +44,7 @@ get_header(); ?>
 											<?php /* Map */
 											if ( get_field( 'google_map' ) ) { ?>
 												<div class="col-md-6">
-													<?php get_template_part( 'partials/content', 'map' ); ?>
+													<?php get_template_part( 'templates/content', 'map' ); ?>
 												</div>
 											<?php } ?>
 

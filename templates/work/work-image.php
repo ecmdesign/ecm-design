@@ -1,6 +1,6 @@
 <?php
 /**
- * The template used for displaying work item images
+ * The template used for work item images
  *
  * @package _s
  */

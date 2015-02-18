@@ -13,43 +13,65 @@
 
 get_header(); ?>
 
-	<div id="content" class="site-content">
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12">
 
-						<?php if ( have_posts() ) : ?>
+				<div id="content" class="site-content">
+					<div id="primary" class="content-area">
+						<main id="main" class="site-main" role="main">
 
-							<?php /* Start the Loop */ ?>
-							<?php while ( have_posts() ) : the_post(); ?>
+							<?php if ( have_posts() ) : ?>
+								<div class="row">
 
-								<div class="post-item">
-									<div class="container">
-										<div class="row">
-											<div class="col-sm-10">
+									<?php /* Start the Loop */ ?>
+									<?php while ( have_posts() ) : the_post(); ?>
+
+										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+											<header class="entry-header">
+												<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+
+												<div class="entry-meta">
+													<?php _s_posted_on(); ?>
+												</div><!-- .entry-meta -->
+											</header><!-- .entry-header -->
+
+											<div class="entry-content">
+												<?php /* Feat Image */
+												if ( has_post_thumbnail() ) { ?>
+													<a href="<?php the_permalink(); ?>">
+														<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
+													</a>
+												<?php } ?>
+
+												<?php the_excerpt(); ?>
+
 												<?php
-													/* Include the Post-Format-specific template for the content.
-													 * If you want to override this in a child theme, then include a file
-													 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-													 */
-													get_template_part( 'partials/content', get_post_format() );
+													wp_link_pages( array(
+														'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+														'after'  => '</div>',
+													) );
 												?>
-											</div>
-										</div><!-- .row -->
-									</div><!-- .container -->
+											</div><!-- .entry-content -->
+										</article><!-- #post-## -->
+
+									<?php endwhile; ?>
+
+									<?php _s_paging_nav(); ?>
+
 								</div>
+							<?php else : ?>
 
-							<?php endwhile; ?>
+								<?php get_template_part( 'templates/content', 'none' ); ?>
 
-							<?php _s_paging_nav(); ?>
+							<?php endif; ?>
 
-						<?php else : ?>
+						</main><!-- #main -->
+					</div><!-- #primary -->
+				</div>
 
-							<?php get_template_part( 'partials/content', 'none' ); ?>
-
-						<?php endif; ?>
-
-			</main><!-- #main -->
-		</div><!-- #primary -->
-	</div>
+			</div><!-- .col-sm-12 -->
+		</div><!-- .row -->
+	</div><!-- .container -->
 
 	<?php get_footer(); ?>

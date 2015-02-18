@@ -134,13 +134,13 @@ Home Page
 .feat-work-item {
 	.cats {
 		display: block;
-		color: darken($border-color, 15%);
+		color: darken($border-color, 30%);
 		font-weight: 300;
 		a {
-			color: darken($border-color, 15%);
+			color: darken($border-color, 30%);
 			border-bottom: 1px dotted transparent;
 			&:hover {
-				border-color: darken($border-color, 15%);
+				border-color: darken($border-color, 30%);
 				@include animated;
 			}
 		}
@@ -193,6 +193,12 @@ Work Page
 	}
 	&:nth-of-type(3n+4) {
 		clear: left;
+	}
+}
+.work-nav-cats {
+	a {
+		font-size: 16px;
+		font-size: 1.6rem;
 	}
 }
 .work-detail {

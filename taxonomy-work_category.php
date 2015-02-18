@@ -24,18 +24,24 @@ get_header(); ?>
 								<h1 class="entry-title xl-heading">Work</h1>
 							</header><!-- .entry-header -->
 
+							<?php /* Work Nav */
+							get_template_part( 'templates/work/work', 'cat_nav' ); ?>
+
 							<div class="entry-content">
 								<div class="row">
 									<?php /* Start the Loop */ ?>
 									<?php while ( have_posts() ) : the_post();
-										get_template_part( 'partials/work', 'image' );
+
+										// get the work image template
+										get_template_part( 'templates/work/work', 'image' );
+
 									endwhile; ?>
 								</div>
 							</div><!-- .entry-content -->
 
 						<?php else : ?>
 
-							<?php get_template_part( 'partials/content', 'none' ); ?>
+							<?php get_template_part( 'templates/content', 'none' ); ?>
 
 						<?php endif; ?>
 

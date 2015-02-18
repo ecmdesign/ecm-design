@@ -44,7 +44,7 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'				=> 'ACF-CF7 Field',
 			'slug'				=> 'acf-cf7-field-master',
-			'source'			=> get_stylesheet_directory() . '/inc/vendor/acf/acf-cf7-field.zip',
+			'source'			=> get_stylesheet_directory() . '/lib/vendor/acf/acf-cf7-field.zip',
 			'required'			=> false,
 			'version'			=> '1.1.2',
 			'force_activation'	=> false,
@@ -58,7 +58,7 @@ function my_theme_register_required_plugins() {
 		array(
 			'name'				=> 'Advanced Custom Fields: Repeater Field',
 			'slug'				=> 'acf-repeater',
-			'source'			=> get_stylesheet_directory() . '/inc/vendor/acf/acf-repeater.zip',
+			'source'			=> get_stylesheet_directory() . '/lib/vendor/acf/acf-repeater.zip',
 			'required'			=> true,
 			'version'			=> '1.1.1',
 			'force_activation'	=> true,

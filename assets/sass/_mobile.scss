@@ -21,6 +21,7 @@ Header
 	background-color: white;
 	border-bottom: 1px solid $border-color;
 	z-index: 500;
+	@include font-smoothing(off);
 	span {
 		color: $link-color;
 	}
@@ -74,11 +75,6 @@ Header
 	}
 }
 
-/* Contact Info */
-.header-contact {
-	display: none;
-}
-
 /*--------------------------------------------------------------
 Content
 --------------------------------------------------------------*/
@@ -100,12 +96,6 @@ Content
 	border: none;
 }
 
-.entry-content {
-	p, li {
-		@include antialiased;
-	}
-}
-
 /* Hero Stuff */
 .has-hero {
 	.site-content {
@@ -123,54 +113,7 @@ Content
 Blog
 --------------------------------------------------------------*/
 .blog {
-	.entry-title {
-		margin-bottom: 0;
-	}
-	.entry-content {
-		margin-top: 2.0em;
-	}
-	.wp-post-image {
-		@include image_lighten;
-	}
-	.hentry {
-		padding-top: 2.0em;
-	}
-	.post-item {
-		&:first-of-type {
-			.hentry {
-				padding-top: 0;
-			}
-		}
-		&:nth-of-type(even) {
-			background-color: $section-bg;
-		}
-	}
-}
-.comments-area {
-	overflow: hidden;
-	.logged-in-as {
-		font-weight: 300;
-	}
-	.comment-reply-title {
-		margin-top: 0.5em;
-	}
-	.comment-form-comment {
-		margin-bottom: 0.75em;
-		label {
-			font-weight: normal;
-		}
-		textarea {
-			border: 1px solid $border-color;
-			padding: 0.25em 0.5em;
-			width: 100%;
-			max-height: 150px;
-		}
-	}
-	.form-submit {
-		input {
-			@extend %wpcf7-submit;
-		}
-	}
+
 }
 /* Single */
 .single {
@@ -193,15 +136,11 @@ Blog
 		text-align: center;
 		color: lighten($body-light, 15%);
 		line-height: 1.25;
-		font-weight: 300;
 	}
 }
 .blog, .single {
-	.xl-heading {
-		margin-bottom: 0.175em;
-	}
 	.entry-meta {
-		font-weight: 300;
+		opacity: 0.75;
 		.updated {
 			display: none; // prevents two dates
 		}
@@ -315,9 +254,6 @@ Home Page
 }
 .service {
 	padding-bottom: 1.0em;
-	p {
-		font-weight: 300;
-	}
 	&:last-of-type {
 		padding-bottom: 0;
 	}
@@ -337,9 +273,6 @@ Home Page
 	h2 {
 		margin-bottom: 0.75em;
 		font-weight: 400;
-	}
-	p {
-		font-weight: 300;
 	}
 }
 .feat-work-item {
@@ -379,7 +312,6 @@ Home Page
 		font-family: $fancy-font;
 		font-size: 20px;
 		font-size: 2.0rem;
-		@include antialiased;
 	}
 	span {
 		display: block;
@@ -412,7 +344,6 @@ Home Page
 		font-size: 1.8rem;
 		font-style: italic;
 		font-family: $fancy-font;
-		@include antialiased;
 	}
 	.button {
 		margin-top: 1.0em;
@@ -447,7 +378,6 @@ About Page
 	text-align: center;
 	font-size: 18px;
 	font-size: 1.8rem;
-	font-weight: 300;
 }
 
 /* Item List */
@@ -464,7 +394,6 @@ About Page
 		column-gap: 15px;
 	}
 	li {
-		font-weight: 300;
 		list-style-position: inside;
 		list-style-type: circle;
 		// indent the list items
@@ -525,7 +454,8 @@ Contact Page
 }
 %wpcf7-submit {
 	@extend %color-button;
-	@include text_small;
+	font-size: 14px;
+	font-size: 1.4rem;
 	padding: 0.5em 1.0em;
 }
 
@@ -538,7 +468,9 @@ Contact Page
 		white-space: nowrap;
 		line-height: 1.35;
 	}
-	img { max-width: none; }
+	img {
+		max-width: none;
+	}
 	h3 {
 		font-size: 18px;
 		font-size: 1.8rem;
@@ -556,19 +488,15 @@ Contact Page
 	position: relative;
 	::-webkit-input-placeholder {
 	    color: $placeholder-text;
-	    @include antialiased;
 	}
 	:-moz-placeholder {
 	   color: $placeholder-text;
-	   @include antialiased;
 	}
 	::-moz-placeholder {
 	   color: $placeholder-text;
-	   @include antialiased;
 	}
 	:-ms-input-placeholder {
 	   color: $placeholder-text;
-	   @include antialiased;
 	}
 	input[type="text"] {
 		border: 1px solid $border-dark;
@@ -577,8 +505,7 @@ Contact Page
 	}
 	input[type="submit"] {
 		position: absolute;
-		top: 0;
-		right: 0;
+		top: 0; right: 0;
 		width: 67px;
 		height: 100%;
 		padding: 0.25em 0.75em;
@@ -586,8 +513,9 @@ Contact Page
 		background: $link-color url('../img/search.svg') 50% 50% no-repeat;
 		background-size: 24px 24px;
 		border: none;
+		font-size: 14px;
+		font-size: 1.4rem;
 		@include flip_horiz;
-		@include text_small;
 		&:hover {
 			background-color: darken($link-color, 10%);
 			@include animated;
@@ -606,10 +534,23 @@ Work Page
 	overflow: hidden;
 	margin-bottom: 30px;
 }
+.work-nav-cats {
+	margin: -0.25em 0 2.5em;
+	li {
+		display: inline;
+		list-style-type: none;
+		padding: 0 0.5em;
+	}
+	a {
+		display: inline-block;
+		padding: 0.25em 0;
+		font-size: 14px;
+		font-size: 1.4rem;
+	}
+}
 .work-detail {
 	position: absolute;
-	top: 0;
-	left: 0;
+	top: 0; left: 0;
 	width: 100%;
 	height: 100%;
 	transition: all 0.25s ease-in-out;
@@ -630,8 +571,8 @@ Work Page
 			margin: 0 0 0.375em;
 		}
 		.cats {
-			@include text_small;
-			font-weight: 300;
+			font-size: 14px;
+			font-size: 1.4rem;
 		}
 		.cats, .cats a {
 			color: darken($border-dark, 15%);
@@ -649,6 +590,9 @@ Work Single
 	.work-image {
 		margin-bottom: 1.5em;
 	}
+}
+.work-nav-single {
+	margin-top: -0.25em;
 }
 .sub-header {
 	margin: 2.5em 0;
@@ -696,9 +640,6 @@ Work Single
 		content: '\e807';
 	}
 }
-.work-nav_top {
-	display: none;
-}
 .work-nav_bottom {
 	margin-top: 1.5em;
 	text-align: center;
@@ -734,7 +675,7 @@ Web Services
 		margin-bottom: 1.0em;
 	}
 	p {
-		font-weight: 300;
+		color: $body-light;
 	}
 }
 
@@ -760,7 +701,6 @@ Footer
 	}
 }
 .info-block {
-	font-weight: 300;
 	margin-bottom: 2.5em;
 	h4 {
 		margin-top: 0;
@@ -813,7 +753,6 @@ Footer
 .link-small {
 	font-size: 14px;
 	font-size: 1.4rem;
-	font-weight: 300;
 	&:hover {
 		text-decoration: underline;
 	}

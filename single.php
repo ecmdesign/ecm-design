@@ -18,7 +18,7 @@ get_header(); ?>
 
 						<?php while ( have_posts() ) : the_post(); ?>
 
-							<?php get_template_part( 'partials/content', 'single' ); ?>
+							<?php get_template_part( 'templates/content', 'single' ); ?>
 
 							<?php _s_post_nav(); ?>
 
