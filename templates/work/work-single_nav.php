@@ -6,6 +6,11 @@
  */
 ?>
 
+<?php /* the prev/next links used below need to
+	  /* to be adjusted to respect the post order
+	  /* set on the work page template (selected IDs) */
+	  ?>
+
 <div class="work-nav-single">
 	<div class="sub-header bordered">
 		<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>

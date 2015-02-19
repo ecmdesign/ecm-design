@@ -3,7 +3,7 @@
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-Utility
+Global
 --------------------------------------------------------------*/
 .full-height_desktop {
 	position: relative;
@@ -172,49 +172,53 @@ About Page
 /* Item List */
 .item-list {
 	ul {
-		-webkit-column-count: 3;
-		-moz-column-count: 3;
-		column-count: 3;
-		-webkit-column-gap: 20px;
-		-moz-column-gap: 20px;
-		column-gap: 20px;
+		@include content-columns(3, 20);
 	}
 }
 
 /*--------------------------------------------------------------
 Work Page
 --------------------------------------------------------------*/
-.work {
+.work-thumb {
+	height: 220px;
+	section {
+		opacity: 0;
+	}
+	// remove fixed color screen
+	&:before {
+		opacity: 0;
+	}
+	// add color screen on hover
 	&:hover {
-		.work-detail {
-			opacity: 1.0;
-			@include screen_effect(0, 0, 0, 0.4);
+		@include screen_effect(0, 0, 0, 0.4);
+		&:before,
+		section {
+			opacity: 1;
+			// fix this transition
+			transition: all 0.25s ease-in-out;
 		}
 	}
 	&:nth-of-type(3n+4) {
 		clear: left;
 	}
 }
+.work-thumb_info {
+	h4 {
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
+	.cats {
+		font-size: 12px;
+		font-size: 1.2rem;
+	}
+}
+
+/*--------------------------------------------------------------
+Work Navigation
+--------------------------------------------------------------*/
 .work-nav-cats {
 	a {
 		font-size: 16px;
 		font-size: 1.6rem;
 	}
 }
-.work-detail {
-	opacity: 0;
-	.content {
-		h4 {
-			font-size: 18px;
-			font-size: 1.8rem;
-		}
-		.cats {
-			font-size: 12px;
-			font-size: 1.2rem;
-		}
-	}
-}
-
-/*--------------------------------------------------------------
-Work Single
---------------------------------------------------------------*/

@@ -185,8 +185,6 @@ Admin Bar
 Headroom
 --------------------------------------------------------------*/
 .headroom {
-	-webkit-transition: transform 200ms linear;
-	-moz-transition: transform 200ms linear;
 	transition: transform 200ms linear;
 }
 .headroom--pinned {

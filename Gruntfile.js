@@ -1,75 +1,82 @@
 'use strict';
 module.exports = function(grunt) {
+  // load all tasks
+  require('load-grunt-tasks')(grunt);
+  // show elapsed time
+  require('time-grunt')(grunt);
 
   grunt.initConfig({
-    jshint: {
-      options: {
-        jshintrc: '.jshintrc'
-      },
-      all: [
-        'Gruntfile.js',
-        //'assets/js/*.js',
-      ]
-    },
     sass: {
-      options: {
-        // https://github.com/sass/node-sass/issues/337
-        //sourceComments: 'map',
-        outputStyle: 'compressed'
-      },
-      dist: {
+      dev: {
+        options: {
+          outputStyle: 'nested'
+        },
         files: {
-          'assets/css/main.min.css' : [
+          'assets/css/main.css': [
+            'assets/sass/main.scss'
+          ]
+        }
+      },
+      build: {
+        options: {
+          outputStyle: 'compressed'
+        },
+        files: {
+          'assets/css/main.min.css': [
             'assets/sass/main.scss'
           ]
         }
       }
     },
+    autoprefixer: {
+      options: {
+        browsers: ['last 2 versions', 'ie 8', 'ie 9', 'android 2.3', 'android 4', 'opera 12']
+      },
+      dev: {
+        options: {
+          map: {
+            prev: 'assets/css/'
+          }
+        },
+        src: 'assets/css/main.css'
+      },
+      build: {
+        src: 'assets/css/main.min.css'
+      }
+    },
     watch: {
       sass: {
         files: [
+          'assets/sass/*.scss',
           'assets/sass/**/*.scss'
         ],
-        tasks: ['sass']
-      },
-      js: {
-        files: [
-          '<%= jshint.all %>'
-        ],
-        tasks: ['jshint']
+        tasks: ['sass:dev']
       },
       livereload: {
+        // Browser live reloading
+        // https://github.com/gruntjs/grunt-contrib-watch#live-reloading
         options: {
           livereload: true
         },
         files: [
-          'assets/css/*.css',
+          'assets/css/main.css',
           'page-templates/*.php',
-          'partials/**/*.php',
-          '*.php',
+          'templates/**/*.php',
+          '*.php'
         ]
       }
     },
-    clean: {
-      dist: [
-        'assets/css/main.min.css',
-      ]
-    }
   });
-
-  // Load tasks
-  grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-sass');
 
   // Register tasks
   grunt.registerTask('default', [
-    'clean',
-    'sass'
+    'dev'
   ]);
   grunt.registerTask('dev', [
     'watch'
   ]);
-
+  grunt.registerTask('build', [
+    'sass:build',
+    'autoprefixer:build'
+  ]);
 };

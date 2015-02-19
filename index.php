@@ -13,65 +13,69 @@
 
 get_header(); ?>
 
-	<div class="container">
-		<div class="row">
-			<div class="col-sm-12">
+	<div class="blog_content">
 
-				<div id="content" class="site-content">
-					<div id="primary" class="content-area">
-						<main id="main" class="site-main" role="main">
+		<div id="content" class="site-content">
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main" role="main">
 
-							<?php if ( have_posts() ) : ?>
-								<div class="row">
+					<?php if ( have_posts() ) : ?>
 
-									<?php /* Start the Loop */ ?>
-									<?php while ( have_posts() ) : the_post(); ?>
+						<?php /* Start the Loop */ ?>
+						<?php while ( have_posts() ) : the_post(); ?>
 
-										<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-											<header class="entry-header">
-												<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
+							<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+								<!-- Feat Image -->
+								<a href="<?php the_permalink(); ?>">
+									<?php // check for thumbnail
+									if ( has_post_thumbnail() ) {
+										the_post_thumbnail( 'blog_thumb' );
+									} else { ?>
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/img/placeholder.gif" />
+									<?php } ?>
+								</a>
 
-												<div class="entry-meta">
-													<?php _s_posted_on(); ?>
-												</div><!-- .entry-meta -->
-											</header><!-- .entry-header -->
+								<div class="article_main">
+									<header class="entry-header">
+										<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
-											<div class="entry-content">
-												<?php /* Feat Image */
-												if ( has_post_thumbnail() ) { ?>
-													<a href="<?php the_permalink(); ?>">
-														<?php the_post_thumbnail( 'thumbnail', array( 'class' => 'alignleft' ) ); ?>
-													</a>
-												<?php } ?>
+										<div class="entry-meta">
+											<?php // custom published date
+											$date = get_the_date( 'n/j/Y' );
+											echo $date; ?>
+										</div><!-- .entry-meta -->
+									</header><!-- .entry-header -->
 
-												<?php the_excerpt(); ?>
+									<div class="entry-content">
+										<?php // set up a custom excerpt
+										$content = get_the_content();
+										$content = wp_trim_words( $content, 30, '... <a href="' . get_the_permalink() . '">Read more</a>' );
+										echo wpautop( $content ); ?>
 
-												<?php
-													wp_link_pages( array(
-														'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
-														'after'  => '</div>',
-													) );
-												?>
-											</div><!-- .entry-content -->
-										</article><!-- #post-## -->
-
-									<?php endwhile; ?>
-
-									<?php _s_paging_nav(); ?>
-
+										<?php
+											wp_link_pages( array(
+												'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+												'after'  => '</div>',
+											) );
+										?>
+									</div><!-- .entry-content -->
 								</div>
-							<?php else : ?>
+							</article><!-- #post-## -->
 
-								<?php get_template_part( 'templates/content', 'none' ); ?>
+						<?php endwhile; ?>
 
-							<?php endif; ?>
+						<?php _s_paging_nav(); ?>
 
-						</main><!-- #main -->
-					</div><!-- #primary -->
-				</div>
+					<?php else : ?>
 
-			</div><!-- .col-sm-12 -->
-		</div><!-- .row -->
-	</div><!-- .container -->
+						<?php get_template_part( 'templates/content', 'none' ); ?>
+
+					<?php endif; ?>
+
+				</main><!-- #main -->
+			</div><!-- #primary -->
+		</div><!-- #content -->
+
+	</div>
 
 	<?php get_footer(); ?>

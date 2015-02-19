@@ -110,7 +110,7 @@ function _s_better_excerpt( $text ) {
 		$text = apply_filters( 'the_content', $text );
 		$text = str_replace( '\]\]\>', ']]&gt;', $text );
 		$text = strip_tags( $text, $allowed );
-		$length = 100;
+		$length = 55;
 		$words = explode( ' ', $text, $length + 1 );
 		if ( count( $words ) > $length ) {
 			array_pop( $words );

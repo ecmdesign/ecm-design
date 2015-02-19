@@ -10,9 +10,12 @@
 if ( has_post_thumbnail() ) { ?>
 	<div class="col-sm-4">
 		<a href="<?php the_permalink(); ?>">
-			<article class="work">
-				<header class="work-detail">
-					<div class="content">
+			<?php // get the featured image
+			$feat_img = _s_feat_img_url( 'medium' ); ?>
+
+			<article class="work-thumb" style="background-image: url('<?php echo $feat_img; ?>')">
+				<header class="work-thumb_info">
+					<section>
 						<!-- Title -->
 						<h4><?php the_title(); ?></h4>
 
@@ -33,11 +36,8 @@ if ( has_post_thumbnail() ) { ?>
 								} ?>
 							</div>
 						<?php } ?>
-					</div>
+					</section>
 				</header>
-
-				<?php /* Image */
-				the_post_thumbnail( 'medium' ); ?>
 			</article>
 		</a>
 	</div>

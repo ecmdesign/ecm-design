@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------
+>>> _variables.scss
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Variables
+--------------------------------------------------------------*/
+/* Fonts */
+$sans-serif: 'Open Sans', sans-serif;
+$sans-alt: 'Lato', sans-serif;
+$serif: Georgia, Palatino, serif;
+
+/* Colors */
+$blue: #80A1B6;
+$brown: #9A857A;
+$charcoal: #505050;
+$gray-light: #E3E3E3;
+
+/*--------------------------------------------------------------
+Definitions
+--------------------------------------------------------------*/
+/* Fonts */
+$body-font: $sans-serif;
+$fancy-font: $serif;
+$heading-font: $sans-alt;
+
+/* Colors */
+$accent-color: darken($brown, 5%);
+$accent-dark: lighten($accent-color, 25%);
+$body-color: $charcoal;
+$body-light: lighten($body-color, 20%);
+$border-color: lighten($gray-light, 5%);
+$border-dark: darken($border-color, 5%);
+$link-color: $blue;
+$nav-bg: darken($link-color, 10%);
+$pill-color: lighten($body-light, 20%);
+$placeholder-text: darken($border-dark, 12.5%);
+$section-bg: lighten($border-color, 4%);
+
+/* Social */
+$gplus: #D4452A;
+$facebook: #3C599B;
+$linkedin: #0077B5;
+$pinterest: #BD081C;
+$twitter: #5EA9DD;
