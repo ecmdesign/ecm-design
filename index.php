@@ -13,11 +13,11 @@
 
 get_header(); ?>
 
-	<div class="blog_content">
+	<div id="content" class="site-content">
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main" role="main">
 
-		<div id="content" class="site-content">
-			<div id="primary" class="content-area">
-				<main id="main" class="site-main" role="main">
+				<div class="blog_container">
 
 					<?php if ( have_posts() ) : ?>
 
@@ -35,14 +35,12 @@ get_header(); ?>
 									<?php } ?>
 								</a>
 
-								<div class="article_main">
+								<section>
 									<header class="entry-header">
 										<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 										<div class="entry-meta">
-											<?php // custom published date
-											$date = get_the_date( 'n/j/Y' );
-											echo $date; ?>
+											<?php echo get_the_date( 'n/j/Y' ); ?>
 										</div><!-- .entry-meta -->
 									</header><!-- .entry-header -->
 
@@ -59,7 +57,7 @@ get_header(); ?>
 											) );
 										?>
 									</div><!-- .entry-content -->
-								</div>
+								</section>
 							</article><!-- #post-## -->
 
 						<?php endwhile; ?>
@@ -72,10 +70,10 @@ get_header(); ?>
 
 					<?php endif; ?>
 
-				</main><!-- #main -->
-			</div><!-- #primary -->
-		</div><!-- #content -->
+				</div><!-- .blog_container -->
 
-	</div>
+			</main><!-- #main -->
+		</div><!-- #primary -->
+	</div><!-- #content -->
 
 	<?php get_footer(); ?>

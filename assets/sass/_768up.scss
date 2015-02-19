@@ -9,6 +9,14 @@ Global
 	position: relative;
 	height: 100%;
 }
+.feat-img-area {
+	height: 375px;
+}
+.page-title {
+	text-align: left;
+}
+
+/* Heroes */
 .text-hero {
 	padding: 3.5em 1.5em 4.5em;
 }
@@ -18,9 +26,6 @@ Global
 		font-size: 64px;
 		font-size: 6.4rem;
 	}
-}
-.feat-img-area {
-	height: 375px;
 }
 
 /*--------------------------------------------------------------
@@ -71,10 +76,19 @@ Header
 }
 
 /*--------------------------------------------------------------
-Content
+Blog
 --------------------------------------------------------------*/
-.page-title {
-	text-align: left;
+.blog, .single-post {
+	.site-content {
+		padding: 3.0em 0 2.0em;
+	}
+}
+
+/* Single */
+.single-post {
+	.entry-content {
+		margin-bottom: 2.0em;
+	}
 }
 
 /*--------------------------------------------------------------
@@ -194,8 +208,7 @@ Work Page
 		&:before,
 		section {
 			opacity: 1;
-			// fix this transition
-			transition: all 0.25s ease-in-out;
+			@include animated;
 		}
 	}
 	&:nth-of-type(3n+4) {

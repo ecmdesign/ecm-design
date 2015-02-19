@@ -5,21 +5,37 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title xl-heading">', '</h1>' ); ?>
+	<?php /* Feat Image */
+	if ( has_post_thumbnail() ) {
+		the_post_thumbnail( 'large' );
+	} ?>
 
-		<div class="entry-meta">
-			<?php _s_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+	<section>
+		<header class="entry-header">
+			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-	<div class="entry-content">
-		<?php the_content(); ?>
+			<div class="entry-meta">
+				<?php echo get_the_date( 'n/j/Y' ); ?>
+			</div><!-- .entry-meta -->
+		</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<?php the_content(); ?>
+			<?php
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
+					'after'  => '</div>',
+				) );
+			?>
+		</div><!-- .entry-content -->
+
+		<?php _s_post_nav(); ?>
+
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', '_s' ),
-				'after'  => '</div>',
-			) );
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || '0' != get_comments_number() ) :
+				comments_template();
+			endif;
 		?>
-	</div><!-- .entry-content -->
+	</section>
 </article><!-- #post-## -->

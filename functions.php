@@ -9,7 +9,7 @@
  * Set the content width based on the theme's design and stylesheet.
  */
 if ( ! isset( $content_width ) ) {
-	$content_width = 640; /* pixels */
+	$content_width = 1000; /* pixels */
 }
 
 if ( ! function_exists( '_s_setup' ) ) :
@@ -83,7 +83,8 @@ function _s_setup() {
 	update_option( 'medium_crop', 1 );
 	// large image size
 	update_option( 'large_size_w', 1140 );
-	update_option( 'large_size_h', 855 );
+	update_option( 'large_size_h', 570 );
+	update_option( 'large_crop', 1 );
 	// custom sizes
 	add_image_size( 'blog_thumb', 600, 300, true );
 	add_image_size( 'gallery-image', 1600, 900, true );

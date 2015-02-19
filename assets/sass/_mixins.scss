@@ -4,15 +4,11 @@
 
 /* Transitions */
 @mixin animated($time: .25s) {
-	transition: all $time linear;
+	transition: all $time ease-in-out;
 }
 @mixin image_lighten($opacity: 0.75) {
 	&:hover {
-		position: relative;
 		opacity: $opacity;
-		// Chrome image move fix:
-		// hat-tip: http://goo.gl/Emko4u
-		-webkit-backface-visibility: hidden;
 		@include animated;
 	}
 }
@@ -64,4 +60,10 @@
 		height: 100%;
 		background-color: rgba($r, $g, $b, $opacity);
 	}
+}
+
+/* Container */
+@mixin contained($max-width: 1170px) {
+	margin: 0 auto;
+	max-width: $max-width;
 }
