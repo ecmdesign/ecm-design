@@ -15,6 +15,7 @@ $blue: #80A1B6;
 $brown: #9A857A;
 $charcoal: #505050;
 $gray-light: #E3E3E3;
+$yellow: #FEFF99;
 
 /*--------------------------------------------------------------
 Definitions
@@ -31,6 +32,7 @@ $body-color: $charcoal;
 $body-light: lighten($body-color, 20%);
 $border-color: lighten($gray-light, 5%);
 $border-dark: darken($border-color, 5%);
+$glow-color: $yellow;
 $link-color: $blue;
 $nav-bg: darken($link-color, 10%);
 $pill-color: lighten($body-light, 20%);

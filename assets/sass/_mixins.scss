@@ -67,3 +67,25 @@
 	margin: 0 auto;
 	max-width: $max-width;
 }
+
+/* Grab Attention */
+@-webkit-keyframes grab-attention {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-15px);
+	}
+}
+@keyframes grab-attention {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-15px);
+	}
+}
+@mixin grab-attention($number: 6) {
+	-webkit-animation: grab-attention .375s ease-in-out $number alternate;
+	animation: grab-attention .375s ease-in-out $number alternate;
+}

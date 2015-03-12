@@ -2059,6 +2059,21 @@ Definitions
 /* Positioning */
 /* Effects */
 /* Container */
+/* Grab Attention */
+@-webkit-keyframes grab-attention {
+  0% {
+    transform: translateY(0); }
+
+  100% {
+    transform: translateY(-15px); } }
+
+@keyframes grab-attention {
+  0% {
+    transform: translateY(0); }
+
+  100% {
+    transform: translateY(-15px); } }
+
 /*--------------------------------------------------------------
 >>> _base.scss
 --------------------------------------------------------------*/
@@ -3397,7 +3412,9 @@ Home Page
     .slide-area_more a {
       color: #e3e3e3;
       font-size: 28px;
-      font-size: 2.8rem; }
+      font-size: 2.8rem;
+      -webkit-animation: grab-attention 0.375s ease-in-out 6 alternate;
+      animation: grab-attention 0.375s ease-in-out 6 alternate; }
       .slide-area_more a:active, .slide-area_more a:focus {
         color: white; }
       .slide-area_more a:hover {
