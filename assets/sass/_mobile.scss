@@ -62,9 +62,10 @@ Header
 	max-width: 100px;
 	height: auto;
 	opacity: 0.75;
+	@include animated(opacity, 0.25s);
 	&:hover {
 		opacity: 1.0;
-		@include animated;
+		@include animated(opacity, 0.4s);
 	}
 }
 .site-branding,

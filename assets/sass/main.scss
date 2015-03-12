@@ -26,15 +26,18 @@ Media Queries
 @media only screen {
 	@import "_mobile";
 }
+@media only screen and (min-width: 481px) {
+	@import "breakpoints/_481up";
+}
 @media only screen and (min-width: 600px) {
-	@import "_600up";
+	@import "breakpoints/_600up";
 }
 @media only screen and (min-width: 768px) {
-	@import "_768up";
+	@import "breakpoints/_768up";
 }
 @media only screen and (min-width: 992px) {
-	@import "_992up";
+	@import "breakpoints/_992up";
 }
 @media only screen and (min-width: 1200px) {
-	@import "_1200up";
+	@import "breakpoints/_1200up";
 }
