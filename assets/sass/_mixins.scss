@@ -85,7 +85,7 @@
 		transform: translateY(-15px);
 	}
 }
-@mixin grab-attention($number: 6) {
+@mixin grab-attention($number: 4) {
 	-webkit-animation: grab-attention .375s ease-in-out $number alternate;
 	animation: grab-attention .375s ease-in-out $number alternate;
 }

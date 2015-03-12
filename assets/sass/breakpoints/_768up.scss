@@ -129,7 +129,7 @@ Home Page
 		color: $border-dark;
 		font-size: 28px;
 		font-size: 2.8rem;
-		@include grab-attention(6);
+		@include grab-attention(4);
 		&:active,
 		&:focus {
 			color: white;

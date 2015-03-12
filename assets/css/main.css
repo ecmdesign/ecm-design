@@ -3449,8 +3449,8 @@ Home Page
       color: #e3e3e3;
       font-size: 28px;
       font-size: 2.8rem;
-      -webkit-animation: grab-attention 0.375s ease-in-out 6 alternate;
-      animation: grab-attention 0.375s ease-in-out 6 alternate; }
+      -webkit-animation: grab-attention 0.375s ease-in-out 4 alternate;
+      animation: grab-attention 0.375s ease-in-out 4 alternate; }
       .slide-area_more a:active, .slide-area_more a:focus {
         color: white; }
       .slide-area_more a:hover {
