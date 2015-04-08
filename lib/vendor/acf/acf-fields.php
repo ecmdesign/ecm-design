@@ -233,6 +233,44 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
+		'id' => 'acf_quiz-page-fields',
+		'title' => 'Quiz Page Fields',
+		'fields' => array (
+			array (
+				'key' => 'field_55255c8145640',
+				'label' => 'Quiz URL',
+				'name' => 'quiz_url',
+				'type' => 'text',
+				'instructions' => 'Enter the URL of your quiz created using Quizworks Quiz Maker.',
+				'required' => 1,
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/quiz-page.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
 		'id' => 'acf_slide-fields',
 		'title' => 'Slide Fields',
 		'fields' => array (
