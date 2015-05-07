@@ -3407,7 +3407,10 @@ Header
   /*--------------------------------------------------------------
 Blog
 --------------------------------------------------------------*/
-  .blog .site-content, .single-post .site-content {
+  .blog .site-content {
+    padding: 0 0 2em; }
+
+  .single-post .site-content {
     padding: 3em 0 2em; }
 
   /* Single */
@@ -3617,7 +3620,7 @@ Footer
   /*--------------------------------------------------------------
 Blog
 --------------------------------------------------------------*/
-  .blog .site-content, .single-post .site-content {
+  .single-post .site-content {
     padding-top: 4em; }
 
   .blog article {
