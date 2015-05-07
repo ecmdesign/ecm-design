@@ -4,27 +4,62 @@ module.exports = function(grunt) {
   require('load-grunt-tasks')(grunt);
   // show elapsed time
   require('time-grunt')(grunt);
+  // any vendor plugins added to list below must be
+  // prefixed with '_' to be compiled into scripts.js
+  var jsFileList = [
+    'assets/js/concat/*.js',
+    'assets/js/_*.js'
+  ];
 
   grunt.initConfig({
+    jshint: {
+      options: {
+        jshintrc: '.jshintrc'
+      },
+      all: [
+        'Gruntfile.js',
+        'assets/js/*.js',
+        '!assets/js/scripts.js',
+        '!assets/**/*.min.*'
+      ]
+    },
     sass: {
       dev: {
         options: {
-          outputStyle: 'nested'
+          outputStyle: 'expanded',
+          compass: true
         },
         files: {
           'assets/css/main.css': [
-            'assets/sass/main.scss'
+            'assets/scss/main.scss'
           ]
         }
       },
       build: {
         options: {
-          outputStyle: 'compressed'
+          outputStyle: 'compressed',
+          compass: true
         },
         files: {
           'assets/css/main.min.css': [
-            'assets/sass/main.scss'
+            'assets/scss/main.scss'
           ]
+        }
+      }
+    },
+    concat: {
+      options: {
+        separator: ';',
+      },
+      dist: {
+        src: [jsFileList],
+        dest: 'assets/js/scripts.js',
+      },
+    },
+    uglify: {
+      dist: {
+        files: {
+          'assets/js/scripts.min.js': [jsFileList]
         }
       }
     },
@@ -47,9 +82,16 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: [
-          'assets/sass/**/*.scss'
+          'assets/scss/**/*.scss'
         ],
         tasks: ['sass:dev']
+      },
+      js: {
+        files: [
+          jsFileList,
+          '<%= jshint.all %>'
+        ],
+        tasks: ['jshint', 'concat']
       },
       livereload: {
         // Browser live reloading
@@ -59,6 +101,7 @@ module.exports = function(grunt) {
         },
         files: [
           'assets/css/main.css',
+          'assets/js/scripts.js',
           'page-templates/*.php',
           'templates/**/*.php',
           '*.php'
@@ -72,10 +115,13 @@ module.exports = function(grunt) {
     'dev'
   ]);
   grunt.registerTask('dev', [
-    'watch'
+    'jshint',
+    'concat'
   ]);
   grunt.registerTask('build', [
+    'jshint',
     'sass:build',
-    'autoprefixer:build'
+    'autoprefixer:build',
+    'uglify'
   ]);
 };

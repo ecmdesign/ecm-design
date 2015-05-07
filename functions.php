@@ -118,55 +118,25 @@ function _s_widgets_init() {
 //add_action( 'widgets_init', '_s_widgets_init' );
 
 /**
- * Enqueue site styles.
- *
- * @link http://codex.wordpress.org/Function_Reference/wp_enqueue_styles
+ * Enqueue scripts and styles.
  */
-function _s_enqueue_styles() {
+function _s_enqueue_scripts() {
 	wp_enqueue_style( '_s-style', get_stylesheet_uri() );
 
 	// load compressed/uncompressed depending on environment
 	if ( WP_ENV !== 'development' ) {
 		wp_enqueue_style( '_s-main', get_template_directory_uri() . '/assets/css/main.min.css' );
+		wp_enqueue_script( '_s-main', get_template_directory_uri() . '/assets/js/scripts.min.js', array( 'jquery' ), '', false );
 	} else {
 		wp_enqueue_style( '_s-main', get_template_directory_uri() . '/assets/css/main.css' );
+		wp_enqueue_script( '_s-main', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), '', false );
 	}
 
-	/* Home Page */
-	if ( is_front_page() ) {
-		wp_enqueue_style( '_s-glide', get_template_directory_uri() . '/assets/css/glide.css', false, '' );
-	}
-	/* Work Items */
-	if ( is_singular( 'work_item' ) || is_singular( 'post' ) ) {
-		wp_enqueue_style( '_s-swipebox', get_template_directory_uri() . '/assets/css/swipebox.min.css', false, '' );
-	}
-}
-add_action( 'wp_enqueue_scripts', '_s_enqueue_styles' );
-
-/**
- * Enqueue site scripts.
- *
- * @link http://codex.wordpress.org/Function_Reference/wp_enqueue_script
- */
-function _s_enqueue_scripts() {
-	//wp_enqueue_script( '_s-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array(), '20120206', true );
-	wp_enqueue_script( '_s-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20130115', true );
+	/* Modernizr */
 	wp_enqueue_script( '_s-modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr.min.js', array(), '', false );
-	wp_enqueue_script( '_s-mobmenu', get_template_directory_uri() . '/assets/js/mobmenu.js', array( 'jquery' ), '', false );
-	wp_enqueue_script( '_s-headroom', get_template_directory_uri() . '/assets/js/vendor/headroom.min.js', array(), '', false );
 
-	// load script required for threaded comments
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
-	}
-
-	/* Home Page */
-	if ( is_front_page() ) {
-		wp_enqueue_script( '_s-glide', get_template_directory_uri() . '/assets/js/vendor/jquery.glide.min.js', array( 'jquery' ), '', true );
-	}
-	/* Work Items */
-	if ( is_singular( 'work_item' ) || is_singular( 'post' ) ) {
-		wp_enqueue_script( '_s-swipebox', get_template_directory_uri() . '/assets/js/vendor/jquery.swipebox.min.js', array( 'jquery' ), '', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', '_s_enqueue_scripts' );

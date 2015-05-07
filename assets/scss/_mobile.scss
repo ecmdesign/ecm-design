@@ -5,6 +5,12 @@
 /*--------------------------------------------------------------
 Global
 --------------------------------------------------------------*/
+body {
+	background: url('../img/bg.png') left top repeat;
+}
+.site {
+	background-color: white;
+}
 .site-content {
 	padding: 2.5em 0;
 	margin-top: 73px;
@@ -805,5 +811,31 @@ Web Services
 	}
 	p {
 		color: $body-light;
+	}
+}
+
+/*--------------------------------------------------------------
+Services Page
+--------------------------------------------------------------*/
+.service-sections {
+	padding-top: 1.5em;
+}
+.service-section {
+	h2 {
+		margin-bottom: 0.75em;
+	}
+	.close {
+		padding-top: 2px;
+	}
+}
+.service {
+	.service-title {
+		margin-bottom: 15px;
+	}
+	p {
+		color: $body-light;
+	}
+	.colored {
+		color: $link-color;
 	}
 }

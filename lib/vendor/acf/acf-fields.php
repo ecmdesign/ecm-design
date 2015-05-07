@@ -8,8 +8,8 @@
 if(function_exists("register_field_group"))
 {
 	register_field_group(array (
-		'id' => 'acf_about-fields',
-		'title' => 'About Fields',
+		'id' => 'acf_about-page-fields',
+		'title' => 'About Page Fields',
 		'fields' => array (
 			array (
 				'key' => 'field_54875daac9140',
@@ -140,8 +140,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
-		'id' => 'acf_contact-fields',
-		'title' => 'Contact Fields',
+		'id' => 'acf_contact-page-fields',
+		'title' => 'Contact Page Fields',
 		'fields' => array (
 			array (
 				'key' => 'field_546e6badb8ba3',
@@ -271,6 +271,152 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
+		'id' => 'acf_services-page-fields',
+		'title' => 'Services Page Fields',
+		'fields' => array (
+			array (
+				'key' => 'field_554b8258414c9',
+				'label' => 'Service Sections',
+				'name' => 'service_sections',
+				'type' => 'repeater',
+				'instructions' => 'Add a services section by clicking "Add Row" below:',
+				'required' => 1,
+				'sub_fields' => array (
+					array (
+						'key' => 'field_554b852140d83',
+						'label' => 'Section Title',
+						'name' => 'section_title',
+						'type' => 'text',
+						'instructions' => 'Enter a title for the services section.',
+						'required' => 1,
+						'column_width' => '',
+						'default_value' => '',
+						'placeholder' => '',
+						'prepend' => '',
+						'append' => '',
+						'formatting' => 'html',
+						'maxlength' => '',
+					),
+					array (
+						'key' => 'field_554b87c5b3e16',
+						'label' => '# of Columns',
+						'name' => 'num_of_columns',
+						'type' => 'select',
+						'instructions' => 'Select the number of columns you\'d like the services section to have.',
+						'required' => 1,
+						'column_width' => '',
+						'choices' => array (
+							2 => 2,
+							3 => 3,
+						),
+						'default_value' => 3,
+						'allow_null' => 0,
+						'multiple' => 0,
+					),
+					array (
+						'key' => 'field_554b835c47846',
+						'label' => 'Services',
+						'name' => 'services',
+						'type' => 'repeater',
+						'instructions' => 'Add services by clicking "Add Row" below:',
+						'required' => 1,
+						'column_width' => '',
+						'sub_fields' => array (
+							array (
+								'key' => 'field_554b838547847',
+								'label' => 'Service Title',
+								'name' => 'service_title',
+								'type' => 'text',
+								'instructions' => 'Enter the title of the service',
+								'required' => 1,
+								'column_width' => '',
+								'default_value' => '',
+								'placeholder' => '',
+								'prepend' => '',
+								'append' => '',
+								'formatting' => 'html',
+								'maxlength' => '',
+							),
+							array (
+								'key' => 'field_554b839c47848',
+								'label' => 'Service Excerpt',
+								'name' => 'service_excerpt',
+								'type' => 'textarea',
+								'instructions' => 'Add an excerpt about the service',
+								'required' => 1,
+								'column_width' => '',
+								'default_value' => '',
+								'placeholder' => '',
+								'maxlength' => 350,
+								'rows' => '',
+								'formatting' => 'br',
+							),
+							array (
+								'key' => 'field_554b84304784a',
+								'label' => 'More Details?',
+								'name' => 'more_details',
+								'type' => 'true_false',
+								'instructions' => 'Check if you\'d like to show more details about the service.',
+								'column_width' => '',
+								'message' => '',
+								'default_value' => 0,
+							),
+							array (
+								'key' => 'field_554b83c747849',
+								'label' => 'Service Details',
+								'name' => 'service_details',
+								'type' => 'wysiwyg',
+								'instructions' => 'Add a more detailed description of the service.',
+								'required' => 1,
+								'conditional_logic' => array (
+									'status' => 1,
+									'rules' => array (
+										array (
+											'field' => 'field_554b84304784a',
+											'operator' => '==',
+											'value' => '1',
+										),
+									),
+									'allorany' => 'all',
+								),
+								'column_width' => '',
+								'default_value' => '',
+								'toolbar' => 'basic',
+								'media_upload' => 'yes',
+							),
+						),
+						'row_min' => 1,
+						'row_limit' => '',
+						'layout' => 'row',
+						'button_label' => 'Add Row',
+					),
+				),
+				'row_min' => 1,
+				'row_limit' => '',
+				'layout' => 'row',
+				'button_label' => 'Add Row',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'page_template',
+					'operator' => '==',
+					'value' => 'page-templates/services-page.php',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+	register_field_group(array (
 		'id' => 'acf_slide-fields',
 		'title' => 'Slide Fields',
 		'fields' => array (
@@ -338,8 +484,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
-		'id' => 'acf_web-services-fields',
-		'title' => 'Web Services Fields',
+		'id' => 'acf_web-services-page-fields',
+		'title' => 'Web Services Page Fields',
 		'fields' => array (
 			array (
 				'key' => 'field_5489d850cd3e3',
@@ -512,8 +658,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 	register_field_group(array (
-		'id' => 'acf_home-about',
-		'title' => 'Home About',
+		'id' => 'acf_home-page-about',
+		'title' => 'Home Page - About',
 		'fields' => array (
 			array (
 				'key' => 'field_5476287d77e7e',
@@ -640,8 +786,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 2,
 	));
 	register_field_group(array (
-		'id' => 'acf_home-services',
-		'title' => 'Home Services',
+		'id' => 'acf_home-page-services',
+		'title' => 'Home Page - Services',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ed23a096b',
@@ -764,8 +910,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 3,
 	));
 	register_field_group(array (
-		'id' => 'acf_home-work',
-		'title' => 'Home Work',
+		'id' => 'acf_home-page-work',
+		'title' => 'Home Page - Work',
 		'fields' => array (
 			array (
 				'key' => 'field_5474edc6e97f5',
@@ -871,8 +1017,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 4,
 	));
 	register_field_group(array (
-		'id' => 'acf_home-more-work',
-		'title' => 'Home More Work',
+		'id' => 'acf_home-page-more-work',
+		'title' => 'Home Page - More Work',
 		'fields' => array (
 			array (
 				'key' => 'field_5487282da9c73',
@@ -995,8 +1141,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 5,
 	));
 	register_field_group(array (
-		'id' => 'acf_home-testimonials',
-		'title' => 'Home Testimonials',
+		'id' => 'acf_home-page-testimonials',
+		'title' => 'Home Page - Testimonials',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ed4a0f2c9',
@@ -1119,8 +1265,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 6,
 	));
 	register_field_group(array (
-		'id' => 'acf_home-clients',
-		'title' => 'Home Clients',
+		'id' => 'acf_home-page-clients',
+		'title' => 'Home Page - Clients',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ed6065b02',
@@ -1213,8 +1359,8 @@ if(function_exists("register_field_group"))
 		'menu_order' => 7,
 	));
 	register_field_group(array (
-		'id' => 'acf_home-contact',
-		'title' => 'Home Contact',
+		'id' => 'acf_home-page-contact',
+		'title' => 'Home Page - Contact',
 		'fields' => array (
 			array (
 				'key' => 'field_5474ee1948f51',

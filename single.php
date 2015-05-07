@@ -25,10 +25,4 @@ get_header(); ?>
 		</div><!-- #primary -->
 	</div><!-- #content -->
 
-	<script>
-	jQuery(window).ready(function($){
-		$('.swipebox').swipebox();
-	});
-	</script>
-
 <?php get_footer(); ?>

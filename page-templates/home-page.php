@@ -49,28 +49,4 @@ get_header(); ?>
 			} ?>
 		</div>
 
-		<script>
-		jQuery(window).ready(function($){
-			/* Testimonials */
-			$('.tst-slider').glide({
-				autoplay: 7000,
-				hoverpause: true,
-				arrows: false,
-				navigation: false,
-				keyboard: true
-			});
-
-			/* Smooth Scroll */
-			$('.slide-area_more a').click(function(e) {
-				// hat tip: http://goo.gl/Najtl
-				e.preventDefault();
-				var target = this.hash;
-				var $target = $(target);
-				$('html, body').stop().animate({
-					'scrollTop': $target.offset().top
-				}, 750, 'swing' );
-			});
-		});
-		</script>
-
 	<?php get_footer(); ?>

@@ -74,7 +74,19 @@ function my_theme_register_required_plugins() {
 			'slug'				=> 'force-regenerate-thumbnails',
 			'required'			=> true,
 			'force_activation'	=> true,
-		)
+		),
+		array(
+			'name'				=> 'Imsanity',
+			'slug'				=> 'imsanity',
+			'required'			=> true,
+			'force_activation'	=> false,
+		),
+		array(
+			'name'				=> 'WordPress Exporter',
+			'slug'				=> 'wp-exporter',
+			'required'			=> true,
+			'force_activation'	=> true,
+		),
 	);
 	$plugins_remote = array(
 		array(
@@ -90,8 +102,8 @@ function my_theme_register_required_plugins() {
 			'force_activation'	=> true,
 		),
 		array(
-			'name'				=> 'Imsanity',
-			'slug'				=> 'Imsanity',
+			'name'				=> 'WordPress SEO by Yoast',
+			'slug'				=> 'wordpress-seo',
 			'required'			=> true,
 			'force_activation'	=> true,
 		),

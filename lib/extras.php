@@ -37,14 +37,18 @@ function _s_body_classes( $classes ) {
 		$classes[] = 'no-hero';
 	}
 
-	/* Page Templates */
-	if ( is_page_template( 'page-templates/about-page.php' ) ):
-		$classes[] = 'about-page'; endif;
-	if ( is_page_template( 'page-templates/contact-page.php' ) ):
-		$classes[] = 'contact-page'; endif;
-	if ( is_page_template( 'page-templates/web_services-page.php' ) ):
-		$classes[] = 'web_services-page'; endif;
-
+	/* About Page */
+	if ( is_page_template( 'page-templates/about-page.php' ) ) {
+		$classes[] = 'about-page';
+	}
+	/* Contact Page */
+	if ( is_page_template( 'page-templates/contact-page.php' ) ) {
+		$classes[] = 'contact-page';
+	}
+	/* Web Services Page */
+	if ( is_page_template( 'page-templates/web_services-page.php' ) ) {
+		$classes[] = 'web_services-page';
+	}
 	return $classes;
 }
 add_filter( 'body_class', '_s_body_classes' );

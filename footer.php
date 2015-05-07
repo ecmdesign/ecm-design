@@ -30,15 +30,6 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
-<script>
-/* Headroom */
-var myHeader = document.getElementById('masthead');
-var headroom = new Headroom(myHeader, {
-	"offset": 83,
-});
-headroom.init();
-</script>
-
 <?php wp_footer(); ?>
 
 </body>

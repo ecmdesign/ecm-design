@@ -241,3 +241,15 @@ Work Navigation
 		font-size: 1.6rem;
 	}
 }
+
+/*--------------------------------------------------------------
+Services Page
+--------------------------------------------------------------*/
+.service-sections {
+}
+.service-section {
+	.even:nth-of-type(odd),
+	.odd:nth-of-type(3n+1) {
+		clear: left;
+	}
+}

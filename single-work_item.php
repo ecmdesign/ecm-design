@@ -92,10 +92,4 @@ get_header(); ?>
 
 		</div><!-- .container -->
 
-		<script>
-		jQuery(window).ready(function($){
-			$('.swipebox').swipebox();
-		});
-		</script>
-
 	<?php get_footer(); ?>
