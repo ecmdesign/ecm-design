@@ -20,6 +20,7 @@ textarea {
 
 h1, h2, h3, h4 {
 	font-family: $heading-font;
+	margin: 0 0 0.5em;
 }
 
 p {
@@ -29,6 +30,11 @@ p {
 b,
 strong {
 	font-weight: 600;
+}
+
+ul {
+	padding-left: 3.0em;
+	margin: 0 0 1.5em;
 }
 
 div:focus {
