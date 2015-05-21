@@ -112,7 +112,8 @@ Header
 /*--------------------------------------------------------------
 Blog
 --------------------------------------------------------------*/
-.blog, .single-post {
+.blog,
+.single-post {
 	.site-content {
 		padding: 0;
 	}
@@ -170,7 +171,10 @@ Blog
 	}
 	.post-navigation {
 		margin-bottom: 0;
-		padding: 1.5em 0 3.0em;
+		padding: 0 0 2.0em;
+	}
+	section img {
+		padding-top: 5px;
 	}
 }
 .single_container {
